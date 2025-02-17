@@ -1,0 +1,11 @@
+{
+	"owner": "mid-games",
+	"register": {
+		"collection-1": {
+			"readme": "",
+			"file1.dpxq": "description for file 1 (mid-games)",
+			"file2.dpxq": "description for file 2 (mid-games)",
+			"file3.dpxq": "description for file 3 (mid-games)"
+		}
+	}
+}

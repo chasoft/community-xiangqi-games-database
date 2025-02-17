@@ -5,7 +5,7 @@ To make game data easy to manage and share, I'm thinking of creating a community
 ## Folder structure
 
 ```
-root
+data
 ├── articles 
 │   └── 
 │
