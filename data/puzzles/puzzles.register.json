@@ -1,8 +1,9 @@
 {
 	"owner": "puzzles",
-	"register": {
+	"data": {
 		"collection-1": {
 			"readme": "",
+			"updatedAt": "1739855842185",
 			"file1.dpxq": "description for file 1 (puzzles-games)",
 			"file2.dpxq": "description for file 2 (puzzles-games)",
 			"file3.dpxq": "description for file 3 (puzzles-games)"

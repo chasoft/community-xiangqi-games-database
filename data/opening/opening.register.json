@@ -1,8 +1,9 @@
 {
 	"owner": "opening",
-	"register": {
+	"data": {
 		"collection-1": {
 			"readme": "",
+			"updatedAt": "1739855842185",
 			"file1.dpxq": "description for file 1 (opening-games)",
 			"file2.dpxq": "description for file 2 (opening-games)",
 			"file3.dpxq": "description for file 3 (opening-games)"

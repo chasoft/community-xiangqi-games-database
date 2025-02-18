@@ -1,8 +1,9 @@
 {
 	"owner": "community",
-	"register": {
+	"data": {
 		"collection-1": {
 			"readme": "",
+			"updatedAt": "1739855842185",
 			"file1.dpxq": "description for file 1 (community)",
 			"file2.dpxq": "description for file 2 (community)",
 			"file3.dpxq": "description for file 3 (community)"
