@@ -1,0 +1,27 @@
+{
+	"editor.rulers": [
+		{
+			"column": 80,
+			"color": "#7a7a7a"
+		},
+		100,
+		{
+			"column": 120,
+			"color": "#7a7a7a"
+		}
+	],
+	"workbench.colorCustomizations": {
+		"editorRuler.foreground": "#7a7a7a"
+	},
+	"files.associations": {
+		"*.css": "css"
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.dropIntoEditor.preferences": [
+	
+	],
+	"code-runner.executorMapByGlob": {
+		"*.ts": "bun"
+	}
+}
