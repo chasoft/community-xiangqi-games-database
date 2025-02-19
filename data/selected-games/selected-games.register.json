@@ -2,11 +2,24 @@
 	"owner": "selected-games",
 	"data": {
 		"collection-1": {
-			"readme": "",
-			"updatedAt": "1739855842185",
-			"file1.dpxq": "description for file 1 (selected-games)",
-			"file2.dpxq": "description for file 2 (selected-games)",
-			"file3.dpxq": "description for file 3 (selected-games)"
+			"meta": {
+				"readme": "",
+				"updatedAt": "1739855842185"
+			},
+			"details": {
+				"file1.dpxq": {
+					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
+					"description": "description for file 1 (selected-games)"
+				},
+				"file2.dpxq": {
+					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
+					"description": "description for file 2 (selected-games)"
+				},
+				"file3.dpxq": {
+					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
+					"description": "description for file 3 (selected-games)"
+				}
+			}
 		}
 	}
 }

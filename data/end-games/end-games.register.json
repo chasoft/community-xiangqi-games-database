@@ -2,11 +2,24 @@
 	"owner": "end-games",
 	"data": {
 		"collection-1": {
-			"readme": "",
-			"updatedAt": "1739855842185",
-			"file1.dpxq": "description for file 1 (end-games)",
-			"file2.dpxq": "description for file 2 (end-games)",
-			"file3.dpxq": "description for file 3 (end-games)"
+			"meta": {
+				"readme": "",
+				"updatedAt": "1739855842185"
+			},
+			"details": {
+				"file1.dpxq": {
+					"preview": "9963999949999999999999999999999999999941309999999999999999999999",
+					"description": "description for file 1 (end-games)"
+				},
+				"file2.dpxq": {
+					"preview": "9952999949999999999999999999999999994299309999999999999999999999",
+					"description": "description for file 2 (end-games)"
+				},
+				"file3.dpxq": {
+					"preview": "9911999939999999999999999999999999994299529999999999999999999999",
+					"description": "description for file 3 (end-games)"
+				}
+			}
 		}
 	}
 }
