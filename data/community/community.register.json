@@ -3,24 +3,24 @@
 	"data": {
 		"collection-1": {
 			"meta": {
-				"title": "Pháo đầu mã đội",
-				"description": "Tuyển tập các ván đầu giang hồ",
+				"title": "Bộ sưu tập này để test",
+				"description": "Các liên kết trong đây sẽ cố tình để bị sai",
 				"updatedAt": "2025/02/10",
 				"tags": ["cờ tướng", "giang hồ", "sát cục", "cờ tàn"],
 				"hasReadme": true
 			},
 			"details": {
-				"cuc-1": {
+				"cuc-1q": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
 					"description": "Cục 1: Pháo đầu mã đội",
 					"tags": ["cờ tướng", "giang hồ", "cờ tàn"]
 				},
-				"cuc-2": {
+				"cudc-2": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
 					"description": "Cục 2: blabla...",
 					"tags": ["cờ tướng", "giang hồ", "sát cục", "cờ tàn"]
 				},
-				"cuc-3": {
+				"cuc-d3": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
 					"description": "Cục 3: blabla...",
 					"tags": ["cờ tướng", "sát cục", "cờ tàn"]
