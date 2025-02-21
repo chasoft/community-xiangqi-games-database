@@ -3,21 +3,27 @@
 	"data": {
 		"collection-1": {
 			"meta": {
-				"readme": "",
-				"updatedAt": "1739855842185"
+				"title": "Pháo đầu mã đội",
+				"description": "Tuyển tập các ván đầu giang hồ",
+				"updatedAt": "2025/02/10",
+				"tags": ["cờ tướng", "giang hồ", "sát cục", "cờ tàn"],
+				"hasReadme": true
 			},
 			"details": {
-				"file1.dpxq": {
+				"cuc-1": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
-					"description": "description for file 1 (community)"
+					"description": "Cục 1: Pháo đầu mã đội",
+					"tags": ["cờ tướng", "giang hồ", "cờ tàn"]
 				},
-				"file2.dpxq": {
+				"cuc-2": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
-					"description": "description for file 2 (community)"
+					"description": "Cục 2: blabla...",
+					"tags": ["cờ tướng", "giang hồ", "sát cục", "cờ tàn"]
 				},
-				"file3.dpxq": {
+				"cuc-3": {
 					"preview": "0919293949596979891777062646668600102030405060708012720323436383",
-					"description": "description for file 3 (community)"
+					"description": "Cục 3: blabla...",
+					"tags": ["cờ tướng", "sát cục", "cờ tàn"]
 				}
 			}
 		}

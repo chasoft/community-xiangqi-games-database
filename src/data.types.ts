@@ -3,9 +3,7 @@
  */
 
 export type CollectionName = string
-export type TournamentName = string
 export type FileName = string
-export type TournamentYear = string
 
 export type DataGroupOwner =
 	| "community"
@@ -21,18 +19,14 @@ export type DataGroup = {
 	data: Record<
 		CollectionName,
 		{
-			meta: { readme: string; updatedAt: number }
-			details: Record<FileName, { preview: string; description: string }>
+			meta: {
+				title: string
+				description: string
+				tags: string[]
+				updatedAt: string
+				hasReadme: boolean
+			}
+			details: Record<FileName, { preview: string; description: string; tags: string[] }>
 		}
 	>
-}
-
-export type TournamentsRegister = {
-	owner: "tournaments"
-	register: TournamentName[]
-}
-
-export type Tournament = {
-	name: TournamentName
-	data: Record<TournamentYear, DataGroup["data"]>
 }

@@ -3,8 +3,9 @@
 	"data": {
 		"collection-1": {
 			"meta": {
-				"readme": "",
-				"updatedAt": "1739855842185"
+				"title": "Bộ sưu tập ván đấu",
+				"updatedAt": "2025/02/20",
+				"hasReadme": true
 			},
 			"details": {
 				"file1.dpxq": {
