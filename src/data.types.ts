@@ -14,19 +14,25 @@ export type DataGroupOwner =
 	| "selected-games"
 	| "tournaments"
 
-export type DataGroup = {
+export type CollectionData = {
+	meta: {
+		title: string
+		description: string
+		tags: string[]
+		updatedAt: string
+	}
+	details: Record<FileName, { preview: string; description: string }>
+}
+
+export type BuiltCollectionData = {
 	owner: DataGroupOwner
+	collections: CollectionName[]
+	statistics: Record<CollectionName, number> & { total: number }
 	data: Record<
 		CollectionName,
 		{
-			meta: {
-				title: string
-				description: string
-				tags: string[]
-				updatedAt: string
-				hasReadme: boolean
-			}
-			details: Record<FileName, { preview: string; description: string; tags: string[] }>
+			meta: CollectionData["meta"] & { readme: string }
+			details: Record<FileName, CollectionData["details"][FileName] & { tags: string[] }>
 		}
 	>
 }

@@ -1,0 +1,585 @@
+/*******************************************************************************
+ *
+ *     This script is used to build the project
+ *     Don't touch this file unless you know what you are doing
+ *     🩠 	🩡 	🩢 	🩣 	🩤 	🩥 	🩦 	🩧 	🩨 	 🩩 	🩪 	🩫 	🩬 	🩭
+ *
+ ******************************************************************************/
+
+// ========================================================
+// Imports and Global Constants
+// ========================================================
+import fs from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+import chalk from "chalk"
+import cliProgress from "cli-progress"
+import Table from "cli-table3"
+import equal from "fast-deep-equal"
+import pako from "pako"
+import type { BuiltCollectionData, CollectionData, DataGroupOwner } from "./data.types"
+
+// Determine project root directory
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const PROJECT_ROOT = path.resolve(__dirname, "..")
+
+const welcomeMessage = `
+  ╦  ╦╦╔═╗╔╦╗   ╔═╗╔═╗  ╔╦╗╦ ╦╔═╗╔╗╔╔═╗
+  ╚╗╔╝║║╣  ║    ║  ║ ║   ║ ║ ║║ ║║║║║ ╦
+   ╚╝ ╩╚═╝ ╩    ╚═╝╚═╝   ╩ ╚═╝╚═╝╝╚╝╚═╝
+═════════════════════════════════════════
+      vietcotuong.com - xiangqi db
+═════════════════════════════════════════`
+
+// Absolute paths for project directories
+const source_path = path.join(PROJECT_ROOT, "data")
+const build_path = path.join(PROJECT_ROOT, "build")
+const temp_path = path.join(PROJECT_ROOT, "build.temp")
+
+// Groups to be processed
+const groups = [
+	"community",
+	"end-games",
+	"mid-games",
+	"opening",
+	"puzzles",
+	"selected-games",
+	"tournaments"
+]
+
+// ========================================================
+// Utility Functions
+// ========================================================
+
+async function readJsonFile<T>(filepath: string): Promise<T> {
+	try {
+		const content = await fs.readFile(filepath, "utf-8")
+		return JSON.parse(content) as T
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to read/parse JSON file ${filepath}: ${error.message}`)
+		}
+		throw new Error(`Failed to read/parse JSON file ${filepath}: Unknown error`)
+	}
+}
+
+async function readMarkdownSafely(filepath: string): Promise<string> {
+	try {
+		return await fs.readFile(filepath, "utf-8")
+	} catch {
+		return ""
+	}
+}
+
+function validateCollectionData(data: CollectionData, filepath: string) {
+	if (!data.meta?.title) throw new Error(`Missing meta.title in ${filepath}`)
+	if (!data.meta?.description) throw new Error(`Missing meta.description in ${filepath}`)
+	if (!data.meta?.updatedAt) throw new Error(`Missing meta.updatedAt in ${filepath}`)
+	if (!data.details || typeof data.details !== "object") {
+		throw new Error(`Invalid details structure in ${filepath}`)
+	}
+}
+
+function formatDuration(ms: number): string {
+	const seconds = (ms / 1000).toFixed(2)
+	return `${seconds}s`
+}
+
+function formatBytes(bytes: number): string {
+	return `${(bytes / 1024).toFixed(1)} KB`
+}
+
+// Add after the existing utility functions
+// Add proper type for comparable objects
+type ComparableValue =
+	| string
+	| number
+	| boolean
+	| null
+	| undefined
+	| Record<string, unknown>
+	| ComparableValue[]
+
+function analyzeObjectDifferences(
+	obj1: ComparableValue,
+	obj2: ComparableValue,
+	path: string[] = []
+): string[] {
+	const differences: string[] = []
+
+	if (typeof obj1 !== typeof obj2) {
+		differences.push(`Type mismatch at ${path.join(".")}: ${typeof obj1} vs ${typeof obj2}`)
+		return differences
+	}
+
+	if (Array.isArray(obj1) && Array.isArray(obj2)) {
+		if (obj1.length !== obj2.length) {
+			differences.push(
+				`Array length mismatch at ${path.join(".")}: ${obj1.length} vs ${obj2.length}`
+			)
+		}
+		for (let i = 0; i < obj1.length; i++) {
+			if (i < obj2.length) {
+				differences.push(...analyzeObjectDifferences(obj1[i], obj2[i], [...path, i.toString()]))
+			}
+		}
+		return differences
+	}
+
+	if (typeof obj1 === "object" && obj1 !== null && typeof obj2 === "object" && obj2 !== null) {
+		const keys1 = Object.keys(obj1).sort()
+		const keys2 = Object.keys(obj2).sort()
+
+		for (const key of keys1) {
+			if (!Object.hasOwn(obj2, key)) {
+				differences.push(`Key ${key} missing in second object at ${path.join(".")}`)
+			} else {
+				differences.push(
+					...analyzeObjectDifferences(
+						(obj1 as Record<string, ComparableValue>)[key],
+						(obj2 as Record<string, ComparableValue>)[key],
+						[...path, key]
+					)
+				)
+			}
+		}
+
+		for (const key of keys2) {
+			if (!Object.hasOwn(obj1, key)) {
+				differences.push(`Key ${key} missing in first object at ${path.join(".")}`)
+			}
+		}
+
+		return differences
+	}
+
+	if (obj1 !== obj2) {
+		differences.push(`Value mismatch at ${path.join(".")}: ${obj1} vs ${obj2}`)
+	}
+
+	return differences
+}
+
+// ========================================================
+// File Comparison Utilities
+// ========================================================
+
+async function filesAreEqual(file1Path: string, file2Path: string): Promise<boolean> {
+	try {
+		const file1Content = await fs.readFile(file1Path, "utf-8")
+		const file2Content = await fs.readFile(file2Path, "utf-8")
+		return file1Content === file2Content
+	} catch {
+		return false // If any file doesn't exist, consider them different
+	}
+}
+
+// ========================================================
+// Collection Processing Functions
+// ========================================================
+
+async function processCollection(
+	collectionPath: string,
+	collectionName: string
+): Promise<[string, BuiltCollectionData["data"][string]]> {
+	// Build paths for register.json and README.md
+	const registerPath = path.join(collectionPath, "register.json")
+	const readmePath = path.join(collectionPath, "README.md")
+
+	const registerData = await readJsonFile<CollectionData>(registerPath)
+	validateCollectionData(registerData, registerPath)
+	const readmeContent = await readMarkdownSafely(readmePath)
+
+	// Validate that all game files mentioned exist
+	for (const filename of Object.keys(registerData.details)) {
+		const gamePath = path.join(collectionPath, filename)
+		await fs.access(gamePath).catch(() => {
+			throw new Error(
+				`Game file ${filename} mentioned in register.json not found in ${collectionPath}`
+			)
+		})
+	}
+
+	// Get all filenames and sort them
+	const filenames = Object.keys(registerData.details).sort()
+
+	// Sort keys for deterministic output
+	const sortedDetails = Object.fromEntries(
+		filenames.map((filename) => [
+			filename,
+			{
+				...registerData.details[filename],
+				tags: [...(registerData.meta.tags || [])].sort()
+			}
+		])
+	)
+
+	return [
+		collectionName,
+		{
+			meta: {
+				...registerData.meta,
+				readme: readmeContent
+			},
+			details: sortedDetails
+		}
+	]
+}
+
+// ========================================================
+// Group Processing Functions
+// ========================================================
+
+const multibar = new cliProgress.MultiBar(
+	{
+		clearOnComplete: false,
+		hideCursor: true,
+		format: "{bar} {percentage}% | {value}/{total} | {status}"
+	},
+	cliProgress.Presets.shades_grey
+)
+
+// Update processGroup to return processing time separately
+async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollectionData, number]> {
+	const groupStartTime = Date.now()
+	const groupPath = path.join(source_path, groupName)
+
+	// Ensure deterministic collection order
+	const collections = (await fs.readdir(groupPath)).sort()
+
+	console.log(chalk.yellow(`\n📁 Group: ${groupName}`))
+	const progressBar = multibar.create(collections.length, 0, { status: "\nStarting..." })
+	let processedCount = 0
+	let totalGames = 0
+
+	const collectionsData = await Promise.all(
+		collections.map(
+			async (collection): Promise<[string, BuiltCollectionData["data"][string]] | null> => {
+				const collectionPath = path.join(groupPath, collection)
+				const stats = await fs.stat(collectionPath)
+				if (!stats.isDirectory()) return null
+
+				const result = await processCollection(collectionPath, collection)
+				if (result) {
+					const gamesCount = Object.keys(result[1].details).length
+					totalGames += gamesCount
+					progressBar.update(++processedCount, {
+						status: `${collection} (${gamesCount} games)`
+					})
+				}
+				return result
+			}
+		)
+	)
+
+	const validCollections = collectionsData
+		.filter((item): item is [string, BuiltCollectionData["data"][string]] => item !== null)
+		.sort(([nameA], [nameB]) => nameA.localeCompare(nameB)) // Sort collections
+
+	const data = Object.fromEntries(validCollections)
+	const statistics = {
+		...Object.fromEntries(
+			validCollections.map(([name]) => [name, Object.keys(data[name].details).length])
+		),
+		total: validCollections.reduce((sum, [name]) => sum + Object.keys(data[name].details).length, 0)
+	}
+
+	// Keep track of duration separately (only for console reporting)
+	const groupDuration = Date.now() - groupStartTime
+	console.log(
+		chalk.dim(
+			`   → Total: ${statistics.total} games in ${processedCount} collections (${formatDuration(groupDuration)})`
+		)
+	)
+
+	return [
+		{
+			owner: groupName,
+			collections: [...Object.keys(data)].sort(),
+			statistics,
+			data: Object.fromEntries([...Object.entries(data)].sort(([a], [b]) => a.localeCompare(b)))
+		},
+		groupDuration
+	]
+}
+
+// ========================================================
+// Compression and Reporting Functions
+// ========================================================
+
+// Add type for compression stats
+type CompressionStats = {
+	originalSize: number
+	compressedSize: number
+	savings: number
+	percentage: number
+	unchanged?: boolean
+	differences?: string[]
+}
+
+// Update compressAndSave function to use for...of
+async function compressAndSave(
+	data: Record<string, unknown>, // Change from unknown to Record<string, unknown>
+	filepath: string
+): Promise<CompressionStats> {
+	const jsonString = JSON.stringify(data)
+	const originalSize = Buffer.byteLength(jsonString)
+	const tempFilePath = filepath.replace(".compressed", "")
+	const existingFilePath = tempFilePath.replace("build.temp", "build")
+	const existingCompressedPath = filepath.replace("build.temp", "build")
+
+	try {
+		await fs.access(existingFilePath)
+		await fs.access(existingCompressedPath)
+
+		const existingData = JSON.parse(await fs.readFile(existingFilePath, "utf-8"))
+		if (equal(existingData, data)) {
+			// Content is identical - copy existing files
+			await fs.mkdir(path.dirname(filepath), { recursive: true })
+			await fs.copyFile(existingCompressedPath, filepath)
+			await fs.writeFile(tempFilePath, jsonString)
+
+			// Get stats from existing files
+			const compressedContent = await fs.readFile(existingCompressedPath)
+			const compressedSize = compressedContent.length
+			const savings = originalSize - compressedSize
+			const percentage = Number(((savings / originalSize) * 100).toFixed(1))
+
+			return {
+				originalSize,
+				compressedSize,
+				savings,
+				percentage,
+				unchanged: true
+			}
+		}
+
+		// Cast both values to ComparableValue since we know they're JSON-compatible
+		const differences = analyzeObjectDifferences(
+			existingData as ComparableValue,
+			data as ComparableValue
+		)
+
+		// Compress new content
+		const compressed = pako.deflate(jsonString)
+		const compressedSize = compressed.length
+		const savings = originalSize - compressedSize
+		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
+
+		await fs.mkdir(path.dirname(filepath), { recursive: true })
+		await fs.writeFile(filepath, Buffer.from(compressed))
+		await fs.writeFile(tempFilePath, jsonString)
+
+		return {
+			originalSize,
+			compressedSize,
+			savings,
+			percentage,
+			unchanged: false,
+			differences
+		}
+	} catch (error) {
+		// Log comparison errors for debugging
+		console.debug("File comparison failed:", error)
+
+		// Compress new content if comparison failed
+		const compressed = pako.deflate(jsonString)
+		const compressedSize = compressed.length
+		const savings = originalSize - compressedSize
+		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
+
+		await fs.mkdir(path.dirname(filepath), { recursive: true })
+		await fs.writeFile(filepath, Buffer.from(compressed))
+		await fs.writeFile(tempFilePath, jsonString)
+
+		return {
+			originalSize,
+			compressedSize,
+			savings,
+			percentage,
+			unchanged: false
+		}
+	}
+}
+
+// Update createStatsTable to use for...of
+function createStatsTable(
+	groupsData: Record<string, BuiltCollectionData>,
+	compressionStats: Record<string, CompressionStats>,
+	processingTimes: Record<string, number>
+): string {
+	const table = new Table({
+		head: ["Group", "Collections", "Games", "Original", "Compressed", "Saved", "Time"],
+		style: {
+			head: ["dim"],
+			border: ["dim"]
+		},
+		chars: {
+			top: "─",
+			"top-mid": "┬",
+			"top-left": "┌",
+			"top-right": "┐",
+			bottom: "─",
+			"bottom-mid": "┴",
+			"bottom-left": "└",
+			"bottom-right": "┘",
+			left: "│",
+			"left-mid": "├",
+			mid: "─",
+			"mid-mid": "┼",
+			right: "│",
+			"right-mid": "┤",
+			middle: "│"
+		}
+	})
+
+	let totalCollections = 0
+	let totalGames = 0
+	let totalOriginalSize = 0
+	let totalCompressedSize = 0
+
+	for (const group of groups) {
+		const data = groupsData[group]
+		const stats = data.statistics
+		const compression = compressionStats[group]
+		if (!compression) {
+			throw new Error(`Compression stats are missing for group ${group}`)
+		}
+
+		totalCollections += data.collections.length
+		totalGames += stats.total
+
+		// Only count sizes for changed files
+		if (!compression.unchanged) {
+			totalOriginalSize += compression.originalSize
+			totalCompressedSize += compression.compressedSize
+		}
+
+		// Show dashes for unchanged files instead of sizes
+		const rowData = [
+			group,
+			data.collections.length.toString(),
+			stats.total.toString(),
+			compression.unchanged ? "-" : formatBytes(compression.originalSize),
+			compression.unchanged ? "-" : formatBytes(compression.compressedSize),
+			compression.unchanged ? "unchanged" : `${compression.percentage}%`,
+			formatDuration(processingTimes[group])
+		]
+
+		// Highlight rows with > 50% compression savings
+		if (compression.unchanged) {
+			rowData.forEach((value, index) => {
+				rowData[index] = chalk.blue(value) // Blue for unchanged
+			})
+		} else if (compression.percentage > 50) {
+			rowData.forEach((value, index) => {
+				rowData[index] = chalk.green(value) // Green for good compression
+			})
+		}
+
+		table.push(rowData)
+
+		if (compression.differences?.length) {
+			console.log(chalk.yellow(`\nDifferences in ${group}:`))
+			for (const diff of compression.differences) {
+				console.log(chalk.dim(`  → ${diff}`))
+			}
+		}
+	}
+
+	// Only calculate savings percentage if there were changes
+	const totalSavings =
+		totalOriginalSize === 0
+			? 0
+			: ((totalOriginalSize - totalCompressedSize) / totalOriginalSize) * 100
+
+	table.push([
+		chalk.bold("Total"),
+		chalk.bold(totalCollections.toString()),
+		chalk.bold(totalGames.toString()),
+		chalk.bold(formatBytes(totalOriginalSize)),
+		chalk.bold(formatBytes(totalCompressedSize)),
+		chalk.bold(`${totalSavings}%`),
+		chalk.bold("")
+	])
+
+	return table.toString()
+}
+
+// ========================================================
+// Main Build Process
+// ========================================================
+
+async function build() {
+	const startTime = Date.now()
+	// Clear console and output welcome message
+	console.clear()
+	console.log(chalk.blue(welcomeMessage))
+	console.log(chalk.yellow("\nDiscover the world of Xiangqi with vietcotuong.com"))
+	console.log(chalk.green("Built with ❤️  by the community, for the community"))
+	console.log(chalk.dim("Building community xiangqi games database...\n"))
+	console.log(chalk.bold.blue("🔨 Starting build process...\n"))
+
+	try {
+		const processStartTime = Date.now() // Start processing timer
+		await fs.rm(temp_path, { recursive: true, force: true })
+		await fs.mkdir(temp_path, { recursive: true })
+
+		const mainProgress = multibar.create(groups.length, 0, { status: "Starting..." })
+		let totalCollections = 0
+		let totalGames = 0
+		const groupsData: Record<string, BuiltCollectionData> = {}
+		const compressionStats: Record<string, CompressionStats> = {} // New separate object
+		const processingTimes: Record<string, number> = {} // Add this to track times
+		let totalOriginalSize = 0
+		let totalCompressedSize = 0
+
+		// Process each defined group
+		for (let i = 0; i < groups.length; i++) {
+			const group = groups[i]
+			mainProgress.update(i, { status: `Processing ${group}...` })
+
+			const [groupData, duration] = await processGroup(group as DataGroupOwner)
+			groupsData[group] = groupData
+			processingTimes[group] = duration // Store duration separately
+			totalCollections += groupData.collections.length
+			totalGames += groupData.statistics.total
+
+			const groupBuildPath = path.join(temp_path, group)
+			await fs.mkdir(groupBuildPath, { recursive: true })
+			const stats = await compressAndSave(
+				groupData,
+				path.join(groupBuildPath, "register.json.compressed")
+			)
+			compressionStats[group] = stats // Store in separate object
+			totalOriginalSize += stats.originalSize
+			totalCompressedSize += stats.compressedSize
+		}
+
+		mainProgress.update(groups.length, { status: "Finalizing..." })
+		await fs.rm(build_path, { recursive: true, force: true })
+		await fs.rename(temp_path, build_path)
+
+		multibar.stop()
+		const processDuration = Date.now() - processStartTime
+		const totalDuration = Date.now() - startTime
+		console.log(chalk.bold.green("\n✨ Build completed successfully!"))
+		console.log(chalk.dim(`Build Duration: ${formatDuration(totalDuration)}`))
+		console.log(chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`))
+		console.log(createStatsTable(groupsData, compressionStats, processingTimes))
+		console.log() // Empty line for formatting
+	} catch (error) {
+		multibar.stop()
+		console.log(chalk.bold.red("\n❌ Build failed:"))
+		if (error instanceof Error) {
+			console.error(chalk.red("Error:"), chalk.yellow(error.message))
+			console.error(chalk.dim(error.stack))
+		} else {
+			console.error(chalk.red("Unknown error:"), error)
+		}
+		process.exit(1)
+	}
+}
+
+build()
