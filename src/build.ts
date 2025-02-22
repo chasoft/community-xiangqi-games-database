@@ -420,11 +420,16 @@ type CompressionStats = {
 
 // Update compressAndSave function to use for...of
 async function compressAndSave(
-	data: Record<string, unknown>, // Change from unknown to Record<string, unknown>
+	data: Record<string, unknown>,
 	filepath: string
 ): Promise<CompressionStats> {
-	const jsonString = JSON.stringify(data)
-	const originalSize = Buffer.byteLength(jsonString)
+	// Calculate original and minified sizes
+	const originalString = JSON.stringify(data, null, 2) // Pretty format
+	const minifiedString = minifyJson(JSON.stringify(data))
+	const originalSize = Buffer.byteLength(originalString)
+	const minifiedSize = Buffer.byteLength(minifiedString)
+	const minifiedSavings = ((originalSize - minifiedSize) / originalSize) * 100
+
 	const tempFilePath = filepath.replace(".compressed", "")
 	const existingFilePath = tempFilePath.replace("build.temp", "build")
 	const existingCompressedPath = filepath.replace("build.temp", "build")
@@ -438,7 +443,7 @@ async function compressAndSave(
 			// Content is identical - copy existing files
 			await fs.mkdir(path.dirname(filepath), { recursive: true })
 			await fs.copyFile(existingCompressedPath, filepath)
-			await fs.writeFile(tempFilePath, jsonString)
+			await fs.writeFile(tempFilePath, minifiedString)
 
 			// Get stats from existing files
 			const compressedContent = await fs.readFile(existingCompressedPath)
@@ -449,33 +454,36 @@ async function compressAndSave(
 			return {
 				originalSize,
 				compressedSize,
+				minifiedSize,
 				savings,
 				percentage,
+				minifiedSavings,
 				unchanged: true
 			}
 		}
 
-		// Cast both values to ComparableValue since we know they're JSON-compatible
 		const differences = analyzeObjectDifferences(
 			existingData as ComparableValue,
 			data as ComparableValue
 		)
 
 		// Compress new content
-		const compressed = pako.deflate(jsonString)
+		const compressed = pako.deflate(minifiedString) // Use minified string for compression
 		const compressedSize = compressed.length
 		const savings = originalSize - compressedSize
 		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
 
 		await fs.mkdir(path.dirname(filepath), { recursive: true })
 		await fs.writeFile(filepath, Buffer.from(compressed))
-		await fs.writeFile(tempFilePath, jsonString)
+		await fs.writeFile(tempFilePath, minifiedString)
 
 		return {
 			originalSize,
 			compressedSize,
+			minifiedSize,
 			savings,
 			percentage,
+			minifiedSavings,
 			unchanged: false,
 			differences
 		}
@@ -483,21 +491,23 @@ async function compressAndSave(
 		// Log comparison errors for debugging
 		console.debug("File comparison failed:", error)
 
-		// Compress new content if comparison failed
-		const compressed = pako.deflate(jsonString)
+		// Compress new content
+		const compressed = pako.deflate(minifiedString) // Use minified string for compression
 		const compressedSize = compressed.length
 		const savings = originalSize - compressedSize
 		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
 
 		await fs.mkdir(path.dirname(filepath), { recursive: true })
 		await fs.writeFile(filepath, Buffer.from(compressed))
-		await fs.writeFile(tempFilePath, jsonString)
+		await fs.writeFile(tempFilePath, minifiedString)
 
 		return {
 			originalSize,
 			compressedSize,
+			minifiedSize,
 			savings,
 			percentage,
+			minifiedSavings,
 			unchanged: false
 		}
 	}
@@ -745,6 +755,20 @@ async function promptCommitMessage(): Promise<string> {
 	})
 }
 
+function hasChanges(
+	compressionStats: Record<string, CompressionStats>,
+	collectionStats: Record<string, Record<string, CompressionStats>>
+): boolean {
+	// Check group files
+	if (Object.values(compressionStats).some((stat) => !stat.unchanged)) {
+		return true
+	}
+	// Check collection files
+	return Object.values(collectionStats).some((groupStats) =>
+		Object.values(groupStats).some((stat) => !stat.unchanged)
+	)
+}
+
 async function build() {
 	const startTime = Date.now()
 	// Clear console and output welcome message
@@ -805,6 +829,17 @@ async function build() {
 		console.log(chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`))
 		console.log(createStatsTable(groupsData, compressionStats, collectionStats, processingTimes))
 		console.log() // Empty line for formatting
+
+		// Check if there were any changes
+		if (!hasChanges(compressionStats, collectionStats)) {
+			console.log(chalk.cyan("\n════════════════════════════════════════════════════════"))
+			console.log(chalk.cyan("                 Build Status"))
+			console.log(chalk.cyan("════════════════════════════════════════════════════════"))
+			console.log(chalk.blue("\n✨ Build completed successfully with no changes detected."))
+			console.log(chalk.dim("All files are up to date. No git operations required."))
+			console.log(chalk.green("\nThank you for using the build tool! 👋"))
+			return
+		}
 
 		// Add Git operations after successful build
 		const commitMessage = await promptCommitMessage()
