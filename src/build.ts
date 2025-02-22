@@ -17,6 +17,9 @@ import cliProgress from "cli-progress"
 import Table from "cli-table3"
 import equal from "fast-deep-equal"
 import pako from "pako"
+import { exec } from "node:child_process"
+import { promisify } from "node:util"
+import { createInterface } from "node:readline"
 import type { BuiltCollectionData, CollectionData, DataGroupOwner } from "./data.types"
 
 // Determine project root directory
@@ -511,6 +514,38 @@ function createStatsTable(
 // Main Build Process
 // ========================================================
 
+const execAsync = promisify(exec)
+
+async function gitCommitAndPush(message: string) {
+	try {
+		await execAsync("git add .")
+		console.log(chalk.dim("Added changes to git staging..."))
+
+		await execAsync(`git commit -m "${message}"`)
+		console.log(chalk.dim("Committed changes..."))
+
+		await execAsync("git push")
+		console.log(chalk.green("✨ Successfully pushed to repository!"))
+	} catch (error) {
+		console.error(chalk.red("Failed to push changes:"), error)
+		throw error
+	}
+}
+
+async function promptCommitMessage(): Promise<string> {
+	const rl = createInterface({
+		input: process.stdin,
+		output: process.stdout
+	})
+
+	return new Promise((resolve) => {
+		rl.question(chalk.yellow("\nEnter commit message: "), (message) => {
+			rl.close()
+			resolve(message)
+		})
+	})
+}
+
 async function build() {
 	const startTime = Date.now()
 	// Clear console and output welcome message
@@ -569,6 +604,14 @@ async function build() {
 		console.log(chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`))
 		console.log(createStatsTable(groupsData, compressionStats, processingTimes))
 		console.log() // Empty line for formatting
+
+		// Add Git operations after successful build
+		const commitMessage = await promptCommitMessage()
+		if (commitMessage.trim()) {
+			await gitCommitAndPush(commitMessage)
+		} else {
+			console.log(chalk.yellow("No commit message provided, skipping git operations."))
+		}
 	} catch (error) {
 		multibar.stop()
 		console.log(chalk.bold.red("\n❌ Build failed:"))
