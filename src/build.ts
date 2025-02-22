@@ -17,7 +17,12 @@ import cliProgress from "cli-progress"
 import Table from "cli-table3"
 import equal from "fast-deep-equal"
 import pako from "pako"
-import type { BuiltCollectionData, CollectionData, DataGroupOwner } from "./data.types"
+import type {
+	BuiltCollectionData,
+	CollectionData,
+	CollectionDataFull,
+	DataGroupOwner
+} from "./data.types"
 
 // Determine project root directory
 const __filename = fileURLToPath(import.meta.url)
@@ -157,12 +162,73 @@ function analyzeObjectDifferences(
 	return differences
 }
 
+// Add after other utility functions
+async function handleCollectionFile(
+	groupName: string,
+	collectionName: string,
+	data: CollectionDataFull
+): Promise<CompressionStats> {
+	const targetPath = path.join(temp_path, groupName, `${collectionName}.register.json`)
+	const existingPath = path.join(build_path, groupName, `${collectionName}.register.json`)
+	const jsonString = JSON.stringify(data, null, 2)
+	const originalSize = Buffer.byteLength(jsonString)
+
+	try {
+		const existingData = await readJsonFile<CollectionDataFull>(existingPath)
+		if (equal(existingData, data)) {
+			// Content identical - copy existing file
+			await fs.mkdir(path.dirname(targetPath), { recursive: true })
+			await fs.copyFile(existingPath, targetPath)
+
+			return {
+				originalSize,
+				compressedSize: originalSize, // Not compressed for individual files
+				savings: 0,
+				percentage: 0,
+				unchanged: true
+			}
+		}
+
+		const differences = analyzeObjectDifferences(
+			existingData as ComparableValue,
+			data as ComparableValue
+		)
+
+		await fs.mkdir(path.dirname(targetPath), { recursive: true })
+		await fs.writeFile(targetPath, jsonString)
+
+		return {
+			originalSize,
+			compressedSize: originalSize, // Not compressed for individual files
+			savings: 0,
+			percentage: 0,
+			unchanged: false,
+			differences
+		}
+	} catch {
+		// File doesn't exist or can't be read - write new file
+		await fs.mkdir(path.dirname(targetPath), { recursive: true })
+		await fs.writeFile(targetPath, jsonString)
+
+		return {
+			originalSize,
+			compressedSize: originalSize,
+			savings: 0,
+			percentage: 0,
+			unchanged: false
+		}
+	}
+}
+
 // Collection Processing Functions
 
+// Modify processCollection to track individual file stats
 async function processCollection(
 	collectionPath: string,
-	collectionName: string
-): Promise<[string, BuiltCollectionData["data"][string]]> {
+	collectionName: string,
+	groupName: string // Add groupName parameter
+): Promise<[string, BuiltCollectionData["data"][string], CompressionStats]> {
+	// Add CompressionStats to return
 	// Build paths for register.json and README.md
 	const registerPath = path.join(collectionPath, "register.json")
 	const readmePath = path.join(collectionPath, "README.md")
@@ -195,15 +261,26 @@ async function processCollection(
 		])
 	)
 
+	// Save individual collection file
+	const collectionFullData: CollectionDataFull = {
+		meta: {
+			...registerData.meta,
+			readme: readmeContent
+		},
+		details: sortedDetails
+	}
+
+	const fileStats = await handleCollectionFile(groupName, collectionName, collectionFullData)
+
 	return [
 		collectionName,
 		{
 			meta: {
-				...registerData.meta,
-				readme: readmeContent
+				...registerData.meta
 			},
 			details: sortedDetails
-		}
+		},
+		fileStats
 	]
 }
 
@@ -219,7 +296,10 @@ const multibar = new cliProgress.MultiBar(
 )
 
 // Update processGroup to return processing time separately
-async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollectionData, number]> {
+// Modify processGroup to track individual file stats
+async function processGroup(
+	groupName: DataGroupOwner
+): Promise<[BuiltCollectionData, number, Record<string, CompressionStats>]> {
 	const groupStartTime = Date.now()
 	const groupPath = path.join(source_path, groupName)
 
@@ -230,16 +310,21 @@ async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollection
 	const progressBar = multibar.create(collections.length, 0, { status: "\nStarting..." })
 	let processedCount = 0
 	let totalGames = 0
+	const collectionStats: Record<string, CompressionStats> = {}
 
 	const collectionsData = await Promise.all(
 		collections.map(
-			async (collection): Promise<[string, BuiltCollectionData["data"][string]] | null> => {
+			async (
+				collection
+			): Promise<[string, BuiltCollectionData["data"][string], CompressionStats] | null> => {
 				const collectionPath = path.join(groupPath, collection)
 				const stats = await fs.stat(collectionPath)
 				if (!stats.isDirectory()) return null
 
-				const result = await processCollection(collectionPath, collection)
+				const result = await processCollection(collectionPath, collection, groupName)
 				if (result) {
+					const [name, _, fileStats] = result
+					collectionStats[name] = fileStats
 					const gamesCount = Object.keys(result[1].details).length
 					totalGames += gamesCount
 					progressBar.update(++processedCount, {
@@ -252,10 +337,13 @@ async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollection
 	)
 
 	const validCollections = collectionsData
-		.filter((item): item is [string, BuiltCollectionData["data"][string]] => item !== null)
+		.filter(
+			(item): item is [string, BuiltCollectionData["data"][string], CompressionStats] =>
+				item !== null
+		)
 		.sort(([nameA], [nameB]) => nameA.localeCompare(nameB)) // Sort collections
 
-	const data = Object.fromEntries(validCollections)
+	const data = Object.fromEntries(validCollections.map(([name, data]) => [name, data]))
 	const statistics = {
 		...Object.fromEntries(
 			validCollections.map(([name]) => [name, Object.keys(data[name].details).length])
@@ -278,7 +366,8 @@ async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollection
 			statistics,
 			data: Object.fromEntries([...Object.entries(data)].sort(([a], [b]) => a.localeCompare(b)))
 		},
-		groupDuration
+		groupDuration,
+		collectionStats
 	]
 }
 
@@ -379,17 +468,17 @@ async function compressAndSave(
 }
 
 // Update createStatsTable to use for...of
+// Modify createStatsTable to include individual file stats
 function createStatsTable(
 	groupsData: Record<string, BuiltCollectionData>,
 	compressionStats: Record<string, CompressionStats>,
+	collectionStats: Record<string, Record<string, CompressionStats>>,
 	processingTimes: Record<string, number>
 ): string {
-	const table = new Table({
+	// First table for compressed group files
+	const compressedTable = new Table({
 		head: ["Group", "Collections", "Games", "Original", "Compressed", "Saved", "Time"],
-		style: {
-			head: ["dim"],
-			border: ["dim"]
-		},
+		style: { head: ["dim"], border: ["dim"] },
 		chars: {
 			top: "─",
 			"top-mid": "┬",
@@ -453,7 +542,7 @@ function createStatsTable(
 			})
 		}
 
-		table.push(rowData)
+		compressedTable.push(rowData)
 
 		if (compression.differences?.length) {
 			console.log(chalk.yellow(`\nDifferences in ${group}:`))
@@ -469,7 +558,7 @@ function createStatsTable(
 			? 0
 			: ((totalOriginalSize - totalCompressedSize) / totalOriginalSize) * 100
 
-	table.push([
+	compressedTable.push([
 		chalk.bold("Total"),
 		chalk.bold(totalCollections.toString()),
 		chalk.bold(totalGames.toString()),
@@ -479,7 +568,98 @@ function createStatsTable(
 		chalk.bold("")
 	])
 
-	return table.toString()
+	// Second table for uncompressed collection files
+	const collectionTable = new Table({
+		head: ["Group", "Collection", "Size", "Status", "Changes"],
+		style: { head: ["dim"], border: ["dim"] },
+		chars: {
+			top: "─",
+			"top-mid": "┬",
+			"top-left": "┌",
+			"top-right": "┐",
+			bottom: "─",
+			"bottom-mid": "┴",
+			"bottom-left": "└",
+			"bottom-right": "┘",
+			left: "│",
+			"left-mid": "├",
+			mid: "─",
+			"mid-mid": "┼",
+			right: "│",
+			"right-mid": "┤",
+			middle: "│"
+		}
+	})
+
+	let totalCollectionFiles = 0
+	let changedCollectionFiles = 0
+
+	for (const group of groups) {
+		const stats = collectionStats[group]
+		if (!stats) continue
+
+		for (const [name, stat] of Object.entries(stats)) {
+			totalCollectionFiles++
+			if (!stat.unchanged) changedCollectionFiles++
+
+			const rowData = [
+				group,
+				name,
+				formatBytes(stat.originalSize),
+				stat.unchanged ? "unchanged" : "modified",
+				stat.differences?.length ? stat.differences.length.toString() : "-"
+			]
+
+			// Color coding
+			if (stat.unchanged) {
+				rowData.forEach((value, index) => {
+					rowData[index] = chalk.blue(value)
+				})
+			} else {
+				rowData.forEach((value, index) => {
+					rowData[index] = chalk.yellow(value)
+				})
+			}
+
+			collectionTable.push(rowData)
+		}
+	}
+
+	// Add collection files summary row
+	collectionTable.push([
+		chalk.bold("Total"),
+		chalk.bold(`${totalCollectionFiles}`),
+		"",
+		chalk.bold(`${changedCollectionFiles} changed`),
+		""
+	])
+
+	let output = chalk.bold("\nCompressed Group Files:\n")
+	output += compressedTable.toString()
+
+	output += chalk.bold("\n\nUncompressed Collection Files:\n")
+	output += collectionTable.toString()
+
+	// Add detailed changes if any
+	for (const group of groups) {
+		const stats = collectionStats[group]
+		if (!stats) continue
+
+		const changes = Object.entries(stats).filter(
+			([_, stat]) => !stat.unchanged && stat.differences?.length
+		)
+		if (changes.length > 0) {
+			output += chalk.bold(`\n\nDetailed Changes in ${group}:\n`)
+			for (const [name, stat] of changes) {
+				output += chalk.yellow(`\n${name}:\n`)
+				for (const diff of stat.differences || []) {
+					output += chalk.dim(`  → ${diff}\n`)
+				}
+			}
+		}
+	}
+
+	return output
 }
 
 // Main Build Process
@@ -547,6 +727,7 @@ async function build() {
 		let totalGames = 0
 		const groupsData: Record<string, BuiltCollectionData> = {}
 		const compressionStats: Record<string, CompressionStats> = {} // New separate object
+		const collectionStats: Record<string, Record<string, CompressionStats>> = {} // Add this to track individual file stats
 		const processingTimes: Record<string, number> = {} // Add this to track times
 		let totalOriginalSize = 0
 		let totalCompressedSize = 0
@@ -556,9 +737,10 @@ async function build() {
 			const group = groups[i]
 			mainProgress.update(i, { status: `Processing ${group}...` })
 
-			const [groupData, duration] = await processGroup(group as DataGroupOwner)
+			const [groupData, duration, fileStats] = await processGroup(group as DataGroupOwner)
 			groupsData[group] = groupData
 			processingTimes[group] = duration // Store duration separately
+			collectionStats[group] = fileStats // Store individual file stats
 			totalCollections += groupData.collections.length
 			totalGames += groupData.statistics.total
 
@@ -583,7 +765,7 @@ async function build() {
 		console.log(chalk.bold.green("\n✨ Build completed successfully!"))
 		console.log(chalk.dim(`Build Duration: ${formatDuration(totalDuration)}`))
 		console.log(chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`))
-		console.log(createStatsTable(groupsData, compressionStats, processingTimes))
+		console.log(createStatsTable(groupsData, compressionStats, collectionStats, processingTimes))
 		console.log() // Empty line for formatting
 
 		// Add Git operations after successful build

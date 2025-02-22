@@ -31,8 +31,19 @@ export type BuiltCollectionData = {
 	data: Record<
 		CollectionName,
 		{
-			meta: CollectionData["meta"] & { readme: string }
+			meta: CollectionData["meta"]
 			details: Record<FileName, CollectionData["details"][FileName] & { tags: string[] }>
 		}
 	>
+}
+
+export type CollectionDataFull = {
+	meta: {
+		title: string
+		description: string
+		tags: string[]
+		updatedAt: string
+		readme: string
+	}
+	details: Record<FileName, { preview: string; description: string }>
 }
