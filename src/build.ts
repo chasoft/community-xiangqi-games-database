@@ -6,20 +6,17 @@
  *
  ******************************************************************************/
 
-// ========================================================
-// Imports and Global Constants
-// ========================================================
+import { exec } from "node:child_process"
 import fs from "node:fs/promises"
 import path from "node:path"
+import { createInterface } from "node:readline"
 import { fileURLToPath } from "node:url"
+import { promisify } from "node:util"
 import chalk from "chalk"
 import cliProgress from "cli-progress"
 import Table from "cli-table3"
 import equal from "fast-deep-equal"
 import pako from "pako"
-import { exec } from "node:child_process"
-import { promisify } from "node:util"
-import { createInterface } from "node:readline"
 import type { BuiltCollectionData, CollectionData, DataGroupOwner } from "./data.types"
 
 // Determine project root directory
@@ -51,9 +48,7 @@ const groups = [
 	"tournaments"
 ]
 
-// ========================================================
 // Utility Functions
-// ========================================================
 
 async function readJsonFile<T>(filepath: string): Promise<T> {
 	try {
@@ -93,8 +88,6 @@ function formatBytes(bytes: number): string {
 	return `${(bytes / 1024).toFixed(1)} KB`
 }
 
-// Add after the existing utility functions
-// Add proper type for comparable objects
 type ComparableValue =
 	| string
 	| number
@@ -164,23 +157,7 @@ function analyzeObjectDifferences(
 	return differences
 }
 
-// ========================================================
-// File Comparison Utilities
-// ========================================================
-
-async function filesAreEqual(file1Path: string, file2Path: string): Promise<boolean> {
-	try {
-		const file1Content = await fs.readFile(file1Path, "utf-8")
-		const file2Content = await fs.readFile(file2Path, "utf-8")
-		return file1Content === file2Content
-	} catch {
-		return false // If any file doesn't exist, consider them different
-	}
-}
-
-// ========================================================
 // Collection Processing Functions
-// ========================================================
 
 async function processCollection(
 	collectionPath: string,
@@ -230,9 +207,7 @@ async function processCollection(
 	]
 }
 
-// ========================================================
 // Group Processing Functions
-// ========================================================
 
 const multibar = new cliProgress.MultiBar(
 	{
@@ -307,11 +282,8 @@ async function processGroup(groupName: DataGroupOwner): Promise<[BuiltCollection
 	]
 }
 
-// ========================================================
 // Compression and Reporting Functions
-// ========================================================
 
-// Add type for compression stats
 type CompressionStats = {
 	originalSize: number
 	compressedSize: number
@@ -510,9 +482,7 @@ function createStatsTable(
 	return table.toString()
 }
 
-// ========================================================
 // Main Build Process
-// ========================================================
 
 const execAsync = promisify(exec)
 
@@ -533,13 +503,24 @@ async function gitCommitAndPush(message: string) {
 }
 
 async function promptCommitMessage(): Promise<string> {
+	console.log(chalk.cyan("\n════════════════════════════════════════════════════════"))
+	console.log(chalk.cyan("                 Git Operations"))
+	console.log(chalk.cyan("════════════════════════════════════════════════════════"))
+	console.log(chalk.dim("\nThe build process has completed successfully!"))
+	console.log(chalk.dim("You can now commit and push your changes to the repository."))
+	console.log(chalk.dim("\nWhat will happen:"))
+	console.log(chalk.dim(" 1. Add all changes (git add .)"))
+	console.log(chalk.dim(' 2. Commit with your message (git commit -m "your message")'))
+	console.log(chalk.dim(" 3. Push to remote repository (git push)"))
+	console.log(chalk.yellow("\nNote: Press Enter without a message to skip Git operations"))
+
 	const rl = createInterface({
 		input: process.stdin,
 		output: process.stdout
 	})
 
 	return new Promise((resolve) => {
-		rl.question(chalk.yellow("\nEnter commit message: "), (message) => {
+		rl.question(chalk.green("\n📝 Enter commit message: "), (message) => {
 			rl.close()
 			resolve(message)
 		})
@@ -609,8 +590,10 @@ async function build() {
 		const commitMessage = await promptCommitMessage()
 		if (commitMessage.trim()) {
 			await gitCommitAndPush(commitMessage)
+			console.log(chalk.green("\n✨ All operations completed successfully!"))
 		} else {
-			console.log(chalk.yellow("No commit message provided, skipping git operations."))
+			console.log(chalk.yellow("\nSkipping Git operations..."))
+			console.log(chalk.green("Thank you for using the build tool! 👋"))
 		}
 	} catch (error) {
 		multibar.stop()
