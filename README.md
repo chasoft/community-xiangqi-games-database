@@ -82,18 +82,25 @@ This guide will walk you through the steps of contributing your Xiangqi games to
 * **Create a `register.json` File:**
     * Create a `register.json` file within your collection folder. This file will help the system identify and process your game data. Refer to the `register.json` file in the `my-great-games` folder for an example.
 
-**4. Building the Data**
+**4. Building and Committing Changes**
 
-* **Open the Terminal:** In VS Code, open the integrated terminal by pressing `Ctrl+` (or `Cmd+` on macOS).
-* **Run the Build Command:** In the terminal, type `bun start` and press Enter. This command will process your game data and prepare it for the database.
+* **Run the Build Command:** In the terminal, type `bun start` and press Enter. This command will:
+    1. Process and validate your game data
+    2. Build the database with your new contributions
+    3. Prompt you for a Git commit message
+    4. If you provide a message:
+        - Stage all changes (`git add .`)
+        - Commit with your message (`git commit -m "your message"`)
+        - Push to your repository (`git push`)
+    5. If you press Enter without a message, it will skip the Git operations
 
-**5. Committing Your Changes**
+Note: The build process will show you detailed information about:
+- Processing status of each group
+- Changes detected in files
+- Compression statistics
+- Total processing time
 
-* **Stage Changes:** In the "Source Control" panel in VS Code, select all the files you've added or modified. Then, click on the "+" icon to stage them for commit.
-* **Commit Changes:** Enter a descriptive message for your commit (e.g., "Added my awesome games collection"). Then, click on the checkmark icon to commit your changes.
-* **Push Changes to GitHub:** Click on the "Sync Changes" button (the upward arrow) to push your committed changes to the GitHub repository.
-
-**6. Create a Pull Request**
+**5. Create a Pull Request**
 
 * **Go to GitHub:** Open your web browser and navigate to the repository on GitHub: [https://github.com/chasoft/community-xiangqi-games-database](https://github.com/chasoft/community-xiangqi-games-database)
 * **Create a Pull Request:** Click on the "New pull request" button. GitHub will automatically compare your changes with the main branch.
