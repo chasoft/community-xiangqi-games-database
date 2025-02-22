@@ -162,7 +162,27 @@ function analyzeObjectDifferences(
 	return differences
 }
 
-// Add after other utility functions
+function minifyJson(json: string): string {
+	try {
+		// Parse into object first
+		const obj = JSON.parse(json)
+		// Use replacer to handle special cases
+		return JSON.stringify(obj, (key, value) => {
+			// Convert empty objects to null
+			if (typeof value === "object" && value !== null && Object.keys(value).length === 0) {
+				return null
+			}
+			// Remove empty strings, empty arrays
+			if (value === "" || (Array.isArray(value) && value.length === 0)) {
+				return undefined
+			}
+			return value
+		})
+	} catch {
+		return json
+	}
+}
+
 async function handleCollectionFile(
 	groupName: string,
 	collectionName: string,
@@ -170,51 +190,65 @@ async function handleCollectionFile(
 ): Promise<CompressionStats> {
 	const targetPath = path.join(temp_path, groupName, `${collectionName}.register.json`)
 	const existingPath = path.join(build_path, groupName, `${collectionName}.register.json`)
-	const jsonString = JSON.stringify(data, null, 2)
-	const originalSize = Buffer.byteLength(jsonString)
+
+	// Calculate original and minified sizes
+	const originalString = JSON.stringify(data, null, 2) // Pretty format for original
+	const minifiedString = minifyJson(JSON.stringify(data))
+	const originalSize = Buffer.byteLength(originalString)
+	const minifiedSize = Buffer.byteLength(minifiedString)
 
 	try {
-		const existingData = await readJsonFile<CollectionDataFull>(existingPath)
-		if (equal(existingData, data)) {
-			// Content identical - copy existing file
+		// Read existing file as raw string and compare strings directly
+		const existingString = await fs.readFile(existingPath, "utf-8")
+		if (existingString === minifiedString) {
+			// Content identical after minification - copy existing file
 			await fs.mkdir(path.dirname(targetPath), { recursive: true })
 			await fs.copyFile(existingPath, targetPath)
+			const minifiedSavings = ((originalSize - minifiedSize) / originalSize) * 100
 
 			return {
 				originalSize,
-				compressedSize: originalSize, // Not compressed for individual files
+				compressedSize: minifiedSize,
+				minifiedSize,
 				savings: 0,
 				percentage: 0,
+				minifiedSavings,
 				unchanged: true
 			}
 		}
 
-		const differences = analyzeObjectDifferences(
-			existingData as ComparableValue,
-			data as ComparableValue
-		)
-
+		// If we get here, the file content is different
 		await fs.mkdir(path.dirname(targetPath), { recursive: true })
-		await fs.writeFile(targetPath, jsonString)
+		await fs.writeFile(targetPath, minifiedString)
+
+		const minifiedSavings = ((originalSize - minifiedSize) / originalSize) * 100
 
 		return {
 			originalSize,
-			compressedSize: originalSize, // Not compressed for individual files
+			compressedSize: minifiedSize,
+			minifiedSize,
 			savings: 0,
 			percentage: 0,
+			minifiedSavings,
 			unchanged: false,
-			differences
+			differences: [
+				`Content changed: was ${formatBytes(existingString.length)} now ${formatBytes(minifiedString.length)}`
+			]
 		}
 	} catch {
-		// File doesn't exist or can't be read - write new file
+		// New file
 		await fs.mkdir(path.dirname(targetPath), { recursive: true })
-		await fs.writeFile(targetPath, jsonString)
+		await fs.writeFile(targetPath, minifiedString)
+
+		const minifiedSavings = ((originalSize - minifiedSize) / originalSize) * 100
 
 		return {
 			originalSize,
-			compressedSize: originalSize,
+			compressedSize: minifiedSize,
+			minifiedSize,
 			savings: 0,
 			percentage: 0,
+			minifiedSavings,
 			unchanged: false
 		}
 	}
@@ -376,8 +410,10 @@ async function processGroup(
 type CompressionStats = {
 	originalSize: number
 	compressedSize: number
+	minifiedSize: number // Add this
 	savings: number
 	percentage: number
+	minifiedSavings: number // Add this
 	unchanged?: boolean
 	differences?: string[]
 }
@@ -570,7 +606,7 @@ function createStatsTable(
 
 	// Second table for uncompressed collection files
 	const collectionTable = new Table({
-		head: ["Group", "Collection", "Size", "Status", "Changes"],
+		head: ["Group", "Collection", "Original", "Minified", "Saved", "Status", "Changes"],
 		style: { head: ["dim"], border: ["dim"] },
 		chars: {
 			top: "─",
@@ -606,6 +642,8 @@ function createStatsTable(
 				group,
 				name,
 				formatBytes(stat.originalSize),
+				formatBytes(stat.minifiedSize),
+				`${stat.minifiedSavings.toFixed(1)}%`,
 				stat.unchanged ? "unchanged" : "modified",
 				stat.differences?.length ? stat.differences.length.toString() : "-"
 			]
