@@ -467,8 +467,13 @@ async function compressAndSave(
 			data as ComparableValue
 		)
 
-		// Compress new content
-		const compressed = pako.deflate(minifiedString) // Use minified string for compression
+		const compressed = pako.gzip(minifiedString)
+
+		// Verify gzip header immediately after compression
+		if (compressed.length < 2 || compressed[0] !== 0x1f || compressed[1] !== 0x8b) {
+			throw new Error("Compression failed: Invalid gzip header in compressed output")
+		}
+
 		const compressedSize = compressed.length
 		const savings = originalSize - compressedSize
 		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
@@ -492,7 +497,7 @@ async function compressAndSave(
 		console.debug("File comparison failed:", error)
 
 		// Compress new content
-		const compressed = pako.deflate(minifiedString) // Use minified string for compression
+		const compressed = pako.gzip(minifiedString) // Use minified string for compression
 		const compressedSize = compressed.length
 		const savings = originalSize - compressedSize
 		const percentage = Number(((savings / originalSize) * 100).toFixed(1))
