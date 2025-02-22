@@ -418,7 +418,6 @@ type CompressionStats = {
 	differences?: string[]
 }
 
-// Update compressAndSave function to use for...of
 async function compressAndSave(
 	data: Record<string, unknown>,
 	filepath: string
@@ -518,7 +517,6 @@ async function compressAndSave(
 	}
 }
 
-// Update createStatsTable to use for...of
 // Modify createStatsTable to include individual file stats
 function createStatsTable(
 	groupsData: Record<string, BuiltCollectionData>,
