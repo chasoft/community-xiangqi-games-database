@@ -22,7 +22,8 @@ import type {
 	CollectionData,
 	CollectionDataFull,
 	DataGroupOwner
-} from "./data.types"
+} from "./build.types"
+import { gameStartedFromTheBegining, getLastPiecesPosition } from "./game"
 
 // Determine project root directory
 const __filename = fileURLToPath(import.meta.url)
@@ -61,7 +62,9 @@ async function readJsonFile<T>(filepath: string): Promise<T> {
 		return JSON.parse(content) as T
 	} catch (error) {
 		if (error instanceof Error) {
-			throw new Error(`Failed to read/parse JSON file ${filepath}: ${error.message}`)
+			throw new Error(
+				`Failed to read/parse JSON file ${filepath}: ${error.message}`
+			)
 		}
 		throw new Error(`Failed to read/parse JSON file ${filepath}: Unknown error`)
 	}
@@ -77,8 +80,10 @@ async function readMarkdownSafely(filepath: string): Promise<string> {
 
 function validateCollectionData(data: CollectionData, filepath: string) {
 	if (!data.meta?.title) throw new Error(`Missing meta.title in ${filepath}`)
-	if (!data.meta?.description) throw new Error(`Missing meta.description in ${filepath}`)
-	if (!data.meta?.updatedAt) throw new Error(`Missing meta.updatedAt in ${filepath}`)
+	if (!data.meta?.description)
+		throw new Error(`Missing meta.description in ${filepath}`)
+	if (!data.meta?.updatedAt)
+		throw new Error(`Missing meta.updatedAt in ${filepath}`)
 	if (!data.details || typeof data.details !== "object") {
 		throw new Error(`Invalid details structure in ${filepath}`)
 	}
@@ -110,7 +115,9 @@ function analyzeObjectDifferences(
 	const differences: string[] = []
 
 	if (typeof obj1 !== typeof obj2) {
-		differences.push(`Type mismatch at ${path.join(".")}: ${typeof obj1} vs ${typeof obj2}`)
+		differences.push(
+			`Type mismatch at ${path.join(".")}: ${typeof obj1} vs ${typeof obj2}`
+		)
 		return differences
 	}
 
@@ -122,19 +129,28 @@ function analyzeObjectDifferences(
 		}
 		for (let i = 0; i < obj1.length; i++) {
 			if (i < obj2.length) {
-				differences.push(...analyzeObjectDifferences(obj1[i], obj2[i], [...path, i.toString()]))
+				differences.push(
+					...analyzeObjectDifferences(obj1[i], obj2[i], [...path, i.toString()])
+				)
 			}
 		}
 		return differences
 	}
 
-	if (typeof obj1 === "object" && obj1 !== null && typeof obj2 === "object" && obj2 !== null) {
+	if (
+		typeof obj1 === "object" &&
+		obj1 !== null &&
+		typeof obj2 === "object" &&
+		obj2 !== null
+	) {
 		const keys1 = Object.keys(obj1).sort()
 		const keys2 = Object.keys(obj2).sort()
 
 		for (const key of keys1) {
 			if (!Object.hasOwn(obj2, key)) {
-				differences.push(`Key ${key} missing in second object at ${path.join(".")}`)
+				differences.push(
+					`Key ${key} missing in second object at ${path.join(".")}`
+				)
 			} else {
 				differences.push(
 					...analyzeObjectDifferences(
@@ -148,7 +164,9 @@ function analyzeObjectDifferences(
 
 		for (const key of keys2) {
 			if (!Object.hasOwn(obj1, key)) {
-				differences.push(`Key ${key} missing in first object at ${path.join(".")}`)
+				differences.push(
+					`Key ${key} missing in first object at ${path.join(".")}`
+				)
 			}
 		}
 
@@ -164,20 +182,8 @@ function analyzeObjectDifferences(
 
 function minifyJson(json: string): string {
 	try {
-		// Parse into object first
 		const obj = JSON.parse(json)
-		// Use replacer to handle special cases
-		return JSON.stringify(obj, (key, value) => {
-			// Convert empty objects to null
-			if (typeof value === "object" && value !== null && Object.keys(value).length === 0) {
-				return null
-			}
-			// Remove empty strings, empty arrays
-			if (value === "" || (Array.isArray(value) && value.length === 0)) {
-				return undefined
-			}
-			return value
-		})
+		return JSON.stringify(obj)
 	} catch {
 		return json
 	}
@@ -188,8 +194,16 @@ async function handleCollectionFile(
 	collectionName: string,
 	data: CollectionDataFull
 ): Promise<CompressionStats> {
-	const targetPath = path.join(temp_path, groupName, `${collectionName}.register.json`)
-	const existingPath = path.join(build_path, groupName, `${collectionName}.register.json`)
+	const targetPath = path.join(
+		temp_path,
+		groupName,
+		`${collectionName}.register.json`
+	)
+	const existingPath = path.join(
+		build_path,
+		groupName,
+		`${collectionName}.register.json`
+	)
 
 	// Calculate original and minified sizes
 	const originalString = JSON.stringify(data, null, 2) // Pretty format for original
@@ -204,7 +218,8 @@ async function handleCollectionFile(
 			// Content identical after minification - copy existing file
 			await fs.mkdir(path.dirname(targetPath), { recursive: true })
 			await fs.copyFile(existingPath, targetPath)
-			const minifiedSavings = ((originalSize - minifiedSize) / originalSize) * 100
+			const minifiedSavings =
+				((originalSize - minifiedSize) / originalSize) * 100
 
 			return {
 				originalSize,
@@ -260,26 +275,103 @@ async function handleCollectionFile(
 async function processCollection(
 	collectionPath: string,
 	collectionName: string,
-	groupName: string // Add groupName parameter
+	groupName: string
 ): Promise<[string, BuiltCollectionData["data"][string], CompressionStats]> {
-	// Add CompressionStats to return
-	// Build paths for register.json and README.md
 	const registerPath = path.join(collectionPath, "register.json")
 	const readmePath = path.join(collectionPath, "README.md")
 
-	const registerData = await readJsonFile<CollectionData>(registerPath)
+	let registerData: CollectionData
+	let isNewRegister = false
+	try {
+		registerData = await readJsonFile<CollectionData>(registerPath)
+	} catch {
+		// Create new register.json if it doesn't exist
+		isNewRegister = true
+		registerData = {
+			meta: {
+				title: collectionName,
+				description: collectionName,
+				tags: [],
+				updatedAt: new Date().toISOString().split("T")[0].replace(/-/g, "/")
+			},
+			details: {}
+		}
+	}
+
+	// Get all files in the directory
+	const files = await fs.readdir(collectionPath)
+	const gameFiles = files.filter(
+		(file) => file !== "register.json" && file !== "README.md"
+	)
+	let hasChanges = isNewRegister
+
+	// Process each game file
+	for (const filename of gameFiles) {
+		if (!registerData.details[filename]) {
+			hasChanges = true
+			registerData.details[filename] = { preview: "", description: "" }
+		}
+
+		if (
+			hasChanges ||
+			!registerData.details[filename].description ||
+			!registerData.details[filename].preview
+		) {
+			// Read and process file content
+			const content = await fs.readFile(
+				path.join(collectionPath, filename),
+				"utf-8"
+			)
+
+			// Extract description from DhtmlXQ_title if not exists
+			if (!registerData.details[filename].description) {
+				const titleMatch = content.match(
+					/\[DhtmlXQ_title\](.*?)\[\/DhtmlXQ_title\]/
+				)
+				if (titleMatch) {
+					registerData.details[filename].description = titleMatch[1]
+					hasChanges = true
+				}
+			}
+
+			// Extract binit and determine preview if not exists
+			if (!registerData.details[filename].preview) {
+				const binitMatch = content.match(
+					/\[DhtmlXQ_binit\](.*?)\[\/DhtmlXQ_binit\]/
+				)
+				if (binitMatch) {
+					const binit = binitMatch[1]
+					if (!gameStartedFromTheBegining(binit)) {
+						registerData.details[filename].preview = binit
+						hasChanges = true
+					} else {
+						// Get movelist and calculate last position
+						const movelistMatch = content.match(
+							/\[DhtmlXQ_movelist\](.*?)\[\/DhtmlXQ_movelist\]/
+						)
+						if (movelistMatch) {
+							registerData.details[filename].preview = getLastPiecesPosition(
+								movelistMatch[1]
+							)
+							hasChanges = true
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Save register.json if there were changes
+	if (hasChanges) {
+		await fs.writeFile(
+			registerPath,
+			JSON.stringify(registerData, null, 2),
+			"utf-8"
+		)
+	}
+
 	validateCollectionData(registerData, registerPath)
 	const readmeContent = await readMarkdownSafely(readmePath)
-
-	// Validate that all game files mentioned exist
-	for (const filename of Object.keys(registerData.details)) {
-		const gamePath = path.join(collectionPath, filename)
-		await fs.access(gamePath).catch(() => {
-			throw new Error(
-				`Game file ${filename} mentioned in register.json not found in ${collectionPath}`
-			)
-		})
-	}
 
 	// Get all filenames and sort them
 	const filenames = Object.keys(registerData.details).sort()
@@ -304,7 +396,11 @@ async function processCollection(
 		details: sortedDetails
 	}
 
-	const fileStats = await handleCollectionFile(groupName, collectionName, collectionFullData)
+	const fileStats = await handleCollectionFile(
+		groupName,
+		collectionName,
+		collectionFullData
+	)
 
 	return [
 		collectionName,
@@ -341,7 +437,9 @@ async function processGroup(
 	const collections = (await fs.readdir(groupPath)).sort()
 
 	console.log(chalk.yellow(`\n📁 Group: ${groupName}`))
-	const progressBar = multibar.create(collections.length, 0, { status: "\nStarting..." })
+	const progressBar = multibar.create(collections.length, 0, {
+		status: "\nStarting..."
+	})
 	let processedCount = 0
 	let totalGames = 0
 	const collectionStats: Record<string, CompressionStats> = {}
@@ -350,12 +448,18 @@ async function processGroup(
 		collections.map(
 			async (
 				collection
-			): Promise<[string, BuiltCollectionData["data"][string], CompressionStats] | null> => {
+			): Promise<
+				[string, BuiltCollectionData["data"][string], CompressionStats] | null
+			> => {
 				const collectionPath = path.join(groupPath, collection)
 				const stats = await fs.stat(collectionPath)
 				if (!stats.isDirectory()) return null
 
-				const result = await processCollection(collectionPath, collection, groupName)
+				const result = await processCollection(
+					collectionPath,
+					collection,
+					groupName
+				)
 				if (result) {
 					const [name, _, fileStats] = result
 					collectionStats[name] = fileStats
@@ -372,17 +476,30 @@ async function processGroup(
 
 	const validCollections = collectionsData
 		.filter(
-			(item): item is [string, BuiltCollectionData["data"][string], CompressionStats] =>
-				item !== null
+			(
+				item
+			): item is [
+				string,
+				BuiltCollectionData["data"][string],
+				CompressionStats
+			] => item !== null
 		)
 		.sort(([nameA], [nameB]) => nameA.localeCompare(nameB)) // Sort collections
 
-	const data = Object.fromEntries(validCollections.map(([name, data]) => [name, data]))
+	const data = Object.fromEntries(
+		validCollections.map(([name, data]) => [name, data])
+	)
 	const statistics = {
 		...Object.fromEntries(
-			validCollections.map(([name]) => [name, Object.keys(data[name].details).length])
+			validCollections.map(([name]) => [
+				name,
+				Object.keys(data[name].details).length
+			])
 		),
-		total: validCollections.reduce((sum, [name]) => sum + Object.keys(data[name].details).length, 0)
+		total: validCollections.reduce(
+			(sum, [name]) => sum + Object.keys(data[name].details).length,
+			0
+		)
 	}
 
 	// Keep track of duration separately (only for console reporting)
@@ -398,7 +515,9 @@ async function processGroup(
 			owner: groupName,
 			collections: [...Object.keys(data)].sort(),
 			statistics,
-			data: Object.fromEntries([...Object.entries(data)].sort(([a], [b]) => a.localeCompare(b)))
+			data: Object.fromEntries(
+				[...Object.entries(data)].sort(([a], [b]) => a.localeCompare(b))
+			)
 		},
 		groupDuration,
 		collectionStats
@@ -437,7 +556,9 @@ async function compressAndSave(
 		await fs.access(existingFilePath)
 		await fs.access(existingCompressedPath)
 
-		const existingData = JSON.parse(await fs.readFile(existingFilePath, "utf-8"))
+		const existingData = JSON.parse(
+			await fs.readFile(existingFilePath, "utf-8")
+		)
 		if (equal(existingData, data)) {
 			// Content is identical - copy existing files
 			await fs.mkdir(path.dirname(filepath), { recursive: true })
@@ -469,8 +590,14 @@ async function compressAndSave(
 		const compressed = pako.gzip(minifiedString)
 
 		// Verify gzip header immediately after compression
-		if (compressed.length < 2 || compressed[0] !== 0x1f || compressed[1] !== 0x8b) {
-			throw new Error("Compression failed: Invalid gzip header in compressed output")
+		if (
+			compressed.length < 2 ||
+			compressed[0] !== 0x1f ||
+			compressed[1] !== 0x8b
+		) {
+			throw new Error(
+				"Compression failed: Invalid gzip header in compressed output"
+			)
 		}
 
 		const compressedSize = compressed.length
@@ -526,7 +653,15 @@ function createStatsTable(
 ): string {
 	// First table for compressed group files
 	const compressedTable = new Table({
-		head: ["Group", "Collections", "Games", "Original", "Compressed", "Saved", "Time"],
+		head: [
+			"Group",
+			"Collections",
+			"Games",
+			"Original",
+			"Compressed",
+			"Saved",
+			"Time"
+		],
 		style: { head: ["dim"], border: ["dim"] },
 		chars: {
 			top: "─",
@@ -619,7 +754,15 @@ function createStatsTable(
 
 	// Second table for uncompressed collection files
 	const collectionTable = new Table({
-		head: ["Group", "Collection", "Original", "Minified", "Saved", "Status", "Changes"],
+		head: [
+			"Group",
+			"Collection",
+			"Original",
+			"Minified",
+			"Saved",
+			"Status",
+			"Changes"
+		],
 		style: { head: ["dim"], border: ["dim"] },
 		chars: {
 			top: "─",
@@ -734,16 +877,26 @@ async function gitCommitAndPush(message: string) {
 }
 
 async function promptCommitMessage(): Promise<string> {
-	console.log(chalk.cyan("\n════════════════════════════════════════════════════════"))
+	console.log(
+		chalk.cyan("\n════════════════════════════════════════════════════════")
+	)
 	console.log(chalk.cyan("                 Git Operations"))
-	console.log(chalk.cyan("════════════════════════════════════════════════════════"))
+	console.log(
+		chalk.cyan("════════════════════════════════════════════════════════")
+	)
 	console.log(chalk.dim("\nThe build process has completed successfully!"))
-	console.log(chalk.dim("You can now commit and push your changes to the repository."))
+	console.log(
+		chalk.dim("You can now commit and push your changes to the repository.")
+	)
 	console.log(chalk.dim("\nWhat will happen:"))
 	console.log(chalk.dim(" 1. Add all changes (git add .)"))
-	console.log(chalk.dim(' 2. Commit with your message (git commit -m "your message")'))
+	console.log(
+		chalk.dim(' 2. Commit with your message (git commit -m "your message")')
+	)
 	console.log(chalk.dim(" 3. Push to remote repository (git push)"))
-	console.log(chalk.yellow("\nNote: Press Enter without a message to skip Git operations"))
+	console.log(
+		chalk.yellow("\nNote: Press Enter without a message to skip Git operations")
+	)
 
 	const rl = createInterface({
 		input: process.stdin,
@@ -777,7 +930,9 @@ async function build() {
 	// Clear console and output welcome message
 	console.clear()
 	console.log(chalk.blue(welcomeMessage))
-	console.log(chalk.yellow("\nDiscover the world of Xiangqi with vietcotuong.com"))
+	console.log(
+		chalk.yellow("\nDiscover the world of Xiangqi with vietcotuong.com")
+	)
 	console.log(chalk.green("Built with ❤️  by the community, for the community"))
 	console.log(chalk.dim("Building community xiangqi games database...\n"))
 	console.log(chalk.bold.blue("🔨 Starting build process...\n"))
@@ -787,7 +942,9 @@ async function build() {
 		await fs.rm(temp_path, { recursive: true, force: true })
 		await fs.mkdir(temp_path, { recursive: true })
 
-		const mainProgress = multibar.create(groups.length, 0, { status: "Starting..." })
+		const mainProgress = multibar.create(groups.length, 0, {
+			status: "Starting..."
+		})
 		let totalCollections = 0
 		let totalGames = 0
 		const groupsData: Record<string, BuiltCollectionData> = {}
@@ -802,7 +959,9 @@ async function build() {
 			const group = groups[i]
 			mainProgress.update(i, { status: `Processing ${group}...` })
 
-			const [groupData, duration, fileStats] = await processGroup(group as DataGroupOwner)
+			const [groupData, duration, fileStats] = await processGroup(
+				group as DataGroupOwner
+			)
 			groupsData[group] = groupData
 			processingTimes[group] = duration // Store duration separately
 			collectionStats[group] = fileStats // Store individual file stats
@@ -829,17 +988,36 @@ async function build() {
 		const totalDuration = Date.now() - startTime
 		console.log(chalk.bold.green("\n✨ Build completed successfully!"))
 		console.log(chalk.dim(`Build Duration: ${formatDuration(totalDuration)}`))
-		console.log(chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`))
-		console.log(createStatsTable(groupsData, compressionStats, collectionStats, processingTimes))
+		console.log(
+			chalk.dim(`Processing Duration: ${formatDuration(processDuration)}\n`)
+		)
+		console.log(
+			createStatsTable(
+				groupsData,
+				compressionStats,
+				collectionStats,
+				processingTimes
+			)
+		)
 		console.log() // Empty line for formatting
 
 		// Check if there were any changes
 		if (!hasChanges(compressionStats, collectionStats)) {
-			console.log(chalk.cyan("\n════════════════════════════════════════════════════════"))
+			console.log(
+				chalk.cyan("\n════════════════════════════════════════════════════════")
+			)
 			console.log(chalk.cyan("                 Build Status"))
-			console.log(chalk.cyan("════════════════════════════════════════════════════════"))
-			console.log(chalk.blue("\n✨ Build completed successfully with no changes detected."))
-			console.log(chalk.dim("All files are up to date. No git operations required."))
+			console.log(
+				chalk.cyan("════════════════════════════════════════════════════════")
+			)
+			console.log(
+				chalk.blue(
+					"\n✨ Build completed successfully with no changes detected."
+				)
+			)
+			console.log(
+				chalk.dim("All files are up to date. No git operations required.")
+			)
 			console.log(chalk.green("\nThank you for using the build tool! 👋"))
 			return
 		}

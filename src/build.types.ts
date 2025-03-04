@@ -32,7 +32,10 @@ export type BuiltCollectionData = {
 		CollectionName,
 		{
 			meta: CollectionData["meta"]
-			details: Record<FileName, CollectionData["details"][FileName] & { tags: string[] }>
+			details: Record<
+				FileName,
+				CollectionData["details"][FileName] & { tags: string[] }
+			>
 		}
 	>
 }
