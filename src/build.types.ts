@@ -43,7 +43,7 @@ export type BuiltCollectionData = {
 export type CollectionDataFull = {
 	meta: {
 		title: string
-		description: string
+		description?: string
 		tags: string[]
 		updatedAt: string
 		readme: string
