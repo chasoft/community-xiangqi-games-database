@@ -17,7 +17,7 @@ export type DataGroupOwner =
 export type CollectionData = {
 	meta: {
 		title: string
-		description: string
+		description?: string
 		tags: string[]
 		updatedAt: string
 	}

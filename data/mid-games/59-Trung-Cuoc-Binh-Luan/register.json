@@ -1,246 +1,246 @@
 {
-  "meta": {
-    "title": "59-selected-commented-midgames",
-    "description": "59-selected-commented-midgames",
-    "tags": [],
-    "updatedAt": "2025/03/05"
-  },
-  "details": {
-    "smg-20120601a-hu-ronghua-w-zhao-qingge": {
-      "preview": "2646474849596955991537062545668634524241405060549913620423638399",
-      "description": "smg 20120601a Hu Ronghua W Zhao Qingge "
-    },
-    "smg-20120601b-hu-ronghua-w-qin-he": {
-      "preview": "6326294849594799993369062346999915432030405024629989990444758399",
-      "description": "smg 20120601b Hu Ronghua W Qin He "
-    },
-    "smg-20120601c-yu-youhua-l-hu-ronghua": {
-      "preview": "5356293949484767993599254666869906022041405042999913220323436484",
-      "description": "smg 20120601c Yu Youhua L Hu Ronghua"
-    },
-    "smg-20120602a-exchanging-for-initiative": {
-      "preview": "1987473949596999882774062546668610314230405060995118720323436483",
-      "description": "smg 20120602a Exchanging for initiative ??????"
-    },
-    "smg-20120602b-exchanging-for-material-gain": {
-      "preview": "1923293949596935510207062546668612224241405060563418820343648399",
-      "description": "smg 20120602b Exchanging for material gain "
-    },
-    "smg-20120602c-exchanging-to-save-oneself": {
-      "preview": "1827294849594799561076062646658634362030404160627022990324436383",
-      "description": "smg 20120602c Exchanging to save oneself"
-    },
-    "smg-20120608a-sacrificing-to-kill": {
-      "preview": "1655695949999999311499062565869912994241409960996830890323638399",
-      "description": "smg 20120608a Sacrificing to kill"
-    },
-    "smg-20120608b-sacrificing-to-gain-the-upperhand": {
-      "preview": "1967293949596999631757062546658616412030405060623152990323438399",
-      "description": "smg 20120608b Sacrificing to gain the upperhand"
-    },
-    "smg-20120608c-sacrificing-to-save-yourself": {
-      "preview": "3627293949484799816599068699999958992041405242997088990483999999",
-      "description": "smg 20120608c Sacrificing to save yourself"
-    },
-    "smg-20120613a-beware-of-moving-without-thinking": {
-      "preview": "1150293949599999998099466386999979246052309964999942990383999999",
-      "description": "smg 20120613a beware of moving without thinking"
-    },
-    "smg-20120613b-beware-of-making-inefficient-moves": {
-      "preview": "2846293949596999831747064466869900222030405060747212610343999999",
-      "description": "smg 20120613b beware of making inefficient moves"
-    },
-    "smg-20120613c-be-bold-do-not-chicken-out": {
-      "preview": "2927074849596963331767066486999915022041405060622622420343468399",
-      "description": "smg 20120613c be bold do not chicken out "
-    },
-    "smg-20120622-the-use-of-the-pawn-in-midgame": {
-      "preview": "7615473949596943991938244565869902284241405060829920520763839999",
-      "description": "smg 20120622 the use of the pawn in midgame"
-    },
-    "smg-20120622b-the-use-of-the-king-in-midgame": {
-      "preview": "4467293949488799530347068699999925432041405060626645992364839999",
-      "description": "smg 20120622b the use of the king in midgame"
-    },
-    "smg-20120622c-the-use-of-the-advisor-and-elephant-in-midgame": {
-      "preview": "7965474849599999990199062599999910999930404199996689990383999999",
-      "description": "smg 20120622c the use of the advisor and elephant in midgame"
-    },
-    "smg-20120623a-maneuvering-your-pieces-to-gain-advantage": {
-      "preview": "7833473949489999999999458699999999622030504142999951670346648399",
-      "description": "smg 20120623a maneuvering your pieces to gain advantage"
-    },
-    "smg-20120623b-maneuvering-your-pieces-to-attack": {
-      "preview": "3223293949484751993799052646869973222030405060419966990324438399",
-      "description": "smg 20120623b maneuvering your pieces to attack"
-    },
-    "smg-20120623c-maneuvering-your-pieces-to-save-yourself": {
-      "preview": "1735293949486967231399062546869910664230405060997744650364839999",
-      "description": "smg 20120623c maneuvering your pieces to save yourself"
-    },
-    "smg-20120701-unlinking-the-elephants-01": {
-      "preview": "6339474849596967991427064665869934222430405060549901120323438399",
-      "description": "smg 20120701 unlinking the elephants 01"
-    },
-    "smg-20120701-unlinking-the-elephants-02": {
-      "preview": "4326293949596967550899466686999900024230404160217784990464839999",
-      "description": "smg 20120701 unlinking the elephants 02"
-    },
-    "smg-20120701-unlinking-the-elephants-03": {
-      "preview": "3855293949594767999999264565869913622041405042999901990663839999",
-      "description": "smg 20120701 unlinking the elephants 03"
-    },
-    "smg-20120712a-threatening-to-capture-your-opponents-chess-piec": {
-      "preview": "3327475949996965994499062545869958484241405060999916790383999999",
-      "description": "smg 20120712a threatening to capture your opponent's chess piec"
-    },
-    "smg-20120712b-threatening-to-capture-your-opponents-chess-piec": {
-      "preview": "5368293949486976749999062645869935334241325060545899990323839999",
-      "description": "smg 20120712b threatening to capture your opponent's chess piec"
-    },
-    "smg-20120712c-threatening-to-capture-your-opponents-chess-piec": {
-      "preview": "1199294849596999200199066686999944620230404199995499990345589999",
-      "description": "smg 20120712c threatening to capture your opponent's chess piec"
-    },
-    "smg-20120712d-threatening-to-capture-your-opponent-chess-pieces": {
-      "preview": "2999473949486999792399061386999935142030405099996642990383999999",
-      "description": "smg 20120712d threatening to capture your opponent chess pieces"
-    },
-    "smg-20120804-gm-yang-guanlin-01": {
-      "preview": "2346293949596999894347062645869910822041405042997322620355839999",
-      "description": "smg 20120804 GM Yang Guanlin 01 "
-    },
-    "smg-20120804-gm-yang-guanlin-02": {
-      "preview": "3807294839596999994347052645869965622041405060999900420324839999",
-      "description": "smg 20120804 GM Yang Guanlin 02 "
-    },
-    "smg-20120804-gm-yang-guanlin-03-mm-xqtjdszjfd-ydlht-0103": {
-      "preview": "1935294849594775541527062546999913412030405042867032730343658399",
-      "description": "smg 20120804 GM Yang Guanlin 03 mm xqtjdszjfd ydlht 0103 "
-    },
-    "smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2": {
-      "preview": "1827293949596967734765062546869934222030405042547014720323438399",
-      "description": "smg 20120808 What would you do if you were GM Yang part 2 "
-    },
-    "smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2 (1)": {
-      "preview": "2351293949489959997799068699999942766099409999996699990326999999",
-      "description": "smg 20120808 What would you do if you were GM Yang? part 2"
-    },
-    "smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2 (2)": {
-      "preview": "1933293949594799233599062446869917670241405060993218666583999999",
-      "description": "smg 20120808 What would you do if you were GM Yang part 2"
-    },
-    "smg-20120909-02-2003-zhao-dong-l-ouyang-qilin": {
-      "preview": "0919293949596967633747062646668610222030405060627042720323438399",
-      "description": "smg 20120909 02 2003 Zhao Dong L Ouyang Qilin"
-    },
-    "smg-20120909-03-2003-he-jing-l-zhang-guofeng": {
-      "preview": "2327293949596967381747062546658612222030404160625402420324446483",
-      "description": "smg 20120909 03 2003 He Jing L Zhang Guofeng "
-    },
-    "smg-20120909-2003-li-xian-l-guo-ruixia": {
-      "preview": "0727293949596934531747062544869920224241405060627812610323436683",
-      "description": "smg 20120909 2003 Li Xian L Guo Ruixia"
-    },
-    "smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3a": {
-      "preview": "1953293949484767791344062586999910354241405060437166760323839999",
-      "description": "smg 20120919 What would you do if you were GM Yang part 3a "
-    },
-    "smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3b": {
-      "preview": "7327294849596934994799062543658636012041405042999912660323638399",
-      "description": "smg 20120919 What would you do if you were GM Yang part 3b"
-    },
-    "smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3c": {
-      "preview": "1135294849594755792276064665869944022030404142627321320423436483",
-      "description": "smg 20120919 What would you do if you were GM Yang part 3c"
-    },
-    "smg-20121122-01-zhuang-hongming-d-zhao-ruquan": {
-      "preview": "0927293949596967531747062546668600222030405060747012610323436483",
-      "description": "smg 20121122 01 Zhuang HongMing D Zhao RuQuan"
-    },
-    "smg-20121122-02-lai-hanshun-l-lai-junying": {
-      "preview": "1907293949596988742847062546869900222041405060357066720323436583",
-      "description": "smg 20121122 02 Lai HanShun L Lai JunYing "
-    },
-    "smg-20121122-03-lu-zhongneng-l-zhao-ruquan": {
-      "preview": "0935293949596955881747064665869900224230405060622412820343638399",
-      "description": "smg 20121122 03 Lu ZhongNeng L Zhao RuQuan"
-    },
-    "smg-20121122-04-lai-junying-l-huang-hailin": {
-      "preview": "0927293949596943531747062544869920624241405060997812610324668399",
-      "description": "smg 20121122 04 Lai JunYing L Huang Hailin "
-    },
-    "smg-20121209-01-zhang-qiang-l-lu-zhengrong": {
-      "preview": "0927293949596967750747062545668600314230405060821422720323436384",
-      "description": "smg 20121209 01 Zhang Qiang L Lu ZhengRong "
-    },
-    "smg-20121209-02-chen-qiming-l-li-qun": {
-      "preview": "3807293949594767891777062646658600342030405060628012420324436383",
-      "description": "smg 20121209 02 Chen QiMing L Li Qun"
-    },
-    "smg-20121209-03-sun-qingli-w-li-aidong": {
-      "preview": "1927294849596967541137062546668630224241405060827052620343638399",
-      "description": "smg 20121209 03 Sun QingLi W Li AiDong"
-    },
-    "smg-20121218-01-tao-hanming-l-xie-kui": {
-      "preview": "1927473949596967990387064686999960262030405042519912722443999999",
-      "description": "smg 20121218 01 Tao HanMing L Xie Kui"
-    },
-    "smg-20121218-02-liu-dianzhong-w-wang-bin": {
-      "preview": "1507293949596967552747052646668610224230405060747014720323436483",
-      "description": "smg 20121218 02 Liu DianZhong W Wang Bin "
-    },
-    "smg-20121218-03-zhuang-yuting-w-li-xuesong": {
-      "preview": "1527293949484755890459062646658556022030404142727332522344839999",
-      "description": "smg 20121218 03 Zhuang YuTing W Li XueSong"
-    },
-    "smg-20121223-01-nie-tiewen-l-jiang-chuan": {
-      "preview": "0935293949596967881547062546869900104230405060626612820323436483",
-      "description": "smg 20121223 01 Nie TieWen L Jiang Chuan  "
-    },
-    "smg-20121223-02-xiao-gelian-l-zhao-jian": {
-      "preview": "1907294849596967744773064665869902222030405060628121420325436383",
-      "description": "smg 20121223 02 Xiao GeLian L Zhao Jian"
-    },
-    "smg-20121223-03-li-zhiping-l-miao-yongpeng": {
-      "preview": "5815293949594779891799062546668601022030405042628072990323436483",
-      "description": "smg 20121223 03 Li ZhiPing L Miao YongPeng"
-    },
-    "smg-20130127-01-li-xian-l-han-bing": {
-      "preview": "1927293949596967581347062546668610222030404142627002740323436483",
-      "description": "smg 20130127 01 Li Xian L Han Bing"
-    },
-    "smg-20130127-02-wu-xia-w-wen-jing": {
-      "preview": "0927293949596979991747062546668600102030405060629912820323436483",
-      "description": "smg 20130127 02 Wu Xia W Wen Jing"
-    },
-    "smg-20130127-03-chen-lichun-w-feng-xiaoxi": {
-      "preview": "3807293949596955792747062646658600144241405060627012760324436383",
-      "description": "smg 20130127 03 Chen LiChun W Feng XiaoXi"
-    },
-    "smg-20130220-01-xu-wenxue-w-xie-yejian": {
-      "preview": "0927293949596963791547062446658638222030405060625112420343839999",
-      "description": "smg 20130220 01 Xu WenXue W Xie YeJian "
-    },
-    "smg-20130220-02-xie-yejian-w-zheng-yihong": {
-      "preview": "2327293949596975994767062646668534102030405060629922410324436483",
-      "description": "smg 20130220 02 Xie YeJian W Zheng YiHong"
-    },
-    "smg-20130220-03-chi-xinde-l-zeng-qiquan": {
-      "preview": "0919293949596967531747062544668600224241405060627012610323436483",
-      "description": "smg 20130220 03 Chi XinDe L Zeng QiQuan"
-    },
-    "smg-20130407-01-wang-yuefei-l-fan-siyuan": {
-      "preview": "0927293949594767791777062546658621022030405060628112420323436383",
-      "description": "smg 20130407 01 Wang YueFei L Fan SiYuan"
-    },
-    "smg-20130407-02-jing-xueyi-l-yu-youhua": {
-      "preview": "7565293949484767993799468699999943642441405042999921618399999999",
-      "description": "smg 20130407 02 Jing XueYi L Yu YouHua"
-    },
-    "smg-20130407-03-zhao-guorong-l-shen-peng": {
-      "preview": "0827293949594767891765062546869900222030405060546412420323438399",
-      "description": "smg 20130407 03 Zhao GuoRong L Shen Peng "
-    }
-  }
+	"meta": {
+		"title": "59 Trung Cục Có Bình Luận",
+		"description": "",
+		"tags": [],
+		"updatedAt": "2025/03/05"
+	},
+	"details": {
+		"smg-20120601a-hu-ronghua-w-zhao-qingge": {
+			"preview": "2646474849596955991537062545668634524241405060549913620423638399",
+			"description": "smg 20120601a Hu Ronghua W Zhao Qingge "
+		},
+		"smg-20120601b-hu-ronghua-w-qin-he": {
+			"preview": "6326294849594799993369062346999915432030405024629989990444758399",
+			"description": "smg 20120601b Hu Ronghua W Qin He "
+		},
+		"smg-20120601c-yu-youhua-l-hu-ronghua": {
+			"preview": "5356293949484767993599254666869906022041405042999913220323436484",
+			"description": "smg 20120601c Yu Youhua L Hu Ronghua"
+		},
+		"smg-20120602a-exchanging-for-initiative": {
+			"preview": "1987473949596999882774062546668610314230405060995118720323436483",
+			"description": "smg 20120602a Exchanging for initiative ??????"
+		},
+		"smg-20120602b-exchanging-for-material-gain": {
+			"preview": "1923293949596935510207062546668612224241405060563418820343648399",
+			"description": "smg 20120602b Exchanging for material gain "
+		},
+		"smg-20120602c-exchanging-to-save-oneself": {
+			"preview": "1827294849594799561076062646658634362030404160627022990324436383",
+			"description": "smg 20120602c Exchanging to save oneself"
+		},
+		"smg-20120608a-sacrificing-to-kill": {
+			"preview": "1655695949999999311499062565869912994241409960996830890323638399",
+			"description": "smg 20120608a Sacrificing to kill"
+		},
+		"smg-20120608b-sacrificing-to-gain-the-upperhand": {
+			"preview": "1967293949596999631757062546658616412030405060623152990323438399",
+			"description": "smg 20120608b Sacrificing to gain the upperhand"
+		},
+		"smg-20120608c-sacrificing-to-save-yourself": {
+			"preview": "3627293949484799816599068699999958992041405242997088990483999999",
+			"description": "smg 20120608c Sacrificing to save yourself"
+		},
+		"smg-20120613a-beware-of-moving-without-thinking": {
+			"preview": "1150293949599999998099466386999979246052309964999942990383999999",
+			"description": "smg 20120613a beware of moving without thinking"
+		},
+		"smg-20120613b-beware-of-making-inefficient-moves": {
+			"preview": "2846293949596999831747064466869900222030405060747212610343999999",
+			"description": "smg 20120613b beware of making inefficient moves"
+		},
+		"smg-20120613c-be-bold-do-not-chicken-out": {
+			"preview": "2927074849596963331767066486999915022041405060622622420343468399",
+			"description": "smg 20120613c be bold do not chicken out "
+		},
+		"smg-20120622-the-use-of-the-pawn-in-midgame": {
+			"preview": "7615473949596943991938244565869902284241405060829920520763839999",
+			"description": "smg 20120622 the use of the pawn in midgame"
+		},
+		"smg-20120622b-the-use-of-the-king-in-midgame": {
+			"preview": "4467293949488799530347068699999925432041405060626645992364839999",
+			"description": "smg 20120622b the use of the king in midgame"
+		},
+		"smg-20120622c-the-use-of-the-advisor-and-elephant-in-midgame": {
+			"preview": "7965474849599999990199062599999910999930404199996689990383999999",
+			"description": "smg 20120622c the use of the advisor and elephant in midgame"
+		},
+		"smg-20120623a-maneuvering-your-pieces-to-gain-advantage": {
+			"preview": "7833473949489999999999458699999999622030504142999951670346648399",
+			"description": "smg 20120623a maneuvering your pieces to gain advantage"
+		},
+		"smg-20120623b-maneuvering-your-pieces-to-attack": {
+			"preview": "3223293949484751993799052646869973222030405060419966990324438399",
+			"description": "smg 20120623b maneuvering your pieces to attack"
+		},
+		"smg-20120623c-maneuvering-your-pieces-to-save-yourself": {
+			"preview": "1735293949486967231399062546869910664230405060997744650364839999",
+			"description": "smg 20120623c maneuvering your pieces to save yourself"
+		},
+		"smg-20120701-unlinking-the-elephants-01": {
+			"preview": "6339474849596967991427064665869934222430405060549901120323438399",
+			"description": "smg 20120701 unlinking the elephants 01"
+		},
+		"smg-20120701-unlinking-the-elephants-02": {
+			"preview": "4326293949596967550899466686999900024230404160217784990464839999",
+			"description": "smg 20120701 unlinking the elephants 02"
+		},
+		"smg-20120701-unlinking-the-elephants-03": {
+			"preview": "3855293949594767999999264565869913622041405042999901990663839999",
+			"description": "smg 20120701 unlinking the elephants 03"
+		},
+		"smg-20120712a-threatening-to-capture-your-opponents-chess-piec": {
+			"preview": "3327475949996965994499062545869958484241405060999916790383999999",
+			"description": "smg 20120712a threatening to capture your opponent's chess piec"
+		},
+		"smg-20120712b-threatening-to-capture-your-opponents-chess-piec": {
+			"preview": "5368293949486976749999062645869935334241325060545899990323839999",
+			"description": "smg 20120712b threatening to capture your opponent's chess piec"
+		},
+		"smg-20120712c-threatening-to-capture-your-opponents-chess-piec": {
+			"preview": "1199294849596999200199066686999944620230404199995499990345589999",
+			"description": "smg 20120712c threatening to capture your opponent's chess piec"
+		},
+		"smg-20120712d-threatening-to-capture-your-opponent-chess-pieces": {
+			"preview": "2999473949486999792399061386999935142030405099996642990383999999",
+			"description": "smg 20120712d threatening to capture your opponent chess pieces"
+		},
+		"smg-20120804-gm-yang-guanlin-01": {
+			"preview": "2346293949596999894347062645869910822041405042997322620355839999",
+			"description": "smg 20120804 GM Yang Guanlin 01 "
+		},
+		"smg-20120804-gm-yang-guanlin-02": {
+			"preview": "3807294839596999994347052645869965622041405060999900420324839999",
+			"description": "smg 20120804 GM Yang Guanlin 02 "
+		},
+		"smg-20120804-gm-yang-guanlin-03-mm-xqtjdszjfd-ydlht-0103": {
+			"preview": "1935294849594775541527062546999913412030405042867032730343658399",
+			"description": "smg 20120804 GM Yang Guanlin 03 mm xqtjdszjfd ydlht 0103 "
+		},
+		"smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2": {
+			"preview": "1827293949596967734765062546869934222030405042547014720323438399",
+			"description": "smg 20120808 What would you do if you were GM Yang part 2 "
+		},
+		"smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2 (1)": {
+			"preview": "2351293949489959997799068699999942766099409999996699990326999999",
+			"description": "smg 20120808 What would you do if you were GM Yang? part 2"
+		},
+		"smg-20120808-what-would-you-do-if-you-were-gm-yang-part-2 (2)": {
+			"preview": "1933293949594799233599062446869917670241405060993218666583999999",
+			"description": "smg 20120808 What would you do if you were GM Yang part 2"
+		},
+		"smg-20120909-02-2003-zhao-dong-l-ouyang-qilin": {
+			"preview": "0919293949596967633747062646668610222030405060627042720323438399",
+			"description": "smg 20120909 02 2003 Zhao Dong L Ouyang Qilin"
+		},
+		"smg-20120909-03-2003-he-jing-l-zhang-guofeng": {
+			"preview": "2327293949596967381747062546658612222030404160625402420324446483",
+			"description": "smg 20120909 03 2003 He Jing L Zhang Guofeng "
+		},
+		"smg-20120909-2003-li-xian-l-guo-ruixia": {
+			"preview": "0727293949596934531747062544869920224241405060627812610323436683",
+			"description": "smg 20120909 2003 Li Xian L Guo Ruixia"
+		},
+		"smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3a": {
+			"preview": "1953293949484767791344062586999910354241405060437166760323839999",
+			"description": "smg 20120919 What would you do if you were GM Yang part 3a "
+		},
+		"smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3b": {
+			"preview": "7327294849596934994799062543658636012041405042999912660323638399",
+			"description": "smg 20120919 What would you do if you were GM Yang part 3b"
+		},
+		"smg-20120919-what-would-you-do-if-you-were-gm-yang-part-3c": {
+			"preview": "1135294849594755792276064665869944022030404142627321320423436483",
+			"description": "smg 20120919 What would you do if you were GM Yang part 3c"
+		},
+		"smg-20121122-01-zhuang-hongming-d-zhao-ruquan": {
+			"preview": "0927293949596967531747062546668600222030405060747012610323436483",
+			"description": "smg 20121122 01 Zhuang HongMing D Zhao RuQuan"
+		},
+		"smg-20121122-02-lai-hanshun-l-lai-junying": {
+			"preview": "1907293949596988742847062546869900222041405060357066720323436583",
+			"description": "smg 20121122 02 Lai HanShun L Lai JunYing "
+		},
+		"smg-20121122-03-lu-zhongneng-l-zhao-ruquan": {
+			"preview": "0935293949596955881747064665869900224230405060622412820343638399",
+			"description": "smg 20121122 03 Lu ZhongNeng L Zhao RuQuan"
+		},
+		"smg-20121122-04-lai-junying-l-huang-hailin": {
+			"preview": "0927293949596943531747062544869920624241405060997812610324668399",
+			"description": "smg 20121122 04 Lai JunYing L Huang Hailin "
+		},
+		"smg-20121209-01-zhang-qiang-l-lu-zhengrong": {
+			"preview": "0927293949596967750747062545668600314230405060821422720323436384",
+			"description": "smg 20121209 01 Zhang Qiang L Lu ZhengRong "
+		},
+		"smg-20121209-02-chen-qiming-l-li-qun": {
+			"preview": "3807293949594767891777062646658600342030405060628012420324436383",
+			"description": "smg 20121209 02 Chen QiMing L Li Qun"
+		},
+		"smg-20121209-03-sun-qingli-w-li-aidong": {
+			"preview": "1927294849596967541137062546668630224241405060827052620343638399",
+			"description": "smg 20121209 03 Sun QingLi W Li AiDong"
+		},
+		"smg-20121218-01-tao-hanming-l-xie-kui": {
+			"preview": "1927473949596967990387064686999960262030405042519912722443999999",
+			"description": "smg 20121218 01 Tao HanMing L Xie Kui"
+		},
+		"smg-20121218-02-liu-dianzhong-w-wang-bin": {
+			"preview": "1507293949596967552747052646668610224230405060747014720323436483",
+			"description": "smg 20121218 02 Liu DianZhong W Wang Bin "
+		},
+		"smg-20121218-03-zhuang-yuting-w-li-xuesong": {
+			"preview": "1527293949484755890459062646658556022030404142727332522344839999",
+			"description": "smg 20121218 03 Zhuang YuTing W Li XueSong"
+		},
+		"smg-20121223-01-nie-tiewen-l-jiang-chuan": {
+			"preview": "0935293949596967881547062546869900104230405060626612820323436483",
+			"description": "smg 20121223 01 Nie TieWen L Jiang Chuan  "
+		},
+		"smg-20121223-02-xiao-gelian-l-zhao-jian": {
+			"preview": "1907294849596967744773064665869902222030405060628121420325436383",
+			"description": "smg 20121223 02 Xiao GeLian L Zhao Jian"
+		},
+		"smg-20121223-03-li-zhiping-l-miao-yongpeng": {
+			"preview": "5815293949594779891799062546668601022030405042628072990323436483",
+			"description": "smg 20121223 03 Li ZhiPing L Miao YongPeng"
+		},
+		"smg-20130127-01-li-xian-l-han-bing": {
+			"preview": "1927293949596967581347062546668610222030404142627002740323436483",
+			"description": "smg 20130127 01 Li Xian L Han Bing"
+		},
+		"smg-20130127-02-wu-xia-w-wen-jing": {
+			"preview": "0927293949596979991747062546668600102030405060629912820323436483",
+			"description": "smg 20130127 02 Wu Xia W Wen Jing"
+		},
+		"smg-20130127-03-chen-lichun-w-feng-xiaoxi": {
+			"preview": "3807293949596955792747062646658600144241405060627012760324436383",
+			"description": "smg 20130127 03 Chen LiChun W Feng XiaoXi"
+		},
+		"smg-20130220-01-xu-wenxue-w-xie-yejian": {
+			"preview": "0927293949596963791547062446658638222030405060625112420343839999",
+			"description": "smg 20130220 01 Xu WenXue W Xie YeJian "
+		},
+		"smg-20130220-02-xie-yejian-w-zheng-yihong": {
+			"preview": "2327293949596975994767062646668534102030405060629922410324436483",
+			"description": "smg 20130220 02 Xie YeJian W Zheng YiHong"
+		},
+		"smg-20130220-03-chi-xinde-l-zeng-qiquan": {
+			"preview": "0919293949596967531747062544668600224241405060627012610323436483",
+			"description": "smg 20130220 03 Chi XinDe L Zeng QiQuan"
+		},
+		"smg-20130407-01-wang-yuefei-l-fan-siyuan": {
+			"preview": "0927293949594767791777062546658621022030405060628112420323436383",
+			"description": "smg 20130407 01 Wang YueFei L Fan SiYuan"
+		},
+		"smg-20130407-02-jing-xueyi-l-yu-youhua": {
+			"preview": "7565293949484767993799468699999943642441405042999921618399999999",
+			"description": "smg 20130407 02 Jing XueYi L Yu YouHua"
+		},
+		"smg-20130407-03-zhao-guorong-l-shen-peng": {
+			"preview": "0827293949594767891765062546869900222030405060546412420323438399",
+			"description": "smg 20130407 03 Zhao GuoRong L Shen Peng "
+		}
+	}
 }

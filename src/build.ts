@@ -80,8 +80,8 @@ async function readMarkdownSafely(filepath: string): Promise<string> {
 
 function validateCollectionData(data: CollectionData, filepath: string) {
 	if (!data.meta?.title) throw new Error(`Missing meta.title in ${filepath}`)
-	if (!data.meta?.description)
-		throw new Error(`Missing meta.description in ${filepath}`)
+	// if (!data.meta?.description)
+	// 	throw new Error(`Missing meta.description in ${filepath}`)
 	if (!data.meta?.updatedAt)
 		throw new Error(`Missing meta.updatedAt in ${filepath}`)
 	if (!data.details || typeof data.details !== "object") {
