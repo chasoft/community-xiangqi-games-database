@@ -1,6 +1,8 @@
 import crypto from "crypto"
 import fs from "node:fs/promises"
 import path from "node:path"
+import chalk from "chalk"
+import Table from "cli-table3"
 import encodeChunks from "png-chunks-encode"
 import extractChunks from "png-chunks-extract"
 import puppeteer from "puppeteer"
@@ -106,6 +108,7 @@ type ProcessingReport = {
 	filename: string
 	totalPreviews: number
 	processedCount: number
+	timeSpentMs: number
 	errors: Array<{
 		file: string
 		error: string
@@ -116,10 +119,12 @@ async function processRegisterFile(
 	filePath: string,
 	existingHashes: Set<string>
 ): Promise<ProcessingReport> {
+	const startTime = Date.now()
 	const report: ProcessingReport = {
 		filename: path.basename(filePath),
 		totalPreviews: 0,
 		processedCount: 0,
+		timeSpentMs: 0,
 		errors: []
 	}
 
@@ -240,41 +245,66 @@ async function processRegisterFile(
 		console.error(`Error reading/parsing ${filePath}:`, error)
 	}
 
+	report.timeSpentMs = Date.now() - startTime
 	return report
 }
 
 function printReport(reports: ProcessingReport[]) {
-	console.log("\nProcessing Report:")
-	console.log("----------------------------------------")
-	console.log("Filename | Total Previews | Processed | Errors")
-	console.log("----------------------------------------")
+	console.log(chalk.bold("\nProcessing Report:"))
+
+	const table = new Table({
+		head: [
+			chalk.cyan("Filename"),
+			chalk.cyan("Total Previews"),
+			chalk.cyan("Processed"),
+			chalk.cyan("Errors"),
+			chalk.cyan("Time (s)")
+		],
+		style: {
+			head: [], // Disable default head styling since we're using chalk
+			border: []
+		}
+	})
 
 	let totalPreviews = 0
 	let totalProcessed = 0
 	let totalErrors = 0
+	let totalTimeMs = 0
 
 	for (const report of reports) {
-		console.log(
-			`${report.filename.padEnd(30)} | ${String(report.totalPreviews).padStart(5)} | ${String(report.processedCount).padStart(5)} | ${String(report.errors.length).padStart(5)}`
-		)
+		const hasErrors = report.errors.length > 0
+		table.push([
+			report.filename,
+			report.totalPreviews.toString(),
+			report.processedCount.toString(),
+			hasErrors ? chalk.red(report.errors.length.toString()) : "0",
+			(report.timeSpentMs / 1000).toFixed(1)
+		])
+
 		totalPreviews += report.totalPreviews
 		totalProcessed += report.processedCount
 		totalErrors += report.errors.length
+		totalTimeMs += report.timeSpentMs
 	}
 
-	console.log("----------------------------------------")
-	console.log(
-		`TOTAL${" ".repeat(25)} | ${String(totalPreviews).padStart(5)} | ${String(totalProcessed).padStart(5)} | ${String(totalErrors).padStart(5)}`
-	)
-	console.log("----------------------------------------")
+	// Add totals row with bold styling
+	table.push([
+		chalk.bold("TOTAL"),
+		chalk.bold(totalPreviews.toString()),
+		chalk.bold(totalProcessed.toString()),
+		totalErrors > 0 ? chalk.bold.red(totalErrors.toString()) : chalk.bold("0"),
+		chalk.bold((totalTimeMs / 1000).toFixed(1))
+	])
+
+	console.log(table.toString())
 
 	if (totalErrors > 0) {
-		console.log("\nError Details:")
+		console.log(chalk.red.bold("\nError Details:"))
 		for (const report of reports) {
 			if (report.errors.length > 0) {
-				console.log(`\n${report.filename}:`)
+				console.log(chalk.yellow(`\n${report.filename}:`))
 				for (const error of report.errors) {
-					console.log(`  - ${error.file}: ${error.error}`)
+					console.log(chalk.red(`  - ${error.file}: ${error.error}`))
 				}
 			}
 		}
@@ -282,6 +312,7 @@ function printReport(reports: ProcessingReport[]) {
 }
 
 async function main() {
+	const startTime = Date.now()
 	const args = process.argv.slice(2)
 	const testFile = args[0]
 
@@ -348,7 +379,8 @@ async function main() {
 									file: registerPath,
 									error: `File processing failed: ${error?.message || "Unknown error"}`
 								}
-							]
+							],
+							timeSpentMs: 0
 						})
 					}
 				}
@@ -361,6 +393,11 @@ async function main() {
 	}
 
 	printReport(reports)
+
+	const totalTimeMs = Date.now() - startTime
+	console.log(
+		chalk.green(`\nTotal execution time: ${(totalTimeMs / 1000).toFixed(1)}s`)
+	)
 }
 
 main().catch(console.error)
