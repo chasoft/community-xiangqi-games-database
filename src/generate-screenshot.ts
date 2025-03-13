@@ -86,18 +86,50 @@ function generatePreviewHtml(preview: string): string {
     `
 }
 
+// Add type for tracking report data
+type ProcessingReport = {
+	filename: string
+	totalPreviews: number
+	processedCount: number
+}
+
 async function processRegisterFile(
 	filePath: string,
 	existingHashes: Set<string>
-): Promise<void> {
+): Promise<ProcessingReport> {
 	console.log(`Processing ${filePath}...`)
 	const data = JSON.parse(
 		await fs.readFile(filePath, "utf-8")
 	) as CollectionData
+
+	// Initialize report data
+	const report: ProcessingReport = {
+		filename: path.basename(filePath),
+		totalPreviews: 0,
+		processedCount: 0
+	}
+
+	// Validate the data structure
+	if (!data || typeof data !== "object") {
+		console.error(`Invalid data structure in ${filePath}`)
+		return report
+	}
+
+	if (!data.details || typeof data.details !== "object") {
+		console.error(`Missing or invalid 'details' object in ${filePath}`)
+		return report
+	}
+
 	const collectionName = path.basename(filePath, ".register.json")
 
+	// Count total previews
+	report.totalPreviews = Object.values(data.details).filter(
+		(d) => d?.preview
+	).length
+
 	for (const [filename, details] of Object.entries(data.details)) {
-		if (!details.preview) continue
+		// Skip entries without preview data
+		if (!details?.preview) continue
 
 		const hash = createHash(details.preview)
 		const screenshotPath = path.join(SCREENSHOTS_DIR, `${hash}.png`)
@@ -151,8 +183,6 @@ async function processRegisterFile(
 				twitter: "@vBizChain",
 				website: "https://vietcotuong.com",
 				preview: details.preview,
-				filename,
-				description: details.description || "",
 				collection: collectionName,
 				hash
 			}
@@ -190,7 +220,35 @@ async function processRegisterFile(
 			// Clean up temp HTML file
 			await fs.unlink(tempHtmlPath)
 		}
+
+		report.processedCount++
 	}
+
+	return report
+}
+
+function printReport(reports: ProcessingReport[]) {
+	console.log("\nProcessing Report:")
+	console.log("----------------------------------------")
+	console.log("Filename | Total Previews | Processed")
+	console.log("----------------------------------------")
+
+	let totalPreviews = 0
+	let totalProcessed = 0
+
+	for (const report of reports) {
+		console.log(
+			`${report.filename.padEnd(30)} | ${String(report.totalPreviews).padStart(5)} | ${String(report.processedCount).padStart(5)}`
+		)
+		totalPreviews += report.totalPreviews
+		totalProcessed += report.processedCount
+	}
+
+	console.log("----------------------------------------")
+	console.log(
+		`TOTAL${" ".repeat(25)} | ${String(totalPreviews).padStart(5)} | ${String(totalProcessed).padStart(5)}`
+	)
+	console.log("----------------------------------------")
 }
 
 async function main() {
@@ -209,13 +267,16 @@ async function main() {
 			.map((f) => f.replace(".png", ""))
 	)
 
+	const reports: ProcessingReport[] = []
+
 	if (testFile) {
 		// Process single file for testing
 		const filePath = path.isAbsolute(testFile)
 			? testFile
 			: path.join(process.cwd(), testFile)
 		try {
-			await processRegisterFile(filePath, existingHashes)
+			const report = await processRegisterFile(filePath, existingHashes)
+			reports.push(report)
 			console.log("\nTest completed successfully!")
 		} catch (error) {
 			console.error(`Error processing test file ${filePath}:`, error)
@@ -231,19 +292,21 @@ async function main() {
 			"selected-games",
 			"tournaments"
 		]
-
 		for (const group of groups) {
 			const groupPath = path.join(BUILD_DIR, group)
 			const registerPath = path.join(groupPath, "register.json")
-
 			try {
-				await processRegisterFile(registerPath, existingHashes)
+				const report = await processRegisterFile(registerPath, existingHashes)
+				reports.push(report)
 			} catch (error) {
 				console.error(`Error processing ${registerPath}:`, error)
 			}
 		}
 		console.log("\nAll processing completed!")
 	}
+
+	// Print the final report
+	printReport(reports)
 }
 
 main().catch(console.error)
