@@ -1,0 +1,23 @@
+.fen-board-container {
+	position: relative;
+	user-select: none;
+	border-radius: 0.5rem;
+}
+
+.fen-board-container:focus-visible {
+	outline: 2px solid rgb(245, 158, 11);
+	outline-offset: 2px;
+}
+
+.pieces-container {
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.piece-wrapper {
+	position: absolute;
+	inset: 0;
+}
