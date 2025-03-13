@@ -151,6 +151,20 @@ export function FenBoard({
 					>
 						楚 河 汉 界
 					</text>
+					<text
+						id="website"
+						x={82}
+						y={38}
+						textAnchor="middle"
+						dominantBaseline="middle"
+						fill={"gray"}
+						fontFamily="Noto Sans"
+						fontSize={squareSize * 0.35}
+						letterSpacing={squareSize * 0.05}
+						transform={`rotate(270, ${padding + (8 * squareSize) / 2}, ${padding + 4.5 * squareSize})`}
+					>
+						vietcotuong.com
+					</text>
 					{/* Position Marks */}
 					{[
 						{ x: 1, y: 2 },

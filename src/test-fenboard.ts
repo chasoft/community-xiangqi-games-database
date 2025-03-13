@@ -15,10 +15,12 @@ const html = `
     <meta charset="UTF-8">
     <title>FenBoard Test</title>
     <style>        
+    	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
         body { 
             margin: 0; 
             padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI (Custom)", Roboto, "Helvetica Neue", "Open Sans (Custom)", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Open Sans", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
         #fen-board { 
             max-width: 800px;
@@ -29,6 +31,9 @@ const html = `
         }
         svg text {
             font-weight: normal;
+        }
+        svg text#website {
+            font-weight: 300;
         }
         .fen-board-container {
             position: relative;
