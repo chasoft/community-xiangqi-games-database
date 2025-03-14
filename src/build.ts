@@ -24,6 +24,7 @@ import type {
 	DataGroupOwner
 } from "./build.types"
 import { gameStartedFromTheBegining, getLastPiecesPosition } from "./game"
+import { createHash } from "./utils"
 
 // Determine project root directory
 const __filename = fileURLToPath(import.meta.url)
@@ -53,8 +54,6 @@ const groups = [
 	"selected-games",
 	"tournaments"
 ]
-
-// Utility Functions
 
 async function readJsonFile<T>(filepath: string): Promise<T> {
 	try {
@@ -382,6 +381,7 @@ async function processCollection(
 			filename,
 			{
 				...registerData.details[filename],
+				gamePreview: `${createHash(registerData.details[filename].preview)}.png`,
 				tags: [...(registerData.meta.tags || [])].sort()
 			}
 		])
