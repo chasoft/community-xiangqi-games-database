@@ -34,7 +34,10 @@ export type BuiltCollectionData = {
 			meta: CollectionData["meta"]
 			details: Record<
 				FileName,
-				CollectionData["details"][FileName] & { tags: string[] }
+				CollectionData["details"][FileName] & {
+					tags: string[]
+					gamePreview: string
+				}
 			>
 		}
 	>

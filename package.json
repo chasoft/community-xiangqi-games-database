@@ -7,6 +7,7 @@
 		"check": "biome check --write ./data && biome check --write ./src",
 		"check-all": "biome check --write ./data && biome check --write ./src && tsc -b",
 		"build": "bun ./src/build.ts",
+		"build-update": "bun ./src/build-update.ts",
 		"screenshot": "bun ./src/generate-screenshot.ts",
 		"start": "bun run src/build.ts",
 		"test-fenboard": "bun run src/test-fenboard.ts"
