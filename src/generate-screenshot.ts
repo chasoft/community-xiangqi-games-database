@@ -33,8 +33,8 @@ const CONFIG = {
 const PROJECT_ROOT = path.dirname(
 	path.dirname(import.meta.url.replace("file:", ""))
 )
+const SCREENSHOTS_DIR = path.join(path.dirname(PROJECT_ROOT), "screenshots")
 const BUILD_DIR = path.join(PROJECT_ROOT, "build")
-const SCREENSHOTS_DIR = path.join(PROJECT_ROOT, "screenshots")
 
 // Create a hash from preview string
 function createHash(preview: string): string {
