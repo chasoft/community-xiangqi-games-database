@@ -1,10 +1,10 @@
+import fs from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
-import fs from "node:fs/promises"
 import chalk from "chalk"
 import Table from "cli-table3"
-import { createHash } from "./utils"
 import type { CollectionDataFull } from "./build.types"
+import { createHash } from "./utils"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
