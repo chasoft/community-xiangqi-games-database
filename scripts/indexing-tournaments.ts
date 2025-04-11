@@ -1,13 +1,13 @@
-// filepath: /home/brian/projects/community-xiangqi-games-database/scripts/indexing-tournaments.ts
 import * as fs from "node:fs"
 import * as path from "node:path"
 import pako from "pako"
 
 type Year = string
 type TournamentName = string
-type AllTournaments = Array<
-	[Year, { name: TournamentName; fullname: string }[]]
->
+type AllTournaments = {
+	statistics: { collections: number; games: number }
+	data: Array<[Year, { name: TournamentName; fullname: string }[]]>
+}
 
 const tournamentsDir = path.resolve(__dirname, "../build/tournaments")
 const outputFile = path.resolve(tournamentsDir, "index.json")
@@ -134,6 +134,10 @@ function indexTournaments(): {
 	> = new Map()
 	const unmatchedFiles: string[] = []
 
+	// Initialize statistics
+	let totalGamesCount = 0
+	let collectionsCount = 0
+
 	for (const file of files) {
 		const year = extractYearFromFilename(file)
 		const tournamentName = extractTournamentName(file)
@@ -147,6 +151,22 @@ function indexTournaments(): {
 				name: tournamentName,
 				fullname: file.replace(".register.json", "")
 			})
+
+			// Count this as a tournament collection
+			collectionsCount++
+
+			// Read the register.json file to count games
+			try {
+				const filePath = path.join(tournamentsDir, file)
+				const tournamentData = JSON.parse(fs.readFileSync(filePath, "utf8"))
+				if (tournamentData?.details) {
+					// Count the number of game entries in the details object
+					const gamesCount = Object.keys(tournamentData.details).length
+					totalGamesCount += gamesCount
+				}
+			} catch (error) {
+				console.error(`Error reading tournament file ${file}:`, error)
+			}
 		} else {
 			// This file didn't match our expected patterns
 			unmatchedFiles.push(file)
@@ -159,9 +179,18 @@ function indexTournaments(): {
 	}
 
 	// Convert to array and sort by year
-	const result: AllTournaments = Array.from(tournamentsByYear.entries()).sort(
+	const data = Array.from(tournamentsByYear.entries()).sort(
 		([yearA], [yearB]) => yearA.localeCompare(yearB)
 	)
+
+	// Create the final result with statistics
+	const result: AllTournaments = {
+		statistics: {
+			collections: collectionsCount,
+			games: totalGamesCount
+		},
+		data: data
+	}
 
 	return { allTournaments: result, unmatchedFiles }
 }
