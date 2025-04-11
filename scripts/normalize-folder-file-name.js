@@ -29,7 +29,7 @@ function normalizeName(name) {
 	// Remove specific suffixes
 	normalizedName = normalizedName
 		.trim()
-		// Remove suffix "-" if it exists
+		// Remove any trailing dashes, regardless of what comes before
 		.replace(/-+$/, "")
 		// Remove ".CBL" suffix
 		.replace(/\.CBL$/i, "")
