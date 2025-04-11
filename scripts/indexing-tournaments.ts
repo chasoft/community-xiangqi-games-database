@@ -5,6 +5,7 @@ import pako from "pako"
 type Year = string
 type TournamentName = string
 type AllTournaments = {
+	owner: "tournaments"
 	statistics: { collections: number; games: number }
 	data: Array<[Year, { name: TournamentName; fullname: string }[]]>
 }
@@ -185,6 +186,7 @@ function indexTournaments(): {
 
 	// Create the final result with statistics
 	const result: AllTournaments = {
+		owner: "tournaments",
 		statistics: {
 			collections: collectionsCount,
 			games: totalGamesCount
