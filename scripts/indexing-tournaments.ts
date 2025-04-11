@@ -179,9 +179,9 @@ function indexTournaments(): {
 		tournamentsByYear.set(year, tournaments.sort())
 	}
 
-	// Convert to array and sort by year
+	// Convert to array and sort by year (most recent first)
 	const data = Array.from(tournamentsByYear.entries()).sort(
-		([yearA], [yearB]) => yearA.localeCompare(yearB)
+		([yearA], [yearB]) => yearB.localeCompare(yearA)
 	)
 
 	// Create the final result with statistics
