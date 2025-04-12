@@ -40,7 +40,8 @@ function extractYearFromFilename(filename: string): string {
  * Extracts the tournament name from a filename.
  * Removes the year prefix, date information, and the ".register.json" extension.
  */
-function extractTournamentName(filename: string): string {
+export function extractTournamentName(filename: string): string {
+	console.log("Extracting tournament name from filename:", filename)
 	// Remove the extension
 	const withoutExtension = filename.replace(".register.json", "")
 
@@ -197,6 +198,15 @@ function indexTournaments(): {
 	return { allTournaments: result, unmatchedFiles }
 }
 
+function minifyJson(json: string): string {
+	try {
+		const obj = JSON.parse(json)
+		return JSON.stringify(obj)
+	} catch {
+		return json
+	}
+}
+
 /**
  * Compresses a JSON file using gzip and saves it with a .compressed extension
  * @param {string} filepath - The path to the JSON file to compress
@@ -205,7 +215,7 @@ function compressJsonFile(filepath: string): void {
 	try {
 		// Read and minify the JSON content
 		const content = fs.readFileSync(filepath, "utf8")
-		const minifiedContent = JSON.stringify(JSON.parse(content))
+		const minifiedContent = minifyJson(content)
 
 		// Compress using pako gzip (same as in build.ts)
 		const compressed = pako.gzip(minifiedContent)

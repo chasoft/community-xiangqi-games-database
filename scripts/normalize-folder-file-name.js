@@ -19,7 +19,7 @@ const replacements = {
  * @param {string} name - The filename or directory name to normalize
  * @returns {string} - The normalized name
  */
-function normalizeName(name) {
+export function normalizeName(name) {
 	let normalizedName = name
 	// Apply character replacements
 	for (const [oldChar, newChar] of Object.entries(replacements)) {
