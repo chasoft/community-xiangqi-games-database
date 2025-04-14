@@ -1,7 +1,7 @@
-// filepath: /home/brian/projects/community-xiangqi-games-database/src/build-search-db.ts
 import fs from "node:fs"
 import path from "node:path"
 import zlib from "node:zlib"
+import { applyDataConversions, getMissingTranslations } from "./data-converter"
 
 const DATA_DIR = path.resolve(process.cwd(), "data") // Base directory for groups/collections
 const OUTPUT_DIR = path.resolve(process.cwd(), "search")
@@ -79,41 +79,158 @@ export type SearchItem = {
 
 /**
  * Parses the DhtmlXQ format content into a key-value object.
- * Simple line-based parsing. Assumes one tag per line.
+ * Handles multiline content and properly extracts all tags.
  */
-function parseDhtmlXQ(content: string): Record<string, string> {
-	const data: Record<string, string> = {}
-	const lines = content.split(/[\r\n]+/)
-	const tagRegex = /^\[([a-zA-Z0-9_]+)\](.*?)(\[\/\1\])?$/
-
-	for (const line of lines) {
-		const match = line.trim().match(tagRegex)
-		if (match) {
-			const tagName = `_${match[1]}` // Prepend underscore for consistency
-			const value = match[2]?.trim() ?? ""
-			data[tagName] = value
-		}
+function parseDhtmlXQ(
+	dataSource: string,
+	id: string,
+	collectionName: string
+): {
+	id: string
+	collectionName: string
+	title: string
+	event: string
+	dateStr: string
+	eventYear: number | null
+	place: string
+	redPlayer: string
+	blackPlayer: string
+	openingName: string
+	result: string
+	round: string
+	redTeam: string
+	blackTeam: string
+	gameType: string
+	author: string
+	owner: string
+	remarks: string
+	allTextContent: string
+	movelist: string
+	binit: string
+	comments: Record<string, string>
+} {
+	// Create an object to store the parsed data
+	const game = {
+		id: id || "",
+		collectionName: collectionName || "",
+		title: "Untitled",
+		event: "",
+		dateStr: "",
+		eventYear: null as number | null,
+		place: "",
+		redPlayer: "Unknown",
+		blackPlayer: "Unknown",
+		openingName: "",
+		result: "Unknown",
+		round: "",
+		redTeam: "",
+		blackTeam: "",
+		gameType: "",
+		author: "",
+		owner: "",
+		remarks: "",
+		allTextContent: "",
+		movelist: "",
+		binit: "",
+		comments: {} as Record<string, string>
 	}
-	return data
-}
 
-/**
- * Extracts the year from a date string. Handles YYYY-MM-DD, YYYY.MM.DD, YYYY/MM/DD, YYYYMMDD, or just YYYY.
- */
-function extractYear(dateStr: string | undefined): number | null {
-	if (!dateStr) return null
-	const trimmedDate = dateStr.trim()
+	// Regular expression to match DhtmlXQ tags - handles multiline content
+	// This pattern also handles potential mismatches between opening and closing tags
+	const tagPattern = /\[DhtmlXQ_([^\]]+)\]([\s\S]*?)\[\/DhtmlXQ_(?:[^\]]+)\]/g
+	let match: RegExpExecArray | null = null
 
-	// Match YYYY at the beginning or as the whole string
-	const yearMatch = trimmedDate.match(/^(\d{4})/)
-	if (yearMatch) {
-		const year = Number.parseInt(yearMatch[1], 10)
-		// Basic sanity check for a reasonable year range
-		if (year > 1000 && year < 3000) {
-			return year
+	// Extract all text content for search purposes
+	const allTextContent: string[] = []
+
+	// Process each matched tag
+	match = tagPattern.exec(dataSource)
+	while (match !== null) {
+		const tagName = match[1].toLowerCase() // Normalize tag names to lowercase
+		const content = match[2] || ""
+
+		if (content.trim()) {
+			// Skip adding empty content to allTextContent
+			allTextContent.push(content)
 		}
+
+		// Map the tags to our game object
+		switch (tagName) {
+			case "title":
+				game.title = content || ""
+				break
+			case "event":
+				game.event = content || ""
+				break
+			case "date":
+				game.dateStr = content
+				if (content) {
+					// Extract year from date if possible
+					const yearMatch = content.match(/\d{4}/)
+					if (yearMatch) {
+						game.eventYear = Number.parseInt(yearMatch[0], 10)
+					}
+				}
+				break
+			case "place":
+				game.place = content || ""
+				break
+			case "red":
+				game.redPlayer = content || ""
+				break
+			case "black":
+				game.blackPlayer = content || ""
+				break
+			case "result":
+				game.result = content || ""
+				break
+			case "round":
+				game.round = content || ""
+				break
+			case "redteam":
+				game.redTeam = content || ""
+				break
+			case "blackteam":
+				game.blackTeam = content || ""
+				break
+			case "type":
+			case "gametype":
+				game.gameType = content || ""
+				break
+			case "author":
+				game.author = content || ""
+				break
+			case "owner":
+				game.owner = content || ""
+				break
+			case "remark":
+				game.remarks = content || ""
+				break
+			case "movelist":
+				game.movelist = content || ""
+				break
+			case "binit":
+				game.binit = content || ""
+				break
+			case "open":
+				game.openingName = content || ""
+				break
+		}
+
+		// Extract comments (numbered or with variations)
+		if (tagName.startsWith("comment")) {
+			// Store all comments including those with variations (like comment1_3)
+			game.comments[tagName] = content
+		}
+
+		// Get the next match
+		match = tagPattern.exec(dataSource)
 	}
-	return null
+
+	// Combine all text content for search
+	game.allTextContent = allTextContent.join(" ")
+
+	return game
 }
 
 /**
@@ -183,39 +300,46 @@ async function buildSearchData() {
 			const collectionName = `${groupName}/${collectionFolderName}` // Combine group and collection
 
 			const fileContent = fs.readFileSync(filePath, "utf-8")
-			const parsedData = parseDhtmlXQ(fileContent)
+			// Parse the DhtmlXQ data
+			const parsedData = parseDhtmlXQ(fileContent, filename, collectionName)
+
+			// Apply data conversions (date formatting, result translation, Han-Viet translations)
+			const convertedData = applyDataConversions(parsedData)
 
 			// Combine remarks and comments
-			let allText = parsedData._remark || ""
-			for (const key of Object.keys(parsedData)) {
-				if (key.startsWith("_comment")) {
-					allText += ` ${parsedData[key]}`
+			let allText = convertedData.remarks || ""
+			if (convertedData.comments) {
+				for (const key of Object.keys(convertedData.comments)) {
+					allText = `${allText} ${convertedData.comments[key]}`
 				}
 			}
 
-			const gameType = parsedData._type || parsedData._gametype || ""
+			const gameType = convertedData.gameType || ""
 
 			const searchItem: SearchItem = {
 				id: `${collectionName}/${filename}`, // Unique ID - keep template literal here as it needs interpolation
 				collectionName: collectionName,
-				title: parsedData._title || "Untitled",
-				event: parsedData._event || "",
-				dateStr: parsedData._date || "",
-				eventYear: extractYear(parsedData._date),
-				place: parsedData._place || "",
-				redPlayer: parsedData._red || "Unknown",
-				blackPlayer: parsedData._black || "Unknown",
-				openingName: parsedData._open || "",
-				result: parsedData._result || "Unknown",
-				round: parsedData._round || "",
-				redTeam: parsedData._redteam || "",
-				blackTeam: parsedData._blackteam || "",
+				title: convertedData.title || "Untitled",
+				event: convertedData.event || "",
+				dateStr: convertedData.dateStr || "",
+				eventYear: convertedData.eventYear || null, // Use the year extracted in parseDhtmlXQ
+				place: convertedData.place || "",
+				redPlayer: convertedData.redPlayer || "Unknown",
+				blackPlayer: convertedData.blackPlayer || "Unknown",
+				openingName: convertedData.openingName || "",
+				result: convertedData.result || "Unknown",
+				round: convertedData.round || "",
+				redTeam: convertedData.redTeam || "",
+				blackTeam: convertedData.blackTeam || "",
 				gameType: gameType,
-				author: parsedData._author || "",
-				owner: parsedData._owner || "",
-				allTextContent: allText.trim(),
-				movelist: parsedData._movelist || ""
-				// binit: parsedData._binit || undefined, // Optional
+				author: convertedData.author || "",
+				owner: convertedData.owner || "",
+				/**
+				 * Currently, we will not include text content
+				 */
+				allTextContent: "", //allText.trim(),
+				movelist: convertedData.movelist || ""
+				// binit: parsedData.binit || undefined, // Optional
 			}
 
 			allSearchItems.push(searchItem)
@@ -239,6 +363,29 @@ async function buildSearchData() {
 			"No search items were generated. Check for errors during processing."
 		)
 		process.exit(1)
+	}
+
+	// Output missing translations for dictionary improvement
+	const missingChars = getMissingTranslations()
+	console.log("\nChecking for untranslated characters...")
+	if (missingChars.length > 0) {
+		console.log(
+			`\nFound ${missingChars.length} untranslated characters: ${missingChars.join("")}`
+		)
+
+		// Write each untranslated character to a file, one per line
+		const missingTranslationsPath = path.join(
+			OUTPUT_DIR,
+			"untranslated-characters.txt"
+		)
+		fs.writeFileSync(missingTranslationsPath, missingChars.join("\n"))
+		console.log(
+			`\nUntranslated characters saved to: ${missingTranslationsPath}`
+		)
+	} else {
+		console.log(
+			"\nGreat! No missing translations found. All characters were successfully translated."
+		)
 	}
 
 	// --- Versioning and Output ---

@@ -1,9 +1,9 @@
-import path from "node:path"
 import fs from "node:fs/promises"
+import path from "node:path"
 import {
-	S3Client,
 	PutObjectCommand,
-	type PutObjectCommandInput
+	type PutObjectCommandInput,
+	S3Client
 } from "@aws-sdk/client-s3"
 import "dotenv/config"
 
