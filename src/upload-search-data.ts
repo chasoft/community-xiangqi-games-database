@@ -94,7 +94,7 @@ async function updateVersionFile(timestamp: string, fileName: string) {
 	// Create version info object
 	const versionInfo = {
 		version: timestamp,
-		dataPath: `/search-data/${fileName}`,
+		dataPath: `${r2Config.publicUrl}/search-data/${fileName}`,
 		lastUpdated: new Date().toISOString()
 	}
 
