@@ -250,6 +250,17 @@ function findGameFiles(startPath: string, fileList: string[] = []): string[] {
 	return fileList
 }
 
+const ownerIdMapping = {
+	community: "cong dong",
+	"end-games": "tan cuc cuoc",
+	"mid-games": "trung cuc cuoc",
+	opening: "khai cuoc",
+	puzzles: "bai luyen tap",
+	"selected-games": "tuyen chon",
+	tournaments: "giai thi dau"
+}
+type OwnerIdMapping = keyof typeof ownerIdMapping
+
 // --- Main Build Logic ---
 
 async function buildSearchData() {
@@ -307,12 +318,12 @@ async function buildSearchData() {
 			const convertedData = applyDataConversions(parsedData)
 
 			// Combine remarks and comments
-			let allText = convertedData.remarks || ""
-			if (convertedData.comments) {
-				for (const key of Object.keys(convertedData.comments)) {
-					allText = `${allText} ${convertedData.comments[key]}`
-				}
-			}
+			// let allText = convertedData.remarks || ""
+			// if (convertedData.comments) {
+			// 	for (const key of Object.keys(convertedData.comments)) {
+			// 		allText = `${allText} ${convertedData.comments[key]}`
+			// 	}
+			// }
 
 			const gameType = convertedData.gameType || ""
 
@@ -334,12 +345,15 @@ async function buildSearchData() {
 				gameType: gameType,
 				author: convertedData.author || "",
 				owner: convertedData.owner || "",
+				movelist: convertedData.movelist || "",
+				// binit: parsedData.binit || undefined, // Optional
 				/**
 				 * Currently, we will not include text content
 				 */
-				allTextContent: "", //allText.trim(),
-				movelist: convertedData.movelist || ""
-				// binit: parsedData.binit || undefined, // Optional
+				allTextContent: [
+					ownerIdMapping[groupName as OwnerIdMapping],
+					collectionFolderName.replaceAll("-", " ")
+				].join(" ")
 			}
 
 			allSearchItems.push(searchItem)
