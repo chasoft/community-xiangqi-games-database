@@ -1,13 +1,19 @@
 ## v1.5.20 - 2025-06-10
 
-- Thêm: Tạo công cụ giả lập Y minh họa khả năng tích hợp với cơ sở dữ liệu khai cuộc và thư viện thế cờ bên ngoài.
+This is quick summary of this release.
+
+- Thêm: Tạo công cụ giả lập Y minh họa khả `năng tích` hợp với cơ sở dữ liệu khai cuộc và thư viện thế cờ bên ngoài.
 - Sửa: Khắc phục lỗi giả lập Z đôi khi khiến việc tô sáng biến thể thử nghiệm không hiển thị đúng.
   ![Hình minh họa](https://vietcotuong.s3.ap-southeast-2.amazonaws.com/releases/v1/1.5.9_install-the-app-as-pwa.png)
 - Hiệu năng: Tối ưu hóa quá trình tải tài nguyên giả lập giúp cải thiện thời gian khởi động trong môi trường trình diễn.
 
 ## v1.5.19 - 2025-06-03
 
-- Thêm: Giới thiệu tính năng giả lập V, dòng thời gian tương tác giúp trực quan hóa tiến trình ván cờ thử nghiệm với các mốc tùy chỉnh.
+This is quick summary of this release. [This is quick summary](https://vietcotuong.com) of this release. This is quick summary of this release. This is quick summary of this release. This is quick summary of this release. This is quick summary of this release.
+
+![Hình minh họa](https://vietcotuong.s3.ap-southeast-2.amazonaws.com/releases/v1/1.5.9_install-the-app-as-pwa.png)
+
+- Thêm: Giới thiệu tính năng giả lập V, **dòng thời gian** tương tác giúp trực quan hóa tiến trình ván cờ thử nghiệm với các mốc tùy chỉnh.
 - Sửa: Sửa lỗi giả lập W khiến thẻ trò chơi giữ chỗ đôi khi biến mất khi chuyển đổi chế độ hiển thị.
 - Cập nhật: Mở rộng tài liệu giả lập với thêm ví dụ về các tùy chọn cấu hình nâng cao.
 
