@@ -1,554 +1,562 @@
 {
-	"meta": {
-		"title": "Lý Thuyết Khai Cục - Lưu Điện Trung",
-		"description": "",
-		"tags": [],
-		"updatedAt": "2025/03/07"
-	},
-	"details": {
-		"001-op-ldz-c010101-General-introduction": {
-			"preview": "0927293949596945231747062699668631304241405060627012520399996483",
-			"description": "op ldz c010101 General introduction "
-		},
-		"002-op-ldz-c0101060101a-Development-of-the-Chariot": {
-			"preview": "4527473949486999899999062646668616624241405060997099990324436483",
-			"description": "op ldz c0101060101a Development of the Chariot"
-		},
-		"003-op-ldz-c0101060101b-Development-of-the-chariot": {
-			"preview": "0915473949596967883777052646668600144230405060828132720324436383",
-			"description": "op ldz c0101060101b Development of the chariot"
-		},
-		"004-op-ldz-c0101060102-Development-of-the-Horse": {
-			"preview": "9919999999999979999999999999999999109999999999709999999999999999",
-			"description": "op ldz c0101060102 Development of the Horse"
-		},
-		"005-op-ldz-c0101060103-Development-of-the-cannon": {
-			"preview": "0907293949596967791747062646658600222030405060628112520324436383",
-			"description": "op ldz c0101060103 Development of the cannon"
-		},
-		"006-eg-ldz-c1002-learn-endgame-compositions-05": {
-			"preview": "1214999959999999990099999999999970609950405299999942824878999999",
-			"description": "eg ldz c1002 learn endgame compositions 05"
-		},
-		"007-eg-ldz-c1002-learn-endgame-compositions-06": {
-			"preview": "1199999959999999990021062646999999992041315224999908790323434878",
-			"description": "eg ldz c1002 learn endgame compositions 06"
-		},
-		"008-eg-ldz-c1002-learn-endgame-compositions-07": {
-			"preview": "6399999959999999996599539999999910999932425099999999993738474899",
-			"description": "eg ldz c1002 learn endgame compositions 07"
-		},
-		"009-eg-ldz-c1002-learn-endgame-compositions-08": {
-			"preview": "9913993747579999998599234699999917299941325299995807994399999999",
-			"description": "eg ldz c1002 learn endgame compositions 08"
-		},
-		"010-op-ldz-c0101060301-Obtaining-a-balanced-formation": {
-			"preview": "0927474849596967893739062646668610222030405060627012420324436483",
-			"description": "op ldz c0101060301 Obtaining a balanced formation"
-		},
-		"011-op-ldz-c0101060302-Obtaining-a-balanced-formation": {
-			"preview": "9927293949596999991747062646668699222030405042629932990324436483",
-			"description": "op ldz c0101060302 Obtaining a balanced formation"
-		},
-		"012-op-ldz-c0101060303-Obtaining-a-balanced-formation": {
-			"preview": "0927293949596967894748062646668610222030405060627012720323436383",
-			"description": "op ldz c0101060303 Obtaining a balanced formation"
-		},
-		"013-op-ldz-c0101060304-Obtaining-a-balanced-formation": {
-			"preview": "0919293949596967891747062646668600102030405060708072730323436383",
-			"description": "op ldz c0101060304 Obtaining a balanced formation"
-		},
-		"014-op-ldz-c01010604-Be-practical-be-versatile": {
-			"preview": "9999999999999999999999999999999999999999999999999999999999999999",
-			"description": "op ldz c01010604 Be practical be versatile"
-		},
-		"015-op-ldz-c0102020101-Pay-attention-to-efficiency": {
-			"preview": "0919293949596967751747062646668600102030405060628112420323436383",
-			"description": "op ldz c0102020101 Pay attention to efficiency"
-		},
-		"016-op-ldz-c0102020102-Pay-attention-to-efficiency": {
-			"preview": "0907293949596967791747062646668600222030405060627012720423436383",
-			"description": "op ldz c0102020102 Pay attention to efficiency"
-		},
-		"017-op-ldz-c0102020201-Never-move-a-single-piece-too-many-times": {
-			"preview": "0927293949596967241347062644668630340241405060627012740399439983",
-			"description": "op ldz c0102020201 Never move a single piece too many times"
-		},
-		"018-op-ldz-c0102020301-no-backup-no-reckless-advancement": {
-			"preview": "0919293949596967332776069946658600262030405060628012720325436383",
-			"description": "op ldz c0102020301 no backup no reckless advancement"
-		},
-		"019-op-ldz-c0102020303-no-backup-no-reckless-advancement": {
-			"preview": "0919293949596967631747062646668600222030405060627012810323439983",
-			"description": "op ldz c0102020303 no backup no reckless advancement"
-		},
-		"020-op-ldz-c0102020401-move-the-advisor-elephant-carefully": {
-			"preview": "0919293949486967791747062546668600102030405060627012760323436483",
-			"description": "op ldz c0102020401 move the advisor elephant carefully"
-		},
-		"021-op-ldz-c0102020402-move-the-advisor-elephant-carefully": {
-			"preview": "0919293949596967791747062546668600222030405060628012520323436483",
-			"description": "op ldz c0102020402 move the advisor elephant carefully"
-		},
-		"022-op-ldz-c0102020501-Never-be-overly-concerned-with-the-pawns": {
-			"preview": "0919293949596979891777063346668620314230405060708012720399436383",
-			"description": "op ldz c0102020501 Never be overly concerned with the pawns"
-		},
-		"023-op-ldz-c0102020601-NEVER-gain-material-but-lose-tempo": {
-			"preview": "0919293949596967532747062545668600222041405060748012610323436483",
-			"description": "op ldz c0102020601 NEVER gain material but lose tempo"
-		},
-		"024-op-ldz-c0102020701-Avoid-cramped-positions": {
-			"preview": "1946293949596967792547069934668626222030405060628241720323436484",
-			"description": "op ldz c0102020701 Avoid cramped positions"
-		},
-		"025-op-ldz-c0102020702-Avoid-cramped-positions": {
-			"preview": "0927473949596955881777062546658600314230405060623212220323436383",
-			"description": "op ldz c0102020702 Avoid cramped positions"
-		},
-		"026-op-ldz-c0102020801-take-control-of-the-important-intersections": {
-			"preview": "0907293949596967732747062646668600144230405060627012720324436383",
-			"description": "op ldz c0102020801 take control of the important intersections"
-		},
-		"027-op-ldz-c0102020802-take-control-of-the-important-intersections": {
-			"preview": "1927293949486967791347062546668610222041405060627042760323436483",
-			"description": "op ldz c0102020802 take control of the important intersections"
-		},
-		"028-op-ldz-c0102020901-always-fight-to-control-the-center": {
-			"preview": "0919293949596967791747062646668600222030405060827012720323436383",
-			"description": "op ldz c0102020901 always fight to control the center"
-		},
-		"029-op-ldz-c0102021001-be-keenly-aware-of-spatial-issues　　": {
-			"preview": "0919293949596967791747062546668600102030405060627012760323436483",
-			"description": "op ldz c0102021001 be keenly aware of spatial issues　　"
-		},
-		"030-op-ldz-c0102021101-the-order-of-the-moves-made": {
-			"preview": "0927293949599967791747062546668600222030405060627012720323436483",
-			"description": "op ldz c0102021101 the order of the moves made"
-		},
-		"031-op-ldz-c0102021201-attack-only-at-the-best-possible-time": {
-			"preview": "0927293949596967731747062546668600222030405060547012720323436483",
-			"description": "op ldz c0102021201 attack only at the best possible time"
-		},
-		"032-op-ldz-c0102021202-attack-only-at-the-best-possible-time　": {
-			"preview": "0927293949596967881747062646668600102030405060627012820323436483",
-			"description": "op ldz c0102021202 attack only at the best possible time　"
-		},
-		"033-op-ldz-c0102021301-be-wary-of-pawn-sacrifices": {
-			"preview": "0927293949596967891777062546668600102030405060628112720323436483",
-			"description": "op ldz c0102021301 be wary of pawn sacrifices"
-		},
-		"034-op-ldz-c0102021302-be-wary-of-pawn-sacrifices": {
-			"preview": "0919293949596967731747062546668600222030405060628012520323436483",
-			"description": "op ldz c0102021302 be wary of pawn sacrifices"
-		},
-		"035-op-ldz-c2-01-cc7paprr-vs-sch7paecrx-red-accepts-exchange-C40": {
-			"preview": "1935293949596967992747062546668610224230405060629918820323436483",
-			"description": "op ldz c2 01 cc7paprr vs sch7paecrx red accepts exchange C40"
-		},
-		"036-op-ldz-c2-02-cc7paprr-vs-sch7paecrx-high-chariot-C40": {
-			"preview": "1907293949596967652747069945998600012441405060627213820323439983",
-			"description": "op ldz c2 02 cc7paprr vs sch7paecrx high chariot C40"
-		},
-		"037-op-ldz-c2-03-cc7paprr-vs-sch7paecrx-C44": {
-			"preview": "1935473949596967556599069946998600992441405042626432330399439983",
-			"description": "op ldz c2 03 cc7paprr vs sch7paecrx C44"
-		},
-		"038-op-ldz-c2-04-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "1954293949596948230799062546998610992041405060743218660399996583",
-			"description": "op ldz c2 04 cc7paprr vs sch7paecrx C45"
-		},
-		"039-op-ldz-c2-05-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "9999293949592535659944069946668699992041405042827399159999999983",
-			"description": "op ldz c2 05 cc7paprr vs sch7paecrx C45"
-		},
-		"040-op-ldz-c2-06-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "1335293949598748540737062546999910222041405042867512810323436683",
-			"description": "op ldz c2 06 cc7paprr vs sch7paecrx C45"
-		},
-		"041-op-ldz-c2-07-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "2627293949596948990747063446998610994241405099637099610399436683",
-			"description": "op ldz c2 07 cc7paprr vs sch7paecrx C45"
-		},
-		"042-op-ldz-c2-08-cc7paprr-vs-sch7paecrx-C42": {
-			"preview": "5899293949594799519999062599999999222041405060742699990323449983",
-			"description": "op ldz c2 08 cc7paprr vs sch7paecrx C42"
-		},
-		"043-op-ldz-c2-09-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "9927294849596599670747062599999999992041405060452216860323999983",
-			"description": "op ldz c2 09 cc7paprr vs sch7paecrx C45"
-		},
-		"044-op-ldz-c2-10-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "1299293949486967562243069946998632999941405042662421620399996483",
-			"description": "op ldz c2 10 cc7paprr vs sch7paecrx C45"
-		},
-		"045-op-ldz-c2-11-cc7paprr-vs-sch7paecrx-C45": {
-			"preview": "9947293949596967560507062545998699314241405060663832629923436483",
-			"description": "op ldz c2 11 cc7paprr vs sch7paecrx C45"
-		},
-		"046-op-ldz-c2-12-cc7paprr-vs-sch7paecrx-C42": {
-			"preview": "9927474849596967560737062546998699224241405060667301620323436483",
-			"description": "op ldz c2 12 cc7paprr vs sch7paecrx C42"
-		},
-		"047-op-ldz-c2-13-cc7paprr-vs-sch7paecrx-C42": {
-			"preview": "1999293949596999560744062545658610994241405060627018670323999983",
-			"description": "op ldz c2 13 cc7paprr vs sch7paecrx C42"
-		},
-		"048-op-ldz-c2-14-cc7paprr-vs-sch7paecrx-C42-01": {
-			"preview": "2227474849596999990876062546998651992030405060746799990323436483",
-			"description": "op ldz c2 14 cc7paprr vs sch7paecrx C42 01"
-		},
-		"049-op-ldz-c2-15-cc7paprr-vs-sch7paecrx-C42-02": {
-			"preview": "1299293949596967330747062546668652222030404160557099610323996483",
-			"description": "op ldz c2 15 cc7paprr vs sch7paecrx C42 02"
-		},
-		"050-op-ldz-c2-16-cc7paprr-vs-sch7paecrx-C42": {
-			"preview": "0927474849596967551537062546998600222041405060665212610323436483",
-			"description": "op ldz c2 16 cc7paprr vs sch7paecrx C42"
-		},
-		"051-op-ldz-c2-17-cc7paprr-vs-sch7paecrx-C48": {
-			"preview": "9935293949596967991127062546668699222030405042629901810323436483",
-			"description": "op ldz c2 17 cc7paprr vs sch7paecrx C48"
-		},
-		"052-op-ldz-c2-18-cc7paprr-vs-sch7paecrx-C48": {
-			"preview": "3799293949596967993247062546668614220230405020629999610399436483",
-			"description": "op ldz c2 18 cc7paprr vs sch7paecrx C48"
-		},
-		"053-op-ldz-c2-19-cc7paprr-vs-sch7paecrx-C47": {
-			"preview": "9999473949486953639999062599998656224241405099999999990323439983",
-			"description": "op ldz c2 19 cc7paprr vs sch7paecrx C47"
-		},
-		"054-op-ldz-c2-20-cc7paprr-vs-sch7paecrx-C41": {
-			"preview": "0927474849596946332399062545998610624230405060997866580399996483",
-			"description": "op ldz c2 20 cc7paprr vs sch7paecrx C41"
-		},
-		"055-op-ldz-c2-21-cc7paprr-vs-sch7paecrx-C49": {
-			"preview": "0923293949596999669947062534998610224241405060993817990399439983",
-			"description": "op ldz c2 21 cc7paprr vs sch7paecrx C49"
-		},
-		"056-op-ldz-c2-22-cc7paprr-vs-sch7paecrx-C49": {
-			"preview": "1907294849598788542747062445999900222041405060866646750323439983",
-			"description": "op ldz c2 22 cc7paprr vs sch7paecrx C49"
-		},
-		"057-op-ldz-c2-23-cc7paprr-vs-sch7pa-rt-a-e-C31-01": {
-			"preview": "1714293949596967662747069946998632222441405060627002720323439983",
-			"description": "op ldz c2 23 cc7paprr vs sch7pa rt a e C31 01"
-		},
-		"058-op-ldz-c2-24-cc7paprr-vs-sch7pa-rt-a-e-C31-02": {
-			"preview": "1934293949596967731747062499668630224241405060547026720399456483",
-			"description": "op ldz c2 24 cc7paprr vs sch7pa rt a e C31 02"
-		},
-		"059-op-ldz-c2-25-cc7paprr-vs-sch7parrr-C33-01": {
-			"preview": "0946293949596967629999062599668645992030405060997041990399996483",
-			"description": "op ldz c2 25 cc7paprr vs sch7parrr C33 01"
-		},
-		"060-op-ldz-c2-26-cc7paprr-vs-sch7parrr-C32-02": {
-			"preview": "3827293949596955631747069946548601222030405042626016660325439983",
-			"description": "op ldz c2 26 cc7paprr vs sch7parrr C32 02"
-		},
-		"061-op-ldz-c2-27-cc7paprr-vs-sch7palt-rbh-C37-01": {
-			"preview": "0923994849594767531737062546998630224241405060827062520399439983",
-			"description": "op ldz c2 27 cc7paprr vs sch7palt rbh C37 01"
-		},
-		"062-op-ldz-c2-28-cc7paprr-vs-sch7palt-rbh-C37-02": {
-			"preview": "0999294849596999991725062299998600994241405060997699990399995583",
-			"description": "op ldz c2 28 cc7paprr vs sch7palt rbh C37 02"
-		},
-		"063-op-ldz-c2-29-cc7paprr-vs-sch7palt-rbh-C37-03": {
-			"preview": "3427293949598754516599069999998600144241405060457499520325999983",
-			"description": "op ldz c2 29 cc7paprr vs sch7palt rbh C37 03"
-		},
-		"064-op-ldz-c2-30-cc7paprr-vs-sch7palt-rbh-C38-04": {
-			"preview": "1933993949596936511132062546998601224299404160995864890323435583",
-			"description": "op ldz c2 30 cc7paprr vs sch7palt rbh C38 04"
-		},
-		"065-op-ldz-c2-31-cc7paprr-vs-sch7palt-rbh-C38-05": {
-			"preview": "0835293949596927997672062546998610224230405060629911660323439983",
-			"description": "op ldz c2 31 cc7paprr vs sch7palt rbh C38 05"
-		},
-		"066-op-ldz-c2-32-cc7paprr-vs-sch7palt-rbh-C39-06": {
-			"preview": "1999473949596967430799062546998610994230405060997018520323996483",
-			"description": "op ldz c2 32 cc7paprr vs sch7palt rbh C39 06"
-		},
-		"067-op-ldz-c2-33-cc7paprr-vs-sch7palt-rbh-C39-07": {
-			"preview": "9935073949596948439999062546998699104241405060757499999923996683",
-			"description": "op ldz c2 33 cc7paprr vs sch7palt rbh C39 07"
-		},
-		"068-op-ldz-c2-34-ccrbc-vs-sch-01": {
-			"preview": "5799293949598799531243062546998611994241405060997530820323996483",
-			"description": "op ldz c2 34 ccrbc vs sch 01"
-		},
-		"069-op-ldz-c2-35-ccrbc-vs-sch-02": {
-			"preview": "1835293949594799482067069999668699349941405024627042460399436483",
-			"description": "op ldz c2 35 ccrbc vs sch 02"
-		},
-		"070-op-ldz-c2-36-ccrbc-vs-sch-03": {
-			"preview": "9935473949596967129936062546668699224230405060745199720323436483",
-			"description": "op ldz c2 36 ccrbc vs sch 03"
-		},
-		"071-op-ldz-c2-37-cc7fh-vs-sch-2prc-01": {
-			"preview": "2299294839596999346747062599668610994241405060464399450323996483",
-			"description": "op ldz c2 37 cc7fh vs sch 2prc 01"
-		},
-		"072-op-ldz-c2-38-ccrrr7fh-vs-sch-01": {
-			"preview": "6535293949596948180747069946998611344230405060622112740399439983",
-			"description": "op ldz c2 38 ccrrr7fh vs sch 01"
-		},
-		"073-op-ldz-c2-39-ccrrr7fh-vs-sch-02": {
-			"preview": "1227293949598734990743062446998620994241405060547599560399999983",
-			"description": "op ldz c2 39 ccrrr7fh vs sch 02"
-		},
-		"074-op-ldz-c2-40-ccrrr7fh-vs-sch-03": {
-			"preview": "0873293949596935991537062546999900224241405060869914720323446683",
-			"description": "op ldz c2 40 ccrrr7fh vs sch 03"
-		},
-		"075-op-ldz-c2-41-ccrrr7fh-vs-sch-04": {
-			"preview": "1543293949596967999999992546998600992030504142669999310399996483",
-			"description": "op ldz c2 41 ccrrr7fh vs sch 04"
-		},
-		"076-op-ldz-c2-42-cc7fh-vs-sch": {
-			"preview": "9935293949484767892737069946668699104230405060627024720399436483",
-			"description": "op ldz c2 42 cc7fh vs sch"
-		},
-		"077-op-ldz-c2-43-57c7pa-vs-sch-rt-prc-01": {
-			"preview": "9927293949598758999943063345999999554230404160999976860499996483",
-			"description": "op ldz c2 43 57c7pa vs sch rt prc 01"
-		},
-		"078-op-ldz-c2-44-57c7pa-vs-sch-rt-prc-02": {
-			"preview": "0919293949596999992747069945548615224230405060419918990324439983",
-			"description": "op ldz c2 44 57c7pa vs sch rt prc 02"
-		},
-		"079-op-ldz-c2-45-57c-vs-sch7pa-rt-prc-01": {
-			"preview": "2607293949596999999947059946658610994241405060549944990399439983",
-			"description": "op ldz c2 45 57c vs sch7pa rt prc 01"
-		},
-		"080-op-ldz-c2-46-57c-vs-sch7pa-rt-rbc-02": {
-			"preview": "2599293949596999192899059944998630244241405060997099990399996583",
-			"description": "op ldz c2 46 57c vs sch7pa rt rbc 02"
-		},
-		"081-op-ldz-c2-47-57c-vs-sch7pa-rt-rbc-03": {
-			"preview": "9926293949594775709999059946998610994230405060999964650399439983",
-			"description": "op ldz c2 47 57c vs sch7pa rt rbc 03"
-		},
-		"082-op-ldz-c2-48-57c-vs-sch7pa-lt-prc-04": {
-			"preview": "9999293949486975769907992646998618276430405060629999990499439983",
-			"description": "op ldz c2 48 57c vs sch7pa lt prc 04"
-		},
-		"083-op-ldz-c2-49-57c-vs-sch7pa-rt-prc-05": {
-			"preview": "9907293949596946862799052699659910222030405060994499990323439983",
-			"description": "op ldz c2 49 57c vs sch7pa rt prc 05"
-		},
-		"084-op-ldz-c2-50-56c-lt-side-h-vs-sch-7pa": {
-			"preview": "9915293949486967653747052546998699222041405042747864820323439983",
-			"description": "op ldz c2 50 56c lt side h vs sch 7pa"
-		},
-		"085-op-ldz-c2-51-ccprr-lt-side-h-vs-sch-7pa": {
-			"preview": "0828293949596967765348062646998600224230405060667061740323439983",
-			"description": "op ldz c2 51 ccprr lt side h vs sch 7pa"
-		},
-		"086-op-ldz-c2-52-cc5paprr-vs-sch7pa": {
-			"preview": "9946293949596999531799062699998620224241405060999914990324559983",
-			"description": "op ldz c2 52 cc5paprr vs sch7pa"
-		},
-		"087-op-ldz-c2-53-cc5paprr-vs-sch7pa": {
-			"preview": "9946293949596967990447062645668699222030405082709923429924436483",
-			"description": "op ldz c2 53 cc5paprr vs sch7pa"
-		},
-		"088-op-ldz-c2-54-cc5paprr-vs-sch7pa": {
-			"preview": "3846293949596973991777062699998600222041405060649912720324439983",
-			"description": "op ldz c2 54 cc5paprr vs sch7pa"
-		},
-		"089-op-ldz-c2-55-cc5paprr-vs-sch7pa": {
-			"preview": "7627293949594767251756069946998630344241405060547012720399439983",
-			"description": "op ldz c2 55 cc5paprr vs sch7pa"
-		},
-		"090-op-ldz-c2-56-cc5paprr-vs-sch7pa": {
-			"preview": "6507293949486975996777062646998630224241405060829913520324439983",
-			"description": "op ldz c2 56 cc5paprr vs sch7pa"
-		},
-		"091-op-ldz-c2-57-58c3pa-vs-sch-01": {
-			"preview": "2707293949596999999947069999659943032030405042249999990499999984",
-			"description": "op ldz c2 57 58c3pa vs sch 01"
-		},
-		"092-op-ldz-c2-58-58c3pa-vs-sch-02": {
-			"preview": "2527073949486967996357069946658615342030405042629922260499439983",
-			"description": "op ldz c2 58 58c3pa vs sch 02"
-		},
-		"093-op-ldz-c2-59-57c3pa-vs-sch13pa-rt-rbh-01": {
-			"preview": "9907474849596922762805992699998699542030404142437032729924996383",
-			"description": "op ldz c2 59 57c3pa vs sch13pa rt rbh 01"
-		},
-		"094-op-ldz-c2-60-57c3pa-vs-sch13pa-rt-rbh-02": {
-			"preview": "5807293949596953762877992645998637142030404142817111739924436483",
-			"description": "op ldz c2 60 57c3pa vs sch13pa rt rbh 02"
-		},
-		"095-op-ldz-c2-61-57c3pa-vs-sch13pa-rt-rbh-03": {
-			"preview": "9999073949596975990848992646998699992030404164629927829935439983",
-			"description": "op ldz c2 61 57c3pa vs sch13pa rt rbh 03"
-		},
-		"096-op-ldz-c2-62-57c3pa-vs-sch13pa-rt-rbh-04": {
-			"preview": "1199293949486967992707992646658605144230404160709999349924436383",
-			"description": "op ldz c2 62 57c3pa vs sch13pa rt rbh 04"
-		},
-		"097-op-ldz-c2-63-57c3pa-vs-sch-01": {
-			"preview": "3507294849594767992837992646658654062030404142709912820424436483",
-			"description": "op ldz c2 63 57c3pa vs sch 01"
-		},
-		"098-op-ldz-c2-64-57c3pa-vs-sch-02": {
-			"preview": "2726293949596967759947993446658635992030404142627002740399436383",
-			"description": "op ldz c2 64 57c3pa vs sch 02"
-		},
-		"099-op-ldz-c2-65-57c-vs-sch3pa": {
-			"preview": "9907293949596967993744992646658699064241305060629912820324996383",
-			"description": "op ldz c2 65 57c vs sch3pa "
-		},
-		"100-op-ldz-c2-66-ccrrr5paclh-vs-sch": {
-			"preview": "0999293949596946884499062699668600992030404142627099790324996383",
-			"description": "op ldz c2 66 ccrrr5paclh vs sch"
-		},
-		"101-op-ldz-c3-67-sdc-rr-vs-fr-01": {
-			"preview": "5299293949596967994243062646668600022099403060707619990323996383",
-			"description": "op ldz c3 67 sdc rr vs fr 01"
-		},
-		"102-op-ldz-c3-68-sdc-rr-vs-fr-02": {
-			"preview": "0407474849596967111627992546998600022030404142625632529924436483",
-			"description": "op ldz c3 68 sdc rr vs fr 02"
-		},
-		"103-op-ldz-c3-69-sdc-rr-vs-fr-03": {
-			"preview": "5899293949596999334843052645998610022030404160996667420324996383",
-			"description": "op ldz c3 69 sdc rr vs fr 03"
-		},
-		"104-op-ldz-c3-70-sdc-rr-vs-fr-04": {
-			"preview": "1827474849596967351337062646658610224230404160625402520324436383",
-			"description": "op ldz c3 70 sdc rr vs fr 04"
-		},
-		"105-op-ldz-c3-71-sdc-rr-vs-fr-05": {
-			"preview": "0927295749596967991847062646998699302041405060625312420324439983",
-			"description": "op ldz c3 71 sdc rr vs fr 05"
-		},
-		"106-op-ldz-c3-72-sdc-fr-vs-rr-01": {
-			"preview": "0999073949488799792547062499668610992030504160625546990399436383",
-			"description": "op ldz c3 72 sdc fr vs rr 01"
-		},
-		"107-op-ldz-c3-73-sdc-fr-vs-rr-02": {
-			"preview": "3307293949486967732747052699668613222030405060625445420323436483",
-			"description": "op ldz c3 73 sdc fr vs rr 02"
-		},
-		"108-op-ldz-c3-74-sdc-fr-vs-rr-03": {
-			"preview": "1735473959486999763144062599658610332041305060993612660323996383",
-			"description": "op ldz c3 74 sdc fr vs rr 03"
-		},
-		"109-op-ldz-c3-75-sdc-fr-vs-rr-04": {
-			"preview": "0927254849596955791557069946658601222030405060624412420399439983",
-			"description": "op ldz c3 75 sdc fr vs rr 04"
-		},
-		"110-op-ldz-c3-76-sdc-fr-vs-sr-01": {
-			"preview": "2699293949486967799947069944998600990241405042621766990324436583",
-			"description": "op ldz c3 76 sdc fr vs sr 01"
-		},
-		"111-op-ldz-c3-77-sdc-fr-vs-sr-02": {
-			"preview": "3515293949489999991747062545998600224241405060999962520323996483",
-			"description": "op ldz c3 77 sdc fr vs sr 02"
-		},
-		"112-op-ldz-c4-78-odc-01": {
-			"preview": "9999293949596967501043052646668654992099519960749942220324996384",
-			"description": "op ldz c4 78 odc 01"
-		},
-		"113-op-ldz-c4-79-odc-02": {
-			"preview": "1927473949596955991168069946659901222030405060629942260424436383",
-			"description": "op ldz c4 79 odc 02"
-		},
-		"114-op-ldz-c4-80-cc-vs-lt-c-blockade-with-odc-variation-01": {
-			"preview": "9965474849596953782399062699998699012030405060627599760324436683",
-			"description": "op ldz c4 80 cc vs lt c blockade with odc variation 01"
-		},
-		"115-op-ldz-c4-81-cc-vs-lt-c-blockade-with-odc-variation-02": {
-			"preview": "9919293949592599999988069946658699222030404142629999990399439983",
-			"description": "op ldz c4 81 cc vs lt c blockade with odc variation 02"
-		},
-		"116-op-ldz-c4-82-cc-vs-lt-c-blockade-with-odc-variation-03": {
-			"preview": "1727293949594779999948069945658634222030405060629999660323436383",
-			"description": "op ldz c4 82 cc vs lt c blockade with odc variation 03"
-		},
-		"117-op-ldz-c4-83-cc-vs-lt-3st-with-halfway-odc-variation": {
-			"preview": "1899473949596967992737062546998699222030405060995462820323439983",
-			"description": "op ldz c4 83 cc vs lt 3st with halfway odc variation "
-		},
-		"118-op-ldz-c4-84-57c3pa-vs-sah-lt-e": {
-			"preview": "9926994849596967543844069945998699222030504142667027520399996583",
-			"description": "op ldz c4 84 57c3pa vs sah lt e"
-		},
-		"119-op-ldz-c4-85-56c3pa-vs-sah-lt-e": {
-			"preview": "9915293949379948629947059946658699222030404142996699690399436383",
-			"description": "op ldz c4 85 56c3pa vs sah lt e"
-		},
-		"120-op-ldz-c4-86-56c3pa-vs-sah-rt-e": {
-			"preview": "1507293949484767653757052646998510224241405060823113520324439983",
-			"description": "op ldz c4 86 56c3pa vs sah rt e"
-		},
-		"121-op-ldz-c4-87-57c3parrr-vs-sah-rt-e": {
-			"preview": "1307293949488799432747052646998610994241405060826412520324999983",
-			"description": "op ldz c4 87 57c3parrr vs sah rt e"
-		},
-		"122-op-ldz-c4-88-cc-with-37pa-vs-sah": {
-			"preview": "1427473949596567992337062546998676602030405042629902540399439983",
-			"description": "op ldz c4 88 cc with 37pa vs sah"
-		},
-		"123-op-ldz-c4-89-56c-left-proper-horse-vs-sah": {
-			"preview": "0735293949484716793799069946998663342030404142438002990399999983",
-			"description": "op ldz c4 89 56c left proper horse vs sah"
-		},
-		"124-op-ldz-c4-90-cc-with-fr-pin-vs-sah-7pa": {
-			"preview": "2899293949596967993744062646668610224241405060709931990323996483",
-			"description": "op ldz c4 90 cc with fr pin vs sah 7pa"
-		},
-		"125-op-ldz-c5-91-cc-vs-shd": {
-			"preview": "1927294849596999990747062546658633224241405060629926990323996384",
-			"description": "op ldz c5 91 cc vs shd "
-		},
-		"126-op-ldz-c5-92-ap-rt-proper-h-vs-td-with-3pa": {
-			"preview": "0807253949596967729999069946998680352030405042706699990399436399",
-			"description": "op ldz c5 92 ap rt proper h vs td with 3pa"
-		},
-		"127-op-ldz-c5-93-ap-lt-cc-vs-td-with-odc": {
-			"preview": "9999993949596999439999069946998699992041405099992699999999996483",
-			"description": "op ldz c5 93 ap lt cc vs td with odc"
-		},
-		"128-op-ldz-c5-94-ap-rt-cc-vs-td-with-rt-e-and-rr": {
-			"preview": "2999474849596967763755992546659914994241405060820602520323996399",
-			"description": "op ldz c5 94 ap rt cc vs td with rt e and rr"
-		},
-		"129-op-ldz-c5-95-ap-rt-cc-vs-td-with-rt-e-3pa": {
-			"preview": "9907654849596987465785069945998699314241405060827322720325999999",
-			"description": "op ldz c5 95 ap rt cc vs td with rt e 3pa"
-		},
-		"130-op-ldz-c5-96-ap-lt-cc-vs-td-left-e": {
-			"preview": "9935293949596967990799992546668699022030404142999951709923446483",
-			"description": "op ldz c5 96 ap lt cc vs td left e"
-		},
-		"131-op-ldz-c5-97-ap-vs-h": {
-			"preview": "0927474849596967881757069946658600224241405060622412820399436383",
-			"description": "op ldz c5 97 ap vs h"
-		},
-		"132-op-ldz-c5-98-p-with-td-vs-p": {
-			"preview": "0946654849596954894767062599648616222030404160828076720323449983",
-			"description": "op ldz c5 98 p with td vs p"
-		},
-		"133-op-ldz-c5-99-p-vs-e": {
-			"preview": "9927293949484734793753062546998499104230405060546102520323436499",
-			"description": "op ldz c5 99 p vs e"
-		},
-		"134-op-ldz-c7-100-E-Rt-pH-vs-Lt-CPC-A34": {
-			"preview": "9915293949594767753787059946668699024230405060622122320399436483",
-			"description": "op ldz c7 100 E Rt pH vs Lt CPC A34"
-		},
-		"135-op-ldz-c7-101-E-vs-rt-pcc-A23": {
-			"preview": "3515293949594775997799052646668599142030404142625032990324436483",
-			"description": "op ldz c7 101 E vs rt pcc A23"
-		},
-		"136-op-ldz-c7-102-E-vs-Lt-ccC-A27": {
-			"preview": "1927293949484767691257992546668604022030405060627022429923436483",
-			"description": "op ldz c7 102 E vs Lt ccC A27"
-		}
-	}
+  "meta": {
+    "title": "Lý Thuyết Khai Cục - Lưu Điện Trung",
+    "description": "",
+    "tags": [],
+    "updatedAt": "2025/03/07"
+  },
+  "details": {
+    "001-op-ldz-c010101-General-introduction": {
+      "preview": "0927293949596945231747062699668631304241405060627012520399996483",
+      "description": "op ldz c010101 General introduction "
+    },
+    "002-op-ldz-c0101060101a-Development-of-the-Chariot": {
+      "preview": "4527473949486999899999062646668616624241405060997099990324436483",
+      "description": "op ldz c0101060101a Development of the Chariot"
+    },
+    "003-op-ldz-c0101060101b-Development-of-the-chariot": {
+      "preview": "0915473949596967883777052646668600144230405060828132720324436383",
+      "description": "op ldz c0101060101b Development of the chariot"
+    },
+    "004-op-ldz-c0101060102-Development-of-the-Horse": {
+      "preview": "9919999999999979999999999999999999109999999999709999999999999999",
+      "description": "op ldz c0101060102 Development of the Horse"
+    },
+    "005-op-ldz-c0101060103-Development-of-the-cannon": {
+      "preview": "0907293949596967791747062646658600222030405060628112520324436383",
+      "description": "op ldz c0101060103 Development of the cannon"
+    },
+    "006-eg-ldz-c1002-learn-endgame-compositions-05": {
+      "preview": "1214999959999999990099999999999970609950405299999942824878999999",
+      "description": "eg ldz c1002 learn endgame compositions 05"
+    },
+    "007-eg-ldz-c1002-learn-endgame-compositions-06": {
+      "preview": "1199999959999999990021062646999999992041315224999908790323434878",
+      "description": "eg ldz c1002 learn endgame compositions 06"
+    },
+    "008-eg-ldz-c1002-learn-endgame-compositions-07": {
+      "preview": "6399999959999999996599539999999910999932425099999999993738474899",
+      "description": "eg ldz c1002 learn endgame compositions 07"
+    },
+    "009-eg-ldz-c1002-learn-endgame-compositions-08": {
+      "preview": "9913993747579999998599234699999917299941325299995807994399999999",
+      "description": "eg ldz c1002 learn endgame compositions 08"
+    },
+    "010-op-ldz-c0101060301-Obtaining-a-balanced-formation": {
+      "preview": "0927474849596967893739062646668610222030405060627012420324436483",
+      "description": "op ldz c0101060301 Obtaining a balanced formation"
+    },
+    "011-op-ldz-c0101060302-Obtaining-a-balanced-formation": {
+      "preview": "9927293949596999991747062646668699222030405042629932990324436483",
+      "description": "op ldz c0101060302 Obtaining a balanced formation"
+    },
+    "012-op-ldz-c0101060303-Obtaining-a-balanced-formation": {
+      "preview": "0927293949596967894748062646668610222030405060627012720323436383",
+      "description": "op ldz c0101060303 Obtaining a balanced formation"
+    },
+    "013-op-ldz-c0101060304-Obtaining-a-balanced-formation": {
+      "preview": "0919293949596967891747062646668600102030405060708072730323436383",
+      "description": "op ldz c0101060304 Obtaining a balanced formation"
+    },
+    "014-op-ldz-c01010604-Be-practical-be-versatile": {
+      "preview": "9999999999999999999999999999999999999999999999999999999999999999",
+      "description": "op ldz c01010604 Be practical be versatile"
+    },
+    "015-op-ldz-c0102020101-Pay-attention-to-efficiency": {
+      "preview": "0919293949596967751747062646668600102030405060628112420323436383",
+      "description": "op ldz c0102020101 Pay attention to efficiency"
+    },
+    "016-op-ldz-c0102020102-Pay-attention-to-efficiency": {
+      "preview": "0907293949596967791747062646668600222030405060627012720423436383",
+      "description": "op ldz c0102020102 Pay attention to efficiency"
+    },
+    "017-op-ldz-c0102020201-Never-move-a-single-piece-too-many-times": {
+      "preview": "0927293949596967241347062644668630340241405060627012740399439983",
+      "description": "op ldz c0102020201 Never move a single piece too many times"
+    },
+    "018-op-ldz-c0102020301-no-backup-no-reckless-advancement": {
+      "preview": "0919293949596967332776069946658600262030405060628012720325436383",
+      "description": "op ldz c0102020301 no backup no reckless advancement"
+    },
+    "019-op-ldz-c0102020303-no-backup-no-reckless-advancement": {
+      "preview": "0919293949596967631747062646668600222030405060627012810323439983",
+      "description": "op ldz c0102020303 no backup no reckless advancement"
+    },
+    "020-op-ldz-c0102020401-move-the-advisor-elephant-carefully": {
+      "preview": "0919293949486967791747062546668600102030405060627012760323436483",
+      "description": "op ldz c0102020401 move the advisor elephant carefully"
+    },
+    "021-op-ldz-c0102020402-move-the-advisor-elephant-carefully": {
+      "preview": "0919293949596967791747062546668600222030405060628012520323436483",
+      "description": "op ldz c0102020402 move the advisor elephant carefully"
+    },
+    "022-op-ldz-c0102020501-Never-be-overly-concerned-with-the-pawns": {
+      "preview": "0919293949596979891777063346668620314230405060708012720399436383",
+      "description": "op ldz c0102020501 Never be overly concerned with the pawns"
+    },
+    "023-op-ldz-c0102020601-NEVER-gain-material-but-lose-tempo": {
+      "preview": "0919293949596967532747062545668600222041405060748012610323436483",
+      "description": "op ldz c0102020601 NEVER gain material but lose tempo"
+    },
+    "024-op-ldz-c0102020701-Avoid-cramped-positions": {
+      "preview": "1946293949596967792547069934668626222030405060628241720323436484",
+      "description": "op ldz c0102020701 Avoid cramped positions"
+    },
+    "025-op-ldz-c0102020702-Avoid-cramped-positions": {
+      "preview": "0927473949596955881777062546658600314230405060623212220323436383",
+      "description": "op ldz c0102020702 Avoid cramped positions"
+    },
+    "026-op-ldz-c0102020801-take-control-of-the-important-intersections": {
+      "preview": "0907293949596967732747062646668600144230405060627012720324436383",
+      "description": "op ldz c0102020801 take control of the important intersections"
+    },
+    "027-op-ldz-c0102020802-take-control-of-the-important-intersections": {
+      "preview": "1927293949486967791347062546668610222041405060627042760323436483",
+      "description": "op ldz c0102020802 take control of the important intersections"
+    },
+    "028-op-ldz-c0102020901-always-fight-to-control-the-center": {
+      "preview": "0919293949596967791747062646668600222030405060827012720323436383",
+      "description": "op ldz c0102020901 always fight to control the center"
+    },
+    "029-op-ldz-c0102021001-be-keenly-aware-of-spatial-issues　　": {
+      "preview": "0919293949596967791747062546668600102030405060627012760323436483",
+      "description": "op ldz c0102021001 be keenly aware of spatial issues　　"
+    },
+    "030-op-ldz-c0102021101-the-order-of-the-moves-made": {
+      "preview": "0927293949599967791747062546668600222030405060627012720323436483",
+      "description": "op ldz c0102021101 the order of the moves made"
+    },
+    "031-op-ldz-c0102021201-attack-only-at-the-best-possible-time": {
+      "preview": "0927293949596967731747062546668600222030405060547012720323436483",
+      "description": "op ldz c0102021201 attack only at the best possible time"
+    },
+    "032-op-ldz-c0102021202-attack-only-at-the-best-possible-time　": {
+      "preview": "0927293949596967881747062646668600102030405060627012820323436483",
+      "description": "op ldz c0102021202 attack only at the best possible time　"
+    },
+    "033-op-ldz-c0102021301-be-wary-of-pawn-sacrifices": {
+      "preview": "0927293949596967891777062546668600102030405060628112720323436483",
+      "description": "op ldz c0102021301 be wary of pawn sacrifices"
+    },
+    "034-op-ldz-c0102021302-be-wary-of-pawn-sacrifices": {
+      "preview": "0919293949596967731747062546668600222030405060628012520323436483",
+      "description": "op ldz c0102021302 be wary of pawn sacrifices"
+    },
+    "035-op-ldz-c2-01-cc7paprr-vs-sch7paecrx-red-accepts-exchange-C40": {
+      "preview": "1935293949596967992747062546668610224230405060629918820323436483",
+      "description": "op ldz c2 01 cc7paprr vs sch7paecrx red accepts exchange C40"
+    },
+    "036-op-ldz-c2-02-cc7paprr-vs-sch7paecrx-high-chariot-C40": {
+      "preview": "1907293949596967652747069945998600012441405060627213820323439983",
+      "description": "op ldz c2 02 cc7paprr vs sch7paecrx high chariot C40"
+    },
+    "037-op-ldz-c2-03-cc7paprr-vs-sch7paecrx-C44": {
+      "preview": "1935473949596967556599069946998600992441405042626432330399439983",
+      "description": "op ldz c2 03 cc7paprr vs sch7paecrx C44"
+    },
+    "038-op-ldz-c2-04-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "1954293949596948230799062546998610992041405060743218660399996583",
+      "description": "op ldz c2 04 cc7paprr vs sch7paecrx C45"
+    },
+    "039-op-ldz-c2-05-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "9999293949592535659944069946668699992041405042827399159999999983",
+      "description": "op ldz c2 05 cc7paprr vs sch7paecrx C45"
+    },
+    "040-op-ldz-c2-06-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "1335293949598748540737062546999910222041405042867512810323436683",
+      "description": "op ldz c2 06 cc7paprr vs sch7paecrx C45"
+    },
+    "041-op-ldz-c2-07-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "2627293949596948990747063446998610994241405099637099610399436683",
+      "description": "op ldz c2 07 cc7paprr vs sch7paecrx C45"
+    },
+    "042-op-ldz-c2-08-cc7paprr-vs-sch7paecrx-C42": {
+      "preview": "5899293949594799519999062599999999222041405060742699990323449983",
+      "description": "op ldz c2 08 cc7paprr vs sch7paecrx C42"
+    },
+    "043-op-ldz-c2-09-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "9927294849596599670747062599999999992041405060452216860323999983",
+      "description": "op ldz c2 09 cc7paprr vs sch7paecrx C45"
+    },
+    "044-op-ldz-c2-10-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "1299293949486967562243069946998632999941405042662421620399996483",
+      "description": "op ldz c2 10 cc7paprr vs sch7paecrx C45"
+    },
+    "045-op-ldz-c2-11-cc7paprr-vs-sch7paecrx-C45": {
+      "preview": "9947293949596967560507062545998699314241405060663832629923436483",
+      "description": "op ldz c2 11 cc7paprr vs sch7paecrx C45"
+    },
+    "046-op-ldz-c2-12-cc7paprr-vs-sch7paecrx-C42": {
+      "preview": "9927474849596967560737062546998699224241405060667301620323436483",
+      "description": "op ldz c2 12 cc7paprr vs sch7paecrx C42"
+    },
+    "047-op-ldz-c2-13-cc7paprr-vs-sch7paecrx-C42": {
+      "preview": "1999293949596999560744062545658610994241405060627018670323999983",
+      "description": "op ldz c2 13 cc7paprr vs sch7paecrx C42"
+    },
+    "048-op-ldz-c2-14-cc7paprr-vs-sch7paecrx-C42-01": {
+      "preview": "2227474849596999990876062546998651992030405060746799990323436483",
+      "description": "op ldz c2 14 cc7paprr vs sch7paecrx C42 01"
+    },
+    "049-op-ldz-c2-15-cc7paprr-vs-sch7paecrx-C42-02": {
+      "preview": "1299293949596967330747062546668652222030404160557099610323996483",
+      "description": "op ldz c2 15 cc7paprr vs sch7paecrx C42 02"
+    },
+    "050-op-ldz-c2-16-cc7paprr-vs-sch7paecrx-C42": {
+      "preview": "0927474849596967551537062546998600222041405060665212610323436483",
+      "description": "op ldz c2 16 cc7paprr vs sch7paecrx C42"
+    },
+    "051-op-ldz-c2-17-cc7paprr-vs-sch7paecrx-C48": {
+      "preview": "9935293949596967991127062546668699222030405042629901810323436483",
+      "description": "op ldz c2 17 cc7paprr vs sch7paecrx C48"
+    },
+    "052-op-ldz-c2-18-cc7paprr-vs-sch7paecrx-C48": {
+      "preview": "3799293949596967993247062546668614220230405020629999610399436483",
+      "description": "op ldz c2 18 cc7paprr vs sch7paecrx C48"
+    },
+    "053-op-ldz-c2-19-cc7paprr-vs-sch7paecrx-C47": {
+      "preview": "9999473949486953639999062599998656224241405099999999990323439983",
+      "description": "op ldz c2 19 cc7paprr vs sch7paecrx C47"
+    },
+    "054-op-ldz-c2-20-cc7paprr-vs-sch7paecrx-C41": {
+      "preview": "0927474849596946332399062545998610624230405060997866580399996483",
+      "description": "op ldz c2 20 cc7paprr vs sch7paecrx C41"
+    },
+    "055-op-ldz-c2-21-cc7paprr-vs-sch7paecrx-C49": {
+      "preview": "0923293949596999669947062534998610224241405060993817990399439983",
+      "description": "op ldz c2 21 cc7paprr vs sch7paecrx C49"
+    },
+    "056-op-ldz-c2-22-cc7paprr-vs-sch7paecrx-C49": {
+      "preview": "1907294849598788542747062445999900222041405060866646750323439983",
+      "description": "op ldz c2 22 cc7paprr vs sch7paecrx C49"
+    },
+    "057-op-ldz-c2-23-cc7paprr-vs-sch7pa-rt-a-e-C31-01": {
+      "preview": "1714293949596967662747069946998632222441405060627002720323439983",
+      "description": "op ldz c2 23 cc7paprr vs sch7pa rt a e C31 01"
+    },
+    "058-op-ldz-c2-24-cc7paprr-vs-sch7pa-rt-a-e-C31-02": {
+      "preview": "1934293949596967731747062499668630224241405060547026720399456483",
+      "description": "op ldz c2 24 cc7paprr vs sch7pa rt a e C31 02"
+    },
+    "059-op-ldz-c2-25-cc7paprr-vs-sch7parrr-C33-01": {
+      "preview": "0946293949596967629999062599668645992030405060997041990399996483",
+      "description": "op ldz c2 25 cc7paprr vs sch7parrr C33 01"
+    },
+    "060-op-ldz-c2-26-cc7paprr-vs-sch7parrr-C32-02": {
+      "preview": "3827293949596955631747069946548601222030405042626016660325439983",
+      "description": "op ldz c2 26 cc7paprr vs sch7parrr C32 02"
+    },
+    "061-op-ldz-c2-27-cc7paprr-vs-sch7palt-rbh-C37-01": {
+      "preview": "0923994849594767531737062546998630224241405060827062520399439983",
+      "description": "op ldz c2 27 cc7paprr vs sch7palt rbh C37 01"
+    },
+    "062-op-ldz-c2-28-cc7paprr-vs-sch7palt-rbh-C37-02": {
+      "preview": "0999294849596999991725062299998600994241405060997699990399995583",
+      "description": "op ldz c2 28 cc7paprr vs sch7palt rbh C37 02"
+    },
+    "063-op-ldz-c2-29-cc7paprr-vs-sch7palt-rbh-C37-03": {
+      "preview": "3427293949598754516599069999998600144241405060457499520325999983",
+      "description": "op ldz c2 29 cc7paprr vs sch7palt rbh C37 03"
+    },
+    "064-op-ldz-c2-30-cc7paprr-vs-sch7palt-rbh-C38-04": {
+      "preview": "1933993949596936511132062546998601224299404160995864890323435583",
+      "description": "op ldz c2 30 cc7paprr vs sch7palt rbh C38 04"
+    },
+    "065-op-ldz-c2-31-cc7paprr-vs-sch7palt-rbh-C38-05": {
+      "preview": "0835293949596927997672062546998610224230405060629911660323439983",
+      "description": "op ldz c2 31 cc7paprr vs sch7palt rbh C38 05"
+    },
+    "066-op-ldz-c2-32-cc7paprr-vs-sch7palt-rbh-C39-06": {
+      "preview": "1999473949596967430799062546998610994230405060997018520323996483",
+      "description": "op ldz c2 32 cc7paprr vs sch7palt rbh C39 06"
+    },
+    "067-op-ldz-c2-33-cc7paprr-vs-sch7palt-rbh-C39-07": {
+      "preview": "9935073949596948439999062546998699104241405060757499999923996683",
+      "description": "op ldz c2 33 cc7paprr vs sch7palt rbh C39 07"
+    },
+    "068-op-ldz-c2-34-ccrbc-vs-sch-01": {
+      "preview": "5799293949598799531243062546998611994241405060997530820323996483",
+      "description": "op ldz c2 34 ccrbc vs sch 01"
+    },
+    "069-op-ldz-c2-35-ccrbc-vs-sch-02": {
+      "preview": "1835293949594799482067069999668699349941405024627042460399436483",
+      "description": "op ldz c2 35 ccrbc vs sch 02"
+    },
+    "070-op-ldz-c2-36-ccrbc-vs-sch-03": {
+      "preview": "9935473949596967129936062546668699224230405060745199720323436483",
+      "description": "op ldz c2 36 ccrbc vs sch 03"
+    },
+    "071-op-ldz-c2-37-cc7fh-vs-sch-2prc-01": {
+      "preview": "2299294839596999346747062599668610994241405060464399450323996483",
+      "description": "op ldz c2 37 cc7fh vs sch 2prc 01"
+    },
+    "072-op-ldz-c2-38-ccrrr7fh-vs-sch-01": {
+      "preview": "6535293949596948180747069946998611344230405060622112740399439983",
+      "description": "op ldz c2 38 ccrrr7fh vs sch 01"
+    },
+    "073-op-ldz-c2-39-ccrrr7fh-vs-sch-02": {
+      "preview": "1227293949598734990743062446998620994241405060547599560399999983",
+      "description": "op ldz c2 39 ccrrr7fh vs sch 02"
+    },
+    "074-op-ldz-c2-40-ccrrr7fh-vs-sch-03": {
+      "preview": "0873293949596935991537062546999900224241405060869914720323446683",
+      "description": "op ldz c2 40 ccrrr7fh vs sch 03"
+    },
+    "075-op-ldz-c2-41-ccrrr7fh-vs-sch-04": {
+      "preview": "1543293949596967999999992546998600992030504142669999310399996483",
+      "description": "op ldz c2 41 ccrrr7fh vs sch 04"
+    },
+    "076-op-ldz-c2-42-cc7fh-vs-sch": {
+      "preview": "9935293949484767892737069946668699104230405060627024720399436483",
+      "description": "op ldz c2 42 cc7fh vs sch"
+    },
+    "077-op-ldz-c2-43-57c7pa-vs-sch-rt-prc-01": {
+      "preview": "9927293949598758999943063345999999554230404160999976860499996483",
+      "description": "op ldz c2 43 57c7pa vs sch rt prc 01"
+    },
+    "078-op-ldz-c2-44-57c7pa-vs-sch-rt-prc-02": {
+      "preview": "0919293949596999992747069945548615224230405060419918990324439983",
+      "description": "op ldz c2 44 57c7pa vs sch rt prc 02"
+    },
+    "079-op-ldz-c2-45-57c-vs-sch7pa-rt-prc-01": {
+      "preview": "2607293949596999999947059946658610994241405060549944990399439983",
+      "description": "op ldz c2 45 57c vs sch7pa rt prc 01"
+    },
+    "080-op-ldz-c2-46-57c-vs-sch7pa-rt-rbc-02": {
+      "preview": "2599293949596999192899059944998630244241405060997099990399996583",
+      "description": "op ldz c2 46 57c vs sch7pa rt rbc 02"
+    },
+    "081-op-ldz-c2-47-57c-vs-sch7pa-rt-rbc-03": {
+      "preview": "9926293949594775709999059946998610994230405060999964650399439983",
+      "description": "op ldz c2 47 57c vs sch7pa rt rbc 03"
+    },
+    "082-op-ldz-c2-48-57c-vs-sch7pa-lt-prc-04": {
+      "preview": "9999293949486975769907992646998618276430405060629999990499439983",
+      "description": "op ldz c2 48 57c vs sch7pa lt prc 04"
+    },
+    "083-op-ldz-c2-49-57c-vs-sch7pa-rt-prc-05": {
+      "preview": "9907293949596946862799052699659910222030405060994499990323439983",
+      "description": "op ldz c2 49 57c vs sch7pa rt prc 05"
+    },
+    "084-op-ldz-c2-50-56c-lt-side-h-vs-sch-7pa": {
+      "preview": "9915293949486967653747052546998699222041405042747864820323439983",
+      "description": "op ldz c2 50 56c lt side h vs sch 7pa"
+    },
+    "085-op-ldz-c2-51-ccprr-lt-side-h-vs-sch-7pa": {
+      "preview": "0828293949596967765348062646998600224230405060667061740323439983",
+      "description": "op ldz c2 51 ccprr lt side h vs sch 7pa"
+    },
+    "086-op-ldz-c2-52-cc5paprr-vs-sch7pa": {
+      "preview": "9946293949596999531799062699998620224241405060999914990324559983",
+      "description": "op ldz c2 52 cc5paprr vs sch7pa"
+    },
+    "087-op-ldz-c2-53-cc5paprr-vs-sch7pa": {
+      "preview": "9946293949596967990447062645668699222030405082709923429924436483",
+      "description": "op ldz c2 53 cc5paprr vs sch7pa"
+    },
+    "088-op-ldz-c2-54-cc5paprr-vs-sch7pa": {
+      "preview": "3846293949596973991777062699998600222041405060649912720324439983",
+      "description": "op ldz c2 54 cc5paprr vs sch7pa"
+    },
+    "089-op-ldz-c2-55-cc5paprr-vs-sch7pa": {
+      "preview": "7627293949594767251756069946998630344241405060547012720399439983",
+      "description": "op ldz c2 55 cc5paprr vs sch7pa"
+    },
+    "090-op-ldz-c2-56-cc5paprr-vs-sch7pa": {
+      "preview": "6507293949486975996777062646998630224241405060829913520324439983",
+      "description": "op ldz c2 56 cc5paprr vs sch7pa"
+    },
+    "091-op-ldz-c2-57-58c3pa-vs-sch-01": {
+      "preview": "2707293949596999999947069999659943032030405042249999990499999984",
+      "description": "op ldz c2 57 58c3pa vs sch 01"
+    },
+    "092-op-ldz-c2-58-58c3pa-vs-sch-02": {
+      "preview": "2527073949486967996357069946658615342030405042629922260499439983",
+      "description": "op ldz c2 58 58c3pa vs sch 02"
+    },
+    "093-op-ldz-c2-59-57c3pa-vs-sch13pa-rt-rbh-01": {
+      "preview": "9907474849596922762805992699998699542030404142437032729924996383",
+      "description": "op ldz c2 59 57c3pa vs sch13pa rt rbh 01"
+    },
+    "094-op-ldz-c2-60-57c3pa-vs-sch13pa-rt-rbh-02": {
+      "preview": "5807293949596953762877992645998637142030404142817111739924436483",
+      "description": "op ldz c2 60 57c3pa vs sch13pa rt rbh 02"
+    },
+    "095-op-ldz-c2-61-57c3pa-vs-sch13pa-rt-rbh-03": {
+      "preview": "9999073949596975990848992646998699992030404164629927829935439983",
+      "description": "op ldz c2 61 57c3pa vs sch13pa rt rbh 03"
+    },
+    "096-op-ldz-c2-62-57c3pa-vs-sch13pa-rt-rbh-04": {
+      "preview": "1199293949486967992707992646658605144230404160709999349924436383",
+      "description": "op ldz c2 62 57c3pa vs sch13pa rt rbh 04"
+    },
+    "097-op-ldz-c2-63-57c3pa-vs-sch-01": {
+      "preview": "3507294849594767992837992646658654062030404142709912820424436483",
+      "description": "op ldz c2 63 57c3pa vs sch 01"
+    },
+    "098-op-ldz-c2-64-57c3pa-vs-sch-02": {
+      "preview": "2726293949596967759947993446658635992030404142627002740399436383",
+      "description": "op ldz c2 64 57c3pa vs sch 02"
+    },
+    "099-op-ldz-c2-65-57c-vs-sch3pa": {
+      "preview": "9907293949596967993744992646658699064241305060629912820324996383",
+      "description": "op ldz c2 65 57c vs sch3pa "
+    },
+    "100-op-ldz-c2-66-ccrrr5paclh-vs-sch": {
+      "preview": "0999293949596946884499062699668600992030404142627099790324996383",
+      "description": "op ldz c2 66 ccrrr5paclh vs sch"
+    },
+    "101-op-ldz-c3-67-sdc-rr-vs-fr-01": {
+      "preview": "5299293949596967994243062646668600022099403060707619990323996383",
+      "description": "op ldz c3 67 sdc rr vs fr 01"
+    },
+    "102-op-ldz-c3-68-sdc-rr-vs-fr-02": {
+      "preview": "0407474849596967111627992546998600022030404142625632529924436483",
+      "description": "op ldz c3 68 sdc rr vs fr 02"
+    },
+    "103-op-ldz-c3-69-sdc-rr-vs-fr-03": {
+      "preview": "5899293949596999334843052645998610022030404160996667420324996383",
+      "description": "op ldz c3 69 sdc rr vs fr 03"
+    },
+    "104-op-ldz-c3-70-sdc-rr-vs-fr-04": {
+      "preview": "1827474849596967351337062646658610224230404160625402520324436383",
+      "description": "op ldz c3 70 sdc rr vs fr 04"
+    },
+    "105-op-ldz-c3-71-sdc-rr-vs-fr-05": {
+      "preview": "0927295749596967991847062646998699302041405060625312420324439983",
+      "description": "op ldz c3 71 sdc rr vs fr 05"
+    },
+    "106-op-ldz-c3-72-sdc-fr-vs-rr-01": {
+      "preview": "0999073949488799792547062499668610992030504160625546990399436383",
+      "description": "op ldz c3 72 sdc fr vs rr 01"
+    },
+    "107-op-ldz-c3-73-sdc-fr-vs-rr-02": {
+      "preview": "3307293949486967732747052699668613222030405060625445420323436483",
+      "description": "op ldz c3 73 sdc fr vs rr 02"
+    },
+    "108-op-ldz-c3-74-sdc-fr-vs-rr-03": {
+      "preview": "1735473959486999763144062599658610332041305060993612660323996383",
+      "description": "op ldz c3 74 sdc fr vs rr 03"
+    },
+    "109-op-ldz-c3-75-sdc-fr-vs-rr-04": {
+      "preview": "0927254849596955791557069946658601222030405060624412420399439983",
+      "description": "op ldz c3 75 sdc fr vs rr 04"
+    },
+    "110-op-ldz-c3-76-sdc-fr-vs-sr-01": {
+      "preview": "2699293949486967799947069944998600990241405042621766990324436583",
+      "description": "op ldz c3 76 sdc fr vs sr 01"
+    },
+    "111-op-ldz-c3-77-sdc-fr-vs-sr-02": {
+      "preview": "3515293949489999991747062545998600224241405060999962520323996483",
+      "description": "op ldz c3 77 sdc fr vs sr 02"
+    },
+    "112-op-ldz-c4-78-odc-01": {
+      "preview": "9999293949596967501043052646668654992099519960749942220324996384",
+      "description": "op ldz c4 78 odc 01"
+    },
+    "113-op-ldz-c4-79-odc-02": {
+      "preview": "1927473949596955991168069946659901222030405060629942260424436383",
+      "description": "op ldz c4 79 odc 02"
+    },
+    "114-op-ldz-c4-80-cc-vs-lt-c-blockade-with-odc-variation-01": {
+      "preview": "9965474849596953782399062699998699012030405060627599760324436683",
+      "description": "op ldz c4 80 cc vs lt c blockade with odc variation 01"
+    },
+    "115-op-ldz-c4-81-cc-vs-lt-c-blockade-with-odc-variation-02": {
+      "preview": "9919293949592599999988069946658699222030404142629999990399439983",
+      "description": "op ldz c4 81 cc vs lt c blockade with odc variation 02"
+    },
+    "116-op-ldz-c4-82-cc-vs-lt-c-blockade-with-odc-variation-03": {
+      "preview": "1727293949594779999948069945658634222030405060629999660323436383",
+      "description": "op ldz c4 82 cc vs lt c blockade with odc variation 03"
+    },
+    "117-op-ldz-c4-83-cc-vs-lt-3st-with-halfway-odc-variation": {
+      "preview": "1899473949596967992737062546998699222030405060995462820323439983",
+      "description": "op ldz c4 83 cc vs lt 3st with halfway odc variation "
+    },
+    "118-op-ldz-c4-84-57c3pa-vs-sah-lt-e": {
+      "preview": "9926994849596967543844069945998699222030504142667027520399996583",
+      "description": "op ldz c4 84 57c3pa vs sah lt e"
+    },
+    "119-op-ldz-c4-85-56c3pa-vs-sah-lt-e": {
+      "preview": "9915293949379948629947059946658699222030404142996699690399436383",
+      "description": "op ldz c4 85 56c3pa vs sah lt e"
+    },
+    "120-op-ldz-c4-86-56c3pa-vs-sah-rt-e": {
+      "preview": "1507293949484767653757052646998510224241405060823113520324439983",
+      "description": "op ldz c4 86 56c3pa vs sah rt e"
+    },
+    "121-op-ldz-c4-87-57c3parrr-vs-sah-rt-e": {
+      "preview": "1307293949488799432747052646998610994241405060826412520324999983",
+      "description": "op ldz c4 87 57c3parrr vs sah rt e"
+    },
+    "122-op-ldz-c4-88-cc-with-37pa-vs-sah": {
+      "preview": "1427473949596567992337062546998676602030405042629902540399439983",
+      "description": "op ldz c4 88 cc with 37pa vs sah"
+    },
+    "123-op-ldz-c4-89-56c-left-proper-horse-vs-sah": {
+      "preview": "0735293949484716793799069946998663342030404142438002990399999983",
+      "description": "op ldz c4 89 56c left proper horse vs sah"
+    },
+    "124-op-ldz-c4-90-cc-with-fr-pin-vs-sah-7pa": {
+      "preview": "2899293949596967993744062646668610224241405060709931990323996483",
+      "description": "op ldz c4 90 cc with fr pin vs sah 7pa"
+    },
+    "125-op-ldz-c5-91-cc-vs-shd": {
+      "preview": "1927294849596999990747062546658633224241405060629926990323996384",
+      "description": "op ldz c5 91 cc vs shd "
+    },
+    "126-op-ldz-c5-92-ap-rt-proper-h-vs-td-with-3pa": {
+      "preview": "0807253949596967729999069946998680352030405042706699990399436399",
+      "description": "op ldz c5 92 ap rt proper h vs td with 3pa"
+    },
+    "127-op-ldz-c5-93-ap-lt-cc-vs-td-with-odc": {
+      "preview": "9999993949596999439999069946998699992041405099992699999999996483",
+      "description": "op ldz c5 93 ap lt cc vs td with odc"
+    },
+    "128-op-ldz-c5-94-ap-rt-cc-vs-td-with-rt-e-and-rr": {
+      "preview": "2999474849596967763755992546659914994241405060820602520323996399",
+      "description": "op ldz c5 94 ap rt cc vs td with rt e and rr"
+    },
+    "129-op-ldz-c5-95-ap-rt-cc-vs-td-with-rt-e-3pa": {
+      "preview": "9907654849596987465785069945998699314241405060827322720325999999",
+      "description": "op ldz c5 95 ap rt cc vs td with rt e 3pa"
+    },
+    "130-op-ldz-c5-96-ap-lt-cc-vs-td-left-e": {
+      "preview": "9935293949596967990799992546668699022030404142999951709923446483",
+      "description": "op ldz c5 96 ap lt cc vs td left e"
+    },
+    "131-op-ldz-c5-97-ap-vs-h": {
+      "preview": "0927474849596967881757069946658600224241405060622412820399436383",
+      "description": "op ldz c5 97 ap vs h"
+    },
+    "132-op-ldz-c5-98-p-with-td-vs-p": {
+      "preview": "0946654849596954894767062599648616222030404160828076720323449983",
+      "description": "op ldz c5 98 p with td vs p"
+    },
+    "133-op-ldz-c5-99-p-vs-e": {
+      "preview": "9927293949484734793753062546998499104230405060546102520323436499",
+      "description": "op ldz c5 99 p vs e"
+    },
+    "134-op-ldz-c7-100-E-Rt-pH-vs-Lt-CPC-A34": {
+      "preview": "9915293949594767753787059946668699024230405060622122320399436483",
+      "description": "op ldz c7 100 E Rt pH vs Lt CPC A34"
+    },
+    "135-op-ldz-c7-101-E-vs-rt-pcc-A23": {
+      "preview": "3515293949594775997799052646668599142030404142625032990324436483",
+      "description": "op ldz c7 101 E vs rt pcc A23"
+    },
+    "136-op-ldz-c7-102-E-vs-Lt-ccC-A27": {
+      "preview": "1927293949484767691257992546668604022030405060627022429923436483",
+      "description": "op ldz c7 102 E vs Lt ccC A27"
+    },
+    "032-op-ldz-c0102021202-attack-only-at-the-best-possible-time": {
+      "preview": "0927293949596967881747062646668600102030405060627012820323436483",
+      "description": "op ldz c0102021202 attack only at the best possible time　"
+    },
+    "029-op-ldz-c0102021001-be-keenly-aware-of-spatial-issues": {
+      "preview": "0919293949596967791747062546668600102030405060627012760323436483",
+      "description": "op ldz c0102021001 be keenly aware of spatial issues　　"
+    }
+  }
 }
