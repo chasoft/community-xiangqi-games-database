@@ -180,11 +180,11 @@ export function addHanVietTranslation(text: string): string {
 export function convertResultText(result: string): string {
 	switch (result) {
 		case "红胜":
-			return "红胜 (đỏ thắng / tiên thắng)"
+			return "红胜 (đỏ / tiên thắng)"
 		case "黑胜":
-			return "黑胜 (đen thắng / hậu thắng)"
+			return "黑胜 (đen / hậu thắng)"
 		case "未知":
-			return "未知 (Không rõ / unknown)"
+			return "未知 (không rõ)"
 		case "和局":
 			return "和局 (hòa)"
 		default:
@@ -226,8 +226,6 @@ export interface XiangqiGame {
 	redTeam: string
 	blackTeam: string
 	gameType: string
-	author: string
-	owner: string
 	remarks: string
 	allTextContent?: string
 	movelist: string
@@ -280,8 +278,6 @@ export function applyDataConversions(game: XiangqiGame): XiangqiGame {
 		"redTeam",
 		"blackTeam",
 		"gameType",
-		"author",
-		"owner",
 		"openingName",
 		"remarks"
 	]

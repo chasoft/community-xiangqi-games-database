@@ -10,8 +10,8 @@
 		"build-sitemap": "bun ./src/build-sitemap.ts",
 		"add-game-preview": "bun ./src/add-game-preview.ts",
 		"screenshot": "bun ./src/generate-screenshot.ts",
-		"build-search": "bun ./src/build-search-db.ts",
-		"build-search:test": "export TEST_MODE=true && bun ./src/build-search-db.ts",
+		"build-search": "bun ./src/build-search-db-v2.ts",
+		"build-search:test": "export TEST_MODE=true && bun ./src/build-search-db-v2.ts",
 		"upload-search": "bun ./src/upload-search-data",
 		"start": "bun run src/build.ts",
 		"test-fenboard": "bun run src/test-fenboard.ts"

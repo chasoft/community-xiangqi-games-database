@@ -39,23 +39,82 @@ function extractYearFromFilename(filename: string): string {
 /**
  * Extracts the tournament name from a filename.
  * Removes the year prefix, date information, and the ".register.json" extension.
+ * Handles various formats including:
+ * - YYYY + tournament name
+ * - YYYY- + tournament name
+ * - YYYY年 + tournament name
+ * - YYYY年- + tournament name
+ * - YYYY-YYYY + tournament name
+ * - YYYY年-YYYY + tournament name
+ * - YYYY-X-Y + tournament name (date formats)
+ * - YYYY年-X-Y + tournament name (date formats with 年)
+ * - YYYY月日 + tournament name (Chinese date format)
+ * - YYYY年-月日 + tournament name (Chinese date format with 年-)
+ * - YYYY年-XX月 + tournament name (year with month only)
+ * - YYYY年-XX日 + tournament name (year with day only)
+ * - YYYY年-XX + tournament name (year with numeric month/day without 月/日 indicator)
+ * - YYYY年-XX- + tournament name (year with numeric month/day with trailing dash)
  */
 export function extractTournamentName(filename: string): string {
 	console.log("Extracting tournament name from filename:", filename)
 	// Remove the extension
 	const withoutExtension = filename.replace(".register.json", "")
 
-	// Special case for year-ranges like "1998-12-199901第14届五羊杯电视快棋赛"
+	// First, handle the specific case with year + month + day format (highest priority)
+	// Examples: "2018年-03月18日太原市阳曲县"升龙杯"象棋赛" or "201803月18日太原市阳曲县"升龙杯"象棋赛"
+	const yearMonthDayPattern = /^\d{4}(?:年-|年)?(\d{1,2})月(\d{1,2})日(.+)/
+	const yearMonthDayMatch = withoutExtension.match(yearMonthDayPattern)
+	if (yearMonthDayMatch?.[3]) {
+		console.log(`Original: ${filename}`)
+		console.log(`Extracted: ${yearMonthDayMatch[3]}`)
+		return cleanupTournamentName(yearMonthDayMatch[3])
+	}
+
+	// Handle case with year + month only format (high priority) - e.g., "2012年-11月全国象棋甲级联赛"
+	const yearMonthPattern = /^\d{4}(?:年-|年)?(\d{1,2})月(.+)/
+	const yearMonthMatch = withoutExtension.match(yearMonthPattern)
+	if (yearMonthMatch?.[2]) {
+		console.log(`Original: ${filename}`)
+		console.log(`Extracted: ${yearMonthMatch[2]}`)
+		return cleanupTournamentName(yearMonthMatch[2])
+	}
+
+	// Handle case with year + day only format (high priority) - e.g., "2012年-11日全国象棋甲级联赛"
+	const yearDayPattern = /^\d{4}(?:年-|年)?(\d{1,2})日(.+)/
+	const yearDayMatch = withoutExtension.match(yearDayPattern)
+	if (yearDayMatch?.[2]) {
+		console.log(`Original: ${filename}`)
+		console.log(`Extracted: ${yearDayMatch[2]}`)
+		return cleanupTournamentName(yearDayMatch[2])
+	}
+
+	// Handle case with year + numeric value without 月/日 indicator - e.g., "1993年-09" or "1993年-09-"
+	const yearNumericPattern = /^\d{4}(?:年-|年)?(\d{1,2})(?:-)?(.+)/
+	const yearNumericMatch = withoutExtension.match(yearNumericPattern)
+	if (yearNumericMatch?.[2]) {
+		console.log(`Original: ${filename}`)
+		console.log(`Extracted: ${yearNumericMatch[2]}`)
+		return cleanupTournamentName(yearNumericMatch[2])
+	}
+
+	// Special case for year-ranges like "1998-12-199901第14届五羊杯电视快棋赛" or "1998年-12-199901第14届五羊杯电视快棋赛"
 	// Handle year-date-year pattern more generically
-	const yearRangePattern = /^\d{4}-\d+-\d+(.*)/
+	const yearRangePattern = /^\d{4}(?:年)?-\d+-\d+(.*)/
 	const yearRangeMatch = withoutExtension.match(yearRangePattern)
 	if (yearRangeMatch?.[1]) {
 		return cleanupTournamentName(yearRangeMatch[1])
 	}
 
-	// Handle year-to-year ranges like "YYYY-YYYY" with variable digit count for the second year
+	// Handle formats like "1998年-第14届五羊杯电视快棋赛"
+	const yearWithSuffixPattern = /^\d{4}年-(.+)/
+	const yearWithSuffixMatch = withoutExtension.match(yearWithSuffixPattern)
+	if (yearWithSuffixMatch?.[1]) {
+		return cleanupTournamentName(yearWithSuffixMatch[1])
+	}
+
+	// Handle year-to-year ranges like "YYYY-YYYY" or "YYYY年-YYYY" with variable digit count for the second year
 	// (since X could be 1-4 digits)
-	const yearToYearPattern = /^\d{4}-\d+(.*)/
+	const yearToYearPattern = /^\d{4}(?:年)?-\d+(.*)/
 	const yearToYearMatch = withoutExtension.match(yearToYearPattern)
 	if (yearToYearMatch?.[1]) {
 		// Make sure we're not matching something that should be handled by more specific patterns
@@ -65,20 +124,23 @@ export function extractTournamentName(filename: string): string {
 		}
 	}
 
-	// More specific pattern to extract just the tournament name:
-	// Match YYYY year patterns followed by optional date information
-	// Handling X as variable length (1-4 digits)
-
-	// First try to match year + date format with month/day components
+	// Handle other date formats (like just month or just day)
 	const datePattern =
-		/^\d{4}(?:年|\-)?(?:\d{1,4}月\d{1,4}日|\d{1,4}月|\d{1,4}日|\-\d+|\-\d+\-\d+)(.*)/
+		/^\d{4}(?:年-|年|\-)?(?:\d{1,4}月|\d{1,4}日|\-\d+|\-\d+\-\d+)(.*)/
 	const dateMatch = withoutExtension.match(datePattern)
 	if (dateMatch?.[1]) {
 		return cleanupTournamentName(dateMatch[1])
 	}
 
+	// Handle case with just digits after year (like "1993年-09" or "1993年-09-")
+	const yearDigitsPattern = /^\d{4}(?:年-|年|\-)?(\d{1,4})(?:-|\b)(.*)/
+	const yearDigitsMatch = withoutExtension.match(yearDigitsPattern)
+	if (yearDigitsMatch?.[2]) {
+		return cleanupTournamentName(yearDigitsMatch[2])
+	}
+
 	// If no date component, try simpler year prefix patterns
-	const yearPattern = /^\d{4}(?:年|\-)?(.*)/
+	const yearPattern = /^\d{4}(?:年-|年|\-)?(.*)/
 	const yearMatch = withoutExtension.match(yearPattern)
 	if (yearMatch?.[1]) {
 		return cleanupTournamentName(yearMatch[1])
@@ -92,7 +154,7 @@ export function extractTournamentName(filename: string): string {
  * Additional cleanup for tournament names:
  * - Replace Chinese commas with hyphens
  * - Remove various types of game count suffixes
- * - Trim trailing hyphens
+ * - Trim leading and trailing hyphens
  */
 function cleanupTournamentName(name: string): string {
 	// Replace commas with hyphens
@@ -106,8 +168,11 @@ function cleanupTournamentName(name: string): string {
 	cleanName = cleanName.replace(/\(全\d+局缺\d+局\)$/, "") // (全X局缺X局)
 	cleanName = cleanName.replace(/\d+局$/, "") // X局
 
-	// Trim any trailing spaces and hyphens
-	return cleanName.trim().replace(/-+$/, "")
+	// Trim any leading and trailing spaces and hyphens
+	cleanName = cleanName.trim()
+	cleanName = cleanName.replace(/^-+/, "") // Remove leading hyphens
+	cleanName = cleanName.replace(/-+$/, "") // Remove trailing hyphens
+	return cleanName
 }
 
 /**
@@ -253,7 +318,32 @@ function compressJsonFile(filepath: string): void {
 
 // Main execution
 try {
-	console.log("Indexing tournaments...")
+	// Test extraction with example filenames
+	console.log("\nTesting extractTournamentName function with sample filenames:")
+	const testCases = [
+		"1998-12-199901第14届五羊杯电视快棋赛.register.json",
+		"1998年-12-199901第14届五羊杯电视快棋赛.register.json",
+		"1998第14届五羊杯电视快棋赛.register.json",
+		"1998年-第14届五羊杯电视快棋赛.register.json",
+		'201803月18日太原市阳曲县"升龙杯"象棋赛.register.json',
+		'2018年-03月18日太原市阳曲县"升龙杯"象棋赛.register.json',
+		"2012年-11月全国象棋甲级联赛.register.json",
+		"2012年-11日全国象棋甲级联赛.register.json",
+		"201211月全国象棋甲级联赛.register.json",
+		"201211日全国象棋甲级联赛.register.json",
+		"1993年-09全国象棋锦标赛.register.json",
+		"1993年-09-全国象棋锦标赛.register.json",
+		"199309全国象棋锦标赛.register.json",
+		"199309-全国象棋锦标赛.register.json"
+	]
+
+	for (const testCase of testCases) {
+		const result = extractTournamentName(testCase)
+		console.log(`\nOriginal: ${testCase}`)
+		console.log(`Extracted: ${result}`)
+	}
+
+	console.log("\nIndexing tournaments...")
 	const { allTournaments, unmatchedFiles } = indexTournaments()
 
 	// Write the result to the output file
