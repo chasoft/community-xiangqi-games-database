@@ -55,15 +55,15 @@ export type SearchItem = {
 	// --- Consolidated Text Content (For Fuzzy Search) ---
 
 	/**
-	 * Combined text from remarks (_remark) and all comments (_commentN, potentially others).
+	 * "allTextContent" Combined text from remarks (_remark) and all comments (_commentN, potentially others).
 	 * This single field makes fuzzy searching across all annotations easier with Fuse.js.
 	 */
-	allTextContent: string
+	aTC: string
 
 	// --- Essential Game Data (Optional inclusion based on size vs. utility) ---
 
-	/** Main movelist string (from DhtmlXQ_movelist). */
-	movelist: string
+	/** "movelist" Main movelist string (from DhtmlXQ_movelist). */
+	m: string
 	/* Optional: Initial board FEN-like string (from DhtmlXQ_binit). */
 	// binit?: string;
 
@@ -329,12 +329,12 @@ async function buildSearchData() {
 				rT: convertedData.redTeam || "",
 				bT: convertedData.blackTeam || "",
 				g: gameType,
-				movelist: convertedData.movelist || "",
+				m: convertedData.movelist || "",
 				// binit: parsedData.binit || undefined, // Optional
 				/**
 				 * Currently, we will not include text content
 				 */
-				allTextContent: [
+				aTC: [
 					ownerIdMapping[groupName as OwnerIdMapping],
 					collectionFolderName.replaceAll("-", " ")
 				].join(" ")
