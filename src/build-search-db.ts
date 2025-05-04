@@ -14,60 +14,56 @@ const TEST_FILE_LIMIT = 1000 // Number of files to process in test mode
  * Represents a single Chinese Chess game record optimized for searching.
  */
 export type SearchItem = {
-	/** Unique identifier for the game (e.g., "collectionName/filename"). Primary Key in IndexedDB. */
-	id: string
+	/** "id" Unique identifier for the game (e.g., "collectionName/filename"). Primary Key in IndexedDB. */
+	i: string
 
-	/** The name of the collection (folder) the game belongs to. Indexed. */
-	collectionName: string
+	/** "collectionName" The name of the collection (folder) the game belongs to. Indexed. */
+	c: string
 
 	// --- Core Metadata (Likely Indexed & Searched) ---
 
-	/** Game title (from DhtmlXQ_title). */
-	title: string
-	/** Event/Tournament name (from DhtmlXQ_event). Indexed. */
-	event: string
-	/** Original date string (from DhtmlXQ_date). */
-	dateStr: string
-	/** Extracted year from dateStr (e.g., 2023 or null if invalid/missing). Indexed. */
-	eventYear: number | null
-	/** Location of the game (from DhtmlXQ_place). */
-	place: string
-	/** Red player's name (from DhtmlXQ_red). Indexed. */
-	redPlayer: string
-	/** Black player's name (from DhtmlXQ_black). Indexed. */
-	blackPlayer: string
-	/** Opening name/classification (from DhtmlXQ_open). Potentially Indexed. */
-	openingName: string
-	/** Game result string (from DhtmlXQ_result). */
-	result: string
+	/** "title" Game title (from DhtmlXQ_title). */
+	t: string
+	/** "event" Event/Tournament name (from DhtmlXQ_event). Indexed. */
+	e: string
+	/** "dateStr" Original date string (from DhtmlXQ_date). */
+	d: string
+	/** "eventYear" Extracted year from dateStr (e.g., 2023 or null if invalid/missing). Indexed. */
+	eY: number | null
+	/** "place" Location of the game (from DhtmlXQ_place). */
+	p: string
+	/** "redPlayer" Red player's name (from DhtmlXQ_red). Indexed. */
+	rP: string
+	/** "blackPlayer" Black player's name (from DhtmlXQ_black). Indexed. */
+	bP: string
+	/** "openingName" Opening name/classification (from DhtmlXQ_open). Potentially Indexed. */
+	oN: string
+	/** "result" Game result string (from DhtmlXQ_result). */
+	r: string
 
 	// --- Additional Metadata (Searched, Less Likely Indexed) ---
 
-	/** Round information (from DhtmlXQ_round). */
-	round: string
-	/** Red player's team (from DhtmlXQ_redteam). */
-	redTeam: string
-	/** Black player's team (from DhtmlXQ_blackteam). */
-	blackTeam: string
-	/** Game type description (combined from DhtmlXQ_type, DhtmlXQ_gametype). */
-	gameType: string
-	/** Annotator/author (from DhtmlXQ_author). */
-	author: string
-	/** Source/owner (from DhtmlXQ_owner). */
-	owner: string
+	/** "round" Round information (from DhtmlXQ_round). */
+	rd: string
+	/** "redTeam" Red player's team (from DhtmlXQ_redteam). */
+	rT: string
+	/** "blackTeam" Black player's team (from DhtmlXQ_blackteam). */
+	bT: string
+	/** "gameType" Game type description (combined from DhtmlXQ_type, DhtmlXQ_gametype). */
+	g: string
 
 	// --- Consolidated Text Content (For Fuzzy Search) ---
 
 	/**
-	 * Combined text from remarks (_remark) and all comments (_commentN, potentially others).
+	 * "allTextContent" Combined text from remarks (_remark) and all comments (_commentN, potentially others).
 	 * This single field makes fuzzy searching across all annotations easier with Fuse.js.
 	 */
-	allTextContent: string
+	aTC: string
 
 	// --- Essential Game Data (Optional inclusion based on size vs. utility) ---
 
-	/** Main movelist string (from DhtmlXQ_movelist). */
-	movelist: string
+	/** "movelist" Main movelist string (from DhtmlXQ_movelist). */
+	m: string
 	/* Optional: Initial board FEN-like string (from DhtmlXQ_binit). */
 	// binit?: string;
 
@@ -101,8 +97,6 @@ function parseDhtmlXQ(
 	redTeam: string
 	blackTeam: string
 	gameType: string
-	author: string
-	owner: string
 	remarks: string
 	allTextContent: string
 	movelist: string
@@ -113,21 +107,19 @@ function parseDhtmlXQ(
 	const game = {
 		id: id || "",
 		collectionName: collectionName || "",
-		title: "Untitled",
+		title: "",
 		event: "",
 		dateStr: "",
-		eventYear: null as number | null,
+		eventYear: 0,
 		place: "",
-		redPlayer: "Unknown",
-		blackPlayer: "Unknown",
+		redPlayer: "",
+		blackPlayer: "",
 		openingName: "",
-		result: "Unknown",
+		result: "",
 		round: "",
 		redTeam: "",
 		blackTeam: "",
 		gameType: "",
-		author: "",
-		owner: "",
 		remarks: "",
 		allTextContent: "",
 		movelist: "",
@@ -196,12 +188,6 @@ function parseDhtmlXQ(
 			case "type":
 			case "gametype":
 				game.gameType = content || ""
-				break
-			case "author":
-				game.author = content || ""
-				break
-			case "owner":
-				game.owner = content || ""
 				break
 			case "remark":
 				game.remarks = content || ""
@@ -328,29 +314,27 @@ async function buildSearchData() {
 			const gameType = convertedData.gameType || ""
 
 			const searchItem: SearchItem = {
-				id: `${collectionName}/${filename}`, // Unique ID - keep template literal here as it needs interpolation
-				collectionName: collectionName,
-				title: convertedData.title || "Untitled",
-				event: convertedData.event || "",
-				dateStr: convertedData.dateStr || "",
-				eventYear: convertedData.eventYear || null, // Use the year extracted in parseDhtmlXQ
-				place: convertedData.place || "",
-				redPlayer: convertedData.redPlayer || "Unknown",
-				blackPlayer: convertedData.blackPlayer || "Unknown",
-				openingName: convertedData.openingName || "",
-				result: convertedData.result || "Unknown",
-				round: convertedData.round || "",
-				redTeam: convertedData.redTeam || "",
-				blackTeam: convertedData.blackTeam || "",
-				gameType: gameType,
-				author: convertedData.author || "",
-				owner: convertedData.owner || "",
-				movelist: convertedData.movelist || "",
+				i: `${collectionName}/${filename}`, // Unique ID - keep template literal here as it needs interpolation
+				c: collectionName,
+				t: convertedData.title || "",
+				e: convertedData.event || "",
+				d: convertedData.dateStr || "",
+				eY: convertedData.eventYear || null, // Use the year extracted in parseDhtmlXQ
+				p: convertedData.place || "",
+				rP: convertedData.redPlayer || "",
+				bP: convertedData.blackPlayer || "",
+				oN: convertedData.openingName || "",
+				r: convertedData.result || "",
+				rd: convertedData.round || "",
+				rT: convertedData.redTeam || "",
+				bT: convertedData.blackTeam || "",
+				g: gameType,
+				m: convertedData.movelist || "",
 				// binit: parsedData.binit || undefined, // Optional
 				/**
 				 * Currently, we will not include text content
 				 */
-				allTextContent: [
+				aTC: [
 					ownerIdMapping[groupName as OwnerIdMapping],
 					collectionFolderName.replaceAll("-", " ")
 				].join(" ")
