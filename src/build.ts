@@ -46,7 +46,6 @@ const temp_path = path.join(PROJECT_ROOT, "build.temp")
 
 // Groups to be processed
 const groups = [
-	"community",
 	"end-games",
 	"mid-games",
 	"opening",
