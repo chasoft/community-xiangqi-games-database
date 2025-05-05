@@ -1,134 +1,134 @@
 {
-	"meta": {
-		"title": "Trung Cục Phản Sát",
-		"description": "",
-		"tags": [],
-		"updatedAt": "2025/03/07"
-	},
-	"details": {
-		"01-mm-xqjwms-sw-010101-One-Chariot-Down": {
-			"preview": "6653474849596999991799119999999970224241405060997824994399999999",
-			"description": "mm xqjwms sw 010101 One Chariot Down"
-		},
-		"02-mm-xqjwms-sw-010102-One-Chariot-Down": {
-			"preview": "1944474849596999992799658599999961864241405060997699996383999999",
-			"description": "mm xqjwms sw 010102 One Chariot Down"
-		},
-		"03-mm-xqjwms-sw-010201-One-Cannon-Down": {
-			"preview": "5515293949484799993799264666859904224241405082999908890324436499",
-			"description": "mm xqjwms sw 010201 One Cannon Down"
-		},
-		"04-mm-xqjwms-sw-010202-One-Cannon-Down": {
-			"preview": "6544253949484799999999059999999926022030405099999931990399999999",
-			"description": "mm xqjwms sw 010202 One Cannon Down"
-		},
-		"05-mm-xqjwms-sw-01010301-One-Horse-Down": {
-			"preview": "0308293949489999991399066399999954992030404142999924992643839999",
-			"description": "mm xqjwms sw 01010301 One Horse Down"
-		},
-		"06-mm-xqjwms-sw-01010302-One-Horse-Down": {
-			"preview": "5373073949572599999999869999999915236041405099319999990384999999",
-			"description": "mm xqjwms sw 01010302 One Horse Down"
-		},
-		"07-mm-xqjwms-sw-01010401-One-Elephant-Down": {
-			"preview": "6463473949486999998899458599999956626041405099999961992683999999",
-			"description": "mm xqjwms sw 01010401 One Elephant Down"
-		},
-		"08-mm-xqjwms-sw-01010402-One-Elephant-Down": {
-			"preview": "4499473949486999993799859999999936248230404199999999996799999999",
-			"description": "mm xqjwms sw 01010402 One Elephant Down"
-		},
-		"09-mm-xqjwms-sw-01010501-One-Advisor-Down": {
-			"preview": "2538694849599999999999529999999943456099409999999999992799999999",
-			"description": "mm xqjwms sw 01010501 One Advisor Down"
-		},
-		"10-mm-xqjwms-sw-01010502-One-Advisor-Down": {
-			"preview": "5452294859574799999999669999999976994299509960999936996499999999",
-			"description": "mm xqjwms sw 01010502 One Advisor Down"
-		},
-		"11-mm-xqjwms-sw-01010601-Down-Many-Pawns": {
-			"preview": "0236474849596999999999549999999988856041405082999999994556688399",
-			"description": "mm xqjwms sw 01010601 Down Many Pawns"
-		},
-		"12-mm-xqjwms-sw-01010602-Down-Many-Pawns": {
-			"preview": "5506293949484799999999859999999946992041405060999933993664769999",
-			"description": "mm xqjwms sw 01010602 Down Many Pawns"
-		},
-		"13-mm-xqjwms-sw-01020101-Under-attack-from-the-center": {
-			"preview": "7299474849596999994446849999999933640241405042999909990363999999",
-			"description": "mm xqjwms sw 01020101 Under attack from the center"
-		},
-		"14-mm-xqjwms-sw-01020102-Under-attack-from-the-center": {
-			"preview": "4699994838999999999999519999999978990232314120999999999999999999",
-			"description": "mm xqjwms sw 01020102 Under attack from the center"
-		},
-		"15-mm-xqjwms-sw-01020102b-Under-attack-from-the-center": {
-			"preview": "4699994838999999999999519999999978990232314199999999999999999999",
-			"description": "mm xqjwms sw 01020102b Under attack from the center"
-		},
-		"16-mm-xqjwms-sw-01020201-Under-attack-on-the-bottom-rank": {
-			"preview": "1067474849596999732099066686999951556032405064998142990345839999",
-			"description": "mm xqjwms sw 01020201 Under attack on the bottom rank"
-		},
-		"17-mm-xqjwms-sw-01020202-Under-attack-on-the-bottom-rank": {
-			"preview": "1230255748594799990099449999999928602050405242999938997599999999",
-			"description": "mm xqjwms sw 01020202 Under attack on the bottom rank"
-		},
-		"18-mm-xqjwms-sw-01020301-Under-attack-on-the-rib-files": {
-			"preview": "7261294849594799993899066686999914564241305060999964990344849999",
-			"description": "mm xqjwms sw 01020301 Under attack on the rib files"
-		},
-		"19-mm-xqjwms-sw-01020302-Under-attack-on-the-rib-files": {
-			"preview": "2773994839579999993799455199999915350232304120999985994399999999",
-			"description": "mm xqjwms sw 01020302 Under attack on the rib files"
-		},
-		"20-mm-xqjwms-sw-01020401-Under-attack-from-one-side": {
-			"preview": "3699474838599999996599435199999929144232404160999999990384999999",
-			"description": "mm xqjwms sw 01020401 Under attack from one side"
-		},
-		"21-mm-xqjwms-sw-01020402-Under-attack-from-one-side": {
-			"preview": "1511293949486999995799064665749933224241315060999952990327446399",
-			"description": "mm xqjwms sw 01020402 Under attack from one side"
-		},
-		"22-mm-xqjwms-sw-01020501-Chariot-under-attack": {
-			"preview": "0935293949596967531527062546658600224241405060627512610324436483",
-			"description": "mm xqjwms sw 01020501 Chariot under attack"
-		},
-		"23-mm-xqjwms-sw-01020502-Chariot-under-attack": {
-			"preview": "0767293949596999532244062446869965742030404142997001610383999999",
-			"description": "mm xqjwms sw 01020502 Chariot under attack"
-		},
-		"24-mm-xqjwms-sw-01020601-Cannon-under-attack": {
-			"preview": "1764473949599967792777064665869926022030405060356342990343839999",
-			"description": "mm xqjwms sw 01020601 Cannon under attack"
-		},
-		"25-mm-xqjwms-sw-01020602-Cannon-under-attack": {
-			"preview": "2307293949596999891243062546658631022030404142997222820363839999",
-			"description": "mm xqjwms sw 01020602 Cannon under attack"
-		},
-		"26-mm-xqjwms-sw-01020701-Horse-under-attack": {
-			"preview": "1207293949484767763799054586999938224241405060545224990343648399",
-			"description": "mm xqjwms sw 01020701 Horse under attack"
-		},
-		"27-mm-xqjwms-sw-01020702-Horse-under-attack": {
-			"preview": "1907293949596967633747062646658610224230405060627016520323438399",
-			"description": "mm xqjwms sw 01020702 Horse under attack"
-		},
-		"28-mm-xqjwms-sw-01020801-Elephant-Advisor-under-attack": {
-			"preview": "3322294849596999990399466599999979664241405060999989990425448499",
-			"description": "mm xqjwms sw 01020801 Elephant Advisor under attack"
-		},
-		"29-mm-xqjwms-sw-01020802-Elephant-Advisor-under-attack": {
-			"preview": "7399294849594799990699219999999967994230405060999946994558999999",
-			"description": "mm xqjwms sw 01020802 Elephant Advisor under attack"
-		},
-		"30-mm-xqjwms-sw-01020901-Pawn-under-attack": {
-			"preview": "1099294849594799997299239999999924344241315060999999994468999999",
-			"description": "mm xqjwms sw 01020901 Pawn under attack"
-		},
-		"31-mm-xqjwms-sw-01020902-Pawn-under-attack": {
-			"preview": "0299993749599999993499239999999988154241305060999999996799999999",
-			"description": "mm xqjwms sw 01020902 Pawn under attack"
-		}
-	}
+  "meta": {
+    "title": "Trung Cục Phản Sát",
+    "description": "",
+    "tags": [],
+    "updatedAt": "2025/03/07"
+  },
+  "details": {
+    "01-mm-xqjwms-sw-010101-One-Chariot-Down": {
+      "preview": "6653474849596999991799119999999970224241405060997824994399999999",
+      "description": "01-mm-xqjwms-sw-010101-One-Chariot-Down"
+    },
+    "02-mm-xqjwms-sw-010102-One-Chariot-Down": {
+      "preview": "1944474849596999992799658599999961864241405060997699996383999999",
+      "description": "02-mm-xqjwms-sw-010102-One-Chariot-Down"
+    },
+    "03-mm-xqjwms-sw-010201-One-Cannon-Down": {
+      "preview": "5515293949484799993799264666859904224241405082999908890324436499",
+      "description": "03-mm-xqjwms-sw-010201-One-Cannon-Down"
+    },
+    "04-mm-xqjwms-sw-010202-One-Cannon-Down": {
+      "preview": "6544253949484799999999059999999926022030405099999931990399999999",
+      "description": "04-mm-xqjwms-sw-010202-One-Cannon-Down"
+    },
+    "05-mm-xqjwms-sw-01010301-One-Horse-Down": {
+      "preview": "0308293949489999991399066399999954992030404142999924992643839999",
+      "description": "05-mm-xqjwms-sw-01010301-One-Horse-Down"
+    },
+    "06-mm-xqjwms-sw-01010302-One-Horse-Down": {
+      "preview": "5373073949572599999999869999999915236041405099319999990384999999",
+      "description": "06-mm-xqjwms-sw-01010302-One-Horse-Down"
+    },
+    "07-mm-xqjwms-sw-01010401-One-Elephant-Down": {
+      "preview": "6463473949486999998899458599999956626041405099999961992683999999",
+      "description": "07-mm-xqjwms-sw-01010401-One-Elephant-Down"
+    },
+    "08-mm-xqjwms-sw-01010402-One-Elephant-Down": {
+      "preview": "4499473949486999993799859999999936248230404199999999996799999999",
+      "description": "08-mm-xqjwms-sw-01010402-One-Elephant-Down"
+    },
+    "09-mm-xqjwms-sw-01010501-One-Advisor-Down": {
+      "preview": "2538694849599999999999529999999943456099409999999999992799999999",
+      "description": "09-mm-xqjwms-sw-01010501-One-Advisor-Down"
+    },
+    "10-mm-xqjwms-sw-01010502-One-Advisor-Down": {
+      "preview": "5452294859574799999999669999999976994299509960999936996499999999",
+      "description": "10-mm-xqjwms-sw-01010502-One-Advisor-Down"
+    },
+    "11-mm-xqjwms-sw-01010601-Down-Many-Pawns": {
+      "preview": "0236474849596999999999549999999988856041405082999999994556688399",
+      "description": "11-mm-xqjwms-sw-01010601-Down-Many-Pawns"
+    },
+    "12-mm-xqjwms-sw-01010602-Down-Many-Pawns": {
+      "preview": "5506293949484799999999859999999946992041405060999933993664769999",
+      "description": "12-mm-xqjwms-sw-01010602-Down-Many-Pawns"
+    },
+    "13-mm-xqjwms-sw-01020101-Under-attack-from-the-center": {
+      "preview": "7299474849596999994446849999999933640241405042999909990363999999",
+      "description": "13-mm-xqjwms-sw-01020101-Under-attack-from-the-center"
+    },
+    "14-mm-xqjwms-sw-01020102-Under-attack-from-the-center": {
+      "preview": "4699994838999999999999519999999978990232314120999999999999999999",
+      "description": "14-mm-xqjwms-sw-01020102-Under-attack-from-the-center"
+    },
+    "15-mm-xqjwms-sw-01020102b-Under-attack-from-the-center": {
+      "preview": "4699994838999999999999519999999978990232314199999999999999999999",
+      "description": "15-mm-xqjwms-sw-01020102b-Under-attack-from-the-center"
+    },
+    "16-mm-xqjwms-sw-01020201-Under-attack-on-the-bottom-rank": {
+      "preview": "1067474849596999732099066686999951556032405064998142990345839999",
+      "description": "16-mm-xqjwms-sw-01020201-Under-attack-on-the-bottom-rank"
+    },
+    "17-mm-xqjwms-sw-01020202-Under-attack-on-the-bottom-rank": {
+      "preview": "1230255748594799990099449999999928602050405242999938997599999999",
+      "description": "17-mm-xqjwms-sw-01020202-Under-attack-on-the-bottom-rank"
+    },
+    "18-mm-xqjwms-sw-01020301-Under-attack-on-the-rib-files": {
+      "preview": "7261294849594799993899066686999914564241305060999964990344849999",
+      "description": "18-mm-xqjwms-sw-01020301-Under-attack-on-the-rib-files"
+    },
+    "19-mm-xqjwms-sw-01020302-Under-attack-on-the-rib-files": {
+      "preview": "2773994839579999993799455199999915350232304120999985994399999999",
+      "description": "19-mm-xqjwms-sw-01020302-Under-attack-on-the-rib-files"
+    },
+    "20-mm-xqjwms-sw-01020401-Under-attack-from-one-side": {
+      "preview": "3699474838599999996599435199999929144232404160999999990384999999",
+      "description": "20-mm-xqjwms-sw-01020401-Under-attack-from-one-side"
+    },
+    "21-mm-xqjwms-sw-01020402-Under-attack-from-one-side": {
+      "preview": "1511293949486999995799064665749933224241315060999952990327446399",
+      "description": "21-mm-xqjwms-sw-01020402-Under-attack-from-one-side"
+    },
+    "22-mm-xqjwms-sw-01020501-Chariot-under-attack": {
+      "preview": "0935293949596967531527062546658600224241405060627512610324436483",
+      "description": "22-mm-xqjwms-sw-01020501-Chariot-under-attack"
+    },
+    "23-mm-xqjwms-sw-01020502-Chariot-under-attack": {
+      "preview": "0767293949596999532244062446869965742030404142997001610383999999",
+      "description": "23-mm-xqjwms-sw-01020502-Chariot-under-attack"
+    },
+    "24-mm-xqjwms-sw-01020601-Cannon-under-attack": {
+      "preview": "1764473949599967792777064665869926022030405060356342990343839999",
+      "description": "24-mm-xqjwms-sw-01020601-Cannon-under-attack"
+    },
+    "25-mm-xqjwms-sw-01020602-Cannon-under-attack": {
+      "preview": "2307293949596999891243062546658631022030404142997222820363839999",
+      "description": "25-mm-xqjwms-sw-01020602-Cannon-under-attack"
+    },
+    "26-mm-xqjwms-sw-01020701-Horse-under-attack": {
+      "preview": "1207293949484767763799054586999938224241405060545224990343648399",
+      "description": "26-mm-xqjwms-sw-01020701-Horse-under-attack"
+    },
+    "27-mm-xqjwms-sw-01020702-Horse-under-attack": {
+      "preview": "1907293949596967633747062646658610224230405060627016520323438399",
+      "description": "27-mm-xqjwms-sw-01020702-Horse-under-attack"
+    },
+    "28-mm-xqjwms-sw-01020801-Elephant-Advisor-under-attack": {
+      "preview": "3322294849596999990399466599999979664241405060999989990425448499",
+      "description": "28-mm-xqjwms-sw-01020801-Elephant-Advisor-under-attack"
+    },
+    "29-mm-xqjwms-sw-01020802-Elephant-Advisor-under-attack": {
+      "preview": "7399294849594799990699219999999967994230405060999946994558999999",
+      "description": "29-mm-xqjwms-sw-01020802-Elephant-Advisor-under-attack"
+    },
+    "30-mm-xqjwms-sw-01020901-Pawn-under-attack": {
+      "preview": "1099294849594799997299239999999924344241315060999999994468999999",
+      "description": "30-mm-xqjwms-sw-01020901-Pawn-under-attack"
+    },
+    "31-mm-xqjwms-sw-01020902-Pawn-under-attack": {
+      "preview": "0299993749599999993499239999999988154241305060999999996799999999",
+      "description": "31-mm-xqjwms-sw-01020902-Pawn-under-attack"
+    }
+  }
 }
