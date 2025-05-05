@@ -282,6 +282,9 @@ async function processCollection(
 	let isNewRegister = false
 	try {
 		registerData = await readJsonFile<CollectionData>(registerPath)
+		// If the file exists, we need to empty details object
+		// to avoid keeping old data
+		registerData.details = {}
 	} catch {
 		// Create new register.json if it doesn't exist
 		isNewRegister = true
