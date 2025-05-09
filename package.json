@@ -6,7 +6,7 @@
 	"scripts": {
 		"check": "biome check --write ./data && biome check --write ./src",
 		"check-all": "biome check --write ./data && biome check --write ./src && tsc -b",
-		"build": "bun ./src/build.ts && bun ./scripts/indexing-tournaments.ts",
+		"build": "bun ./src/build.ts && bun ./scripts/indexing-tournaments.ts && bun ./scripts/generate-no-detail-owner.ts",
 		"build-sitemap": "bun ./src/build-sitemap.ts",
 		"add-game-preview": "bun ./src/add-game-preview.ts",
 		"screenshot": "bun ./src/generate-screenshot.ts",

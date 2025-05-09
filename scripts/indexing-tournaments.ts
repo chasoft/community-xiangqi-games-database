@@ -4,11 +4,23 @@ import pako from "pako"
 
 type Year = string
 type TournamentName = string
-type AllTournaments = {
+
+export type AllTournaments = {
 	owner: "tournaments"
 	statistics: { collections: number; games: number }
 	data: Array<[Year, { name: TournamentName; fullname: string }[]]>
 }
+
+export type TournamentsYears = {
+	owner: "tournaments"
+	statistics: { collections: number; games: number }
+	data: Array<Year>
+}
+
+export type TournamentsOfYear = Record<
+	Year,
+	{ name: TournamentName; fullname: string }[]
+>
 
 const tournamentsDir = path.resolve(__dirname, "../build/tournaments")
 const outputFile = path.resolve(tournamentsDir, "index.json")

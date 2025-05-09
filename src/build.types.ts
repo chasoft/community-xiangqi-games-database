@@ -43,6 +43,19 @@ export type BuiltCollectionData = {
 	>
 }
 
+export type BuiltCollectionCompactData = {
+	owner: DataGroupOwner
+	collections: CollectionName[]
+	statistics: Record<CollectionName, number> & { total: number }
+	data: Record<
+		CollectionName,
+		{
+			meta: CollectionData["meta"]
+			// details: FileName[]
+		}
+	>
+}
+
 export type CollectionDataFull = {
 	meta: {
 		title: string
