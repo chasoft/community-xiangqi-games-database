@@ -1,0 +1,540 @@
+{
+  "owner": "mid-games",
+  "collections": [
+    "59-Trung-Cuoc-Binh-Luan",
+    "Chien-Thuat-Trung-Cuoc-Co-Ban",
+    "Khi-Tu-Thap-Tam-Dao",
+    "Trung-Cuc-Chien-Thuat-Ly-Lai-Quan",
+    "Trung-Cuc-Phan-Sat",
+    "Trung-Cuc-Sat-Phap",
+    "Tuong-Ky-Chien-Thuat-Tinh-Tuy",
+    "Xa-Ma-vs-Xa-Song-Tuong-chuyen-de",
+    "中局全书",
+    "中局夺子",
+    "中局妙弃",
+    "中局妙手",
+    "中局妙漏",
+    "中局实战",
+    "中局弃子",
+    "中局弃炮",
+    "中局快速提高",
+    "中局战略战术",
+    "中局抢先",
+    "中局提高捷径",
+    "中局杀法",
+    "中局棋艺",
+    "中局献车",
+    "中局理论研究",
+    "中局答疑",
+    "中局精妙战法",
+    "先弃后取",
+    "司令中局",
+    "名手入局",
+    "吕钦中残",
+    "围魏救赵",
+    "妙手漏着",
+    "实战中局",
+    "实战中局解析",
+    "弃仕",
+    "弃兵",
+    "弃子",
+    "弃子中局",
+    "弃子大师",
+    "弃子布局",
+    "弃子战术",
+    "弃子杀法",
+    "弃子绝招",
+    "弃子陷阱",
+    "弃炮",
+    "弃相",
+    "弃空头",
+    "弃车",
+    "弃马",
+    "瞒天过海",
+    "精妙中局欣賞",
+    "象棋中局精华",
+    "车塞相腰"
+  ],
+  "statistics": {
+    "59-Trung-Cuoc-Binh-Luan": 59,
+    "Chien-Thuat-Trung-Cuoc-Co-Ban": 77,
+    "Khi-Tu-Thap-Tam-Dao": 115,
+    "Trung-Cuc-Chien-Thuat-Ly-Lai-Quan": 52,
+    "Trung-Cuc-Phan-Sat": 31,
+    "Trung-Cuc-Sat-Phap": 153,
+    "Tuong-Ky-Chien-Thuat-Tinh-Tuy": 401,
+    "Xa-Ma-vs-Xa-Song-Tuong-chuyen-de": 64,
+    "中局全书": 169,
+    "中局夺子": 150,
+    "中局妙弃": 250,
+    "中局妙手": 556,
+    "中局妙漏": 20,
+    "中局实战": 78,
+    "中局弃子": 20,
+    "中局弃炮": 11,
+    "中局快速提高": 111,
+    "中局战略战术": 52,
+    "中局抢先": 5,
+    "中局提高捷径": 111,
+    "中局杀法": 153,
+    "中局棋艺": 40,
+    "中局献车": 14,
+    "中局理论研究": 12,
+    "中局答疑": 318,
+    "中局精妙战法": 555,
+    "先弃后取": 33,
+    "司令中局": 256,
+    "名手入局": 30,
+    "吕钦中残": 32,
+    "围魏救赵": 42,
+    "妙手漏着": 20,
+    "实战中局": 195,
+    "实战中局解析": 78,
+    "弃仕": 4,
+    "弃兵": 59,
+    "弃子": 70,
+    "弃子中局": 311,
+    "弃子大师": 23,
+    "弃子布局": 272,
+    "弃子战术": 22,
+    "弃子杀法": 432,
+    "弃子绝招": 32,
+    "弃子陷阱": 22,
+    "弃炮": 48,
+    "弃相": 6,
+    "弃空头": 12,
+    "弃车": 92,
+    "弃马": 80,
+    "瞒天过海": 19,
+    "精妙中局欣賞": 169,
+    "象棋中局精华": 192,
+    "车塞相腰": 37,
+    "total": 6165
+  },
+  "data": {
+    "59-Trung-Cuoc-Binh-Luan": {
+      "meta": {
+        "title": "59 Trung Cục Có Bình Luận",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/05"
+      }
+    },
+    "Chien-Thuat-Trung-Cuoc-Co-Ban": {
+      "meta": {
+        "title": "Chiến Thuật Trung Cuộc Cơ Bản",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/05"
+      }
+    },
+    "Khi-Tu-Thap-Tam-Dao": {
+      "meta": {
+        "title": "Khí Tử Thập Tam Đao",
+        "description": "Mười Ba Nhát Dao Bỏ Quân",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Trung-Cuc-Chien-Thuat-Ly-Lai-Quan": {
+      "meta": {
+        "title": "Trung Cục Chiến Lược Dữ Chiến Thuật (Lý Lai Quần)",
+        "description": "Chiến Lược và Chiến Thuật Trung Cuộc",
+        "tags": [],
+        "updatedAt": "2025/03/16"
+      }
+    },
+    "Trung-Cuc-Phan-Sat": {
+      "meta": {
+        "title": "Trung Cục Phản Sát",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/07"
+      }
+    },
+    "Trung-Cuc-Sat-Phap": {
+      "meta": {
+        "title": "Trung Cuộc Sát Pháp",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Tuong-Ky-Chien-Thuat-Tinh-Tuy": {
+      "meta": {
+        "title": "Tượng Kỳ Chiến Thuật Tinh Tuý",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Xa-Ma-vs-Xa-Song-Tuong-chuyen-de": {
+      "meta": {
+        "title": "Xe Mã đối Xe Song Tượng chuyên đề",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "中局全书": {
+      "meta": {
+        "title": "中局全书",
+        "description": "中局全书",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局夺子": {
+      "meta": {
+        "title": "中局夺子",
+        "description": "中局夺子",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局妙弃": {
+      "meta": {
+        "title": "中局妙弃",
+        "description": "中局妙弃",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局妙手": {
+      "meta": {
+        "title": "中局妙手",
+        "description": "中局妙手",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局妙漏": {
+      "meta": {
+        "title": "中局妙漏",
+        "description": "中局妙漏",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局实战": {
+      "meta": {
+        "title": "中局实战",
+        "description": "中局实战",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局弃子": {
+      "meta": {
+        "title": "中局弃子",
+        "description": "中局弃子",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局弃炮": {
+      "meta": {
+        "title": "中局弃炮",
+        "description": "中局弃炮",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局快速提高": {
+      "meta": {
+        "title": "中局快速提高",
+        "description": "中局快速提高",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局战略战术": {
+      "meta": {
+        "title": "中局战略战术",
+        "description": "中局战略战术",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局抢先": {
+      "meta": {
+        "title": "中局抢先",
+        "description": "中局抢先",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局提高捷径": {
+      "meta": {
+        "title": "中局提高捷径",
+        "description": "中局提高捷径",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局杀法": {
+      "meta": {
+        "title": "中局杀法",
+        "description": "中局杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局棋艺": {
+      "meta": {
+        "title": "中局棋艺",
+        "description": "中局棋艺",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局献车": {
+      "meta": {
+        "title": "中局献车",
+        "description": "中局献车",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局理论研究": {
+      "meta": {
+        "title": "中局理论研究",
+        "description": "中局理论研究",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局答疑": {
+      "meta": {
+        "title": "中局答疑",
+        "description": "中局答疑",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中局精妙战法": {
+      "meta": {
+        "title": "中局精妙战法",
+        "description": "中局精妙战法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "先弃后取": {
+      "meta": {
+        "title": "先弃后取",
+        "description": "先弃后取",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "司令中局": {
+      "meta": {
+        "title": "司令中局",
+        "description": "司令中局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "名手入局": {
+      "meta": {
+        "title": "名手入局",
+        "description": "名手入局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "吕钦中残": {
+      "meta": {
+        "title": "吕钦中残",
+        "description": "吕钦中残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "围魏救赵": {
+      "meta": {
+        "title": "围魏救赵",
+        "description": "围魏救赵",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "妙手漏着": {
+      "meta": {
+        "title": "妙手漏着",
+        "description": "妙手漏着",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实战中局": {
+      "meta": {
+        "title": "实战中局",
+        "description": "实战中局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实战中局解析": {
+      "meta": {
+        "title": "实战中局解析",
+        "description": "实战中局解析",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃仕": {
+      "meta": {
+        "title": "弃仕",
+        "description": "弃仕",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃兵": {
+      "meta": {
+        "title": "弃兵",
+        "description": "弃兵",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子": {
+      "meta": {
+        "title": "弃子",
+        "description": "弃子",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子中局": {
+      "meta": {
+        "title": "弃子中局",
+        "description": "弃子中局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子大师": {
+      "meta": {
+        "title": "弃子大师",
+        "description": "弃子大师",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子布局": {
+      "meta": {
+        "title": "弃子布局",
+        "description": "弃子布局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子战术": {
+      "meta": {
+        "title": "弃子战术",
+        "description": "弃子战术",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子杀法": {
+      "meta": {
+        "title": "弃子杀法",
+        "description": "弃子杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子绝招": {
+      "meta": {
+        "title": "弃子绝招",
+        "description": "弃子绝招",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子陷阱": {
+      "meta": {
+        "title": "弃子陷阱",
+        "description": "弃子陷阱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃炮": {
+      "meta": {
+        "title": "弃炮",
+        "description": "弃炮",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃相": {
+      "meta": {
+        "title": "弃相",
+        "description": "弃相",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃空头": {
+      "meta": {
+        "title": "弃空头",
+        "description": "弃空头",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃车": {
+      "meta": {
+        "title": "弃车",
+        "description": "弃车",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃马": {
+      "meta": {
+        "title": "弃马",
+        "description": "弃马",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "瞒天过海": {
+      "meta": {
+        "title": "瞒天过海",
+        "description": "瞒天过海",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "精妙中局欣賞": {
+      "meta": {
+        "title": "精妙中局欣賞",
+        "description": "精妙中局欣賞",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "象棋中局精华": {
+      "meta": {
+        "title": "象棋中局精华",
+        "description": "象棋中局精华",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "车塞相腰": {
+      "meta": {
+        "title": "车塞相腰",
+        "description": "车塞相腰",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    }
+  }
+}

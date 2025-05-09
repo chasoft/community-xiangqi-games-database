@@ -1,0 +1,1140 @@
+{
+  "owner": "end-games",
+  "collections": [
+    "An-Tu-Trai-Tuong-Hi-Pho",
+    "Bach-Bien-Tuong-Ky-Pho",
+    "Co-Tan-Thuc-Dung",
+    "Dao-Tinh-Dat-Thu",
+    "Dich-Hai-Chinh-Pham",
+    "Ham-Xa-Cuc",
+    "Ho-Nhai-Tap",
+    "Lan-Kha-Than-Co",
+    "Mong-Nhap-Than-Co",
+    "Ne-Ma-Do-Khang-Vuong",
+    "Quat-Trung-Bi-Tan-Cuc-Pho",
+    "Song-Xa-Lien-Cong",
+    "Tam-Vo-Tan-Bien",
+    "Tan-Cuc-Thuc-Dung-Do-Canh-Minh",
+    "Thao-Luoc-Nguyen-Co-Tan-Cuc-Pho",
+    "Thi-Xa-Dieu-Phap",
+    "Thich-Tinh-Nha-Thu",
+    "Thuc-Chien-Cong-Sat-Ky-Xao",
+    "Tieu-Song-Dat-Pham",
+    "Tieu-Truc-Trai",
+    "Truc-Huong-Trai-Ky-Pho",
+    "Tuong-Ky-Sat-Tru-Dai-Toan-Ly-Duc-Lam",
+    "一百零八",
+    "东萍网录",
+    "中残经典",
+    "例胜专集",
+    "兑子杀法",
+    "双车攻防",
+    "古谱残局",
+    "古谱闷杀",
+    "吕钦中残",
+    "周德裕局",
+    "基本战术",
+    "基本杀法",
+    "大师残局",
+    "妙局杀法",
+    "妙杀巧和",
+    "官璘残局",
+    "实残增订",
+    "实残手册",
+    "实残艺术",
+    "实残车兵",
+    "实用残五",
+    "巧妙",
+    "巫师魔题",
+    "弃子攻杀",
+    "弃子杀法",
+    "弃车绝杀",
+    "弈海征帆",
+    "弈海烟波",
+    "形势判断",
+    "德裕残局",
+    "心武残编",
+    "怪招速胜",
+    "排局二百",
+    "杀局宝典",
+    "杀法大全",
+    "杀法强化",
+    "杀法运用",
+    "杀着大全",
+    "桔中秘残",
+    "棋例裁决",
+    "棋艺测棋",
+    "棋藝残杀",
+    "棋题测验",
+    "橘中秘残",
+    "步步追杀",
+    "残局习题",
+    "残局全书",
+    "残局基础",
+    "残局大全",
+    "残局学用",
+    "残局巧胜",
+    "残局手册",
+    "残局提高",
+    "残局攻杀",
+    "残局杀势",
+    "残局杀技",
+    "残局杀法",
+    "残局欣赏",
+    "残局漫笔",
+    "残局窥秘",
+    "残局答疑",
+    "残局精选",
+    "残局胜和",
+    "残战精华",
+    "残桐零泪",
+    "残棋妙式",
+    "江湖百局",
+    "测测棋力",
+    "炮兵攻杀",
+    "炮马兵残",
+    "百花棋谱",
+    "神妙排局",
+    "简易残局",
+    "胜和定式",
+    "蕴秀斋谱",
+    "虎啸弈林",
+    "象棋习题",
+    "象棋弈理",
+    "象棋老谱",
+    "趣味象棋",
+    "路边摊前",
+    "车马专辑",
+    "运子杀法",
+    "连将带杀",
+    "适情雅趣",
+    "配合杀法",
+    "锦囊妙手",
+    "难胜残局",
+    "韬略元残",
+    "马兵攻杀",
+    "高残教程"
+  ],
+  "statistics": {
+    "An-Tu-Trai-Tuong-Hi-Pho": 26,
+    "Bach-Bien-Tuong-Ky-Pho": 90,
+    "Co-Tan-Thuc-Dung": 236,
+    "Dao-Tinh-Dat-Thu": 62,
+    "Dich-Hai-Chinh-Pham": 50,
+    "Ham-Xa-Cuc": 26,
+    "Ho-Nhai-Tap": 60,
+    "Lan-Kha-Than-Co": 258,
+    "Mong-Nhap-Than-Co": 152,
+    "Ne-Ma-Do-Khang-Vuong": 54,
+    "Quat-Trung-Bi-Tan-Cuc-Pho": 141,
+    "Song-Xa-Lien-Cong": 19,
+    "Tam-Vo-Tan-Bien": 155,
+    "Tan-Cuc-Thuc-Dung-Do-Canh-Minh": 575,
+    "Thao-Luoc-Nguyen-Co-Tan-Cuc-Pho": 182,
+    "Thi-Xa-Dieu-Phap": 120,
+    "Thich-Tinh-Nha-Thu": 550,
+    "Thuc-Chien-Cong-Sat-Ky-Xao": 238,
+    "Tieu-Song-Dat-Pham": 10,
+    "Tieu-Truc-Trai": 91,
+    "Truc-Huong-Trai-Ky-Pho": 263,
+    "Tuong-Ky-Sat-Tru-Dai-Toan-Ly-Duc-Lam": 595,
+    "一百零八": 108,
+    "东萍网录": 81,
+    "中残经典": 32,
+    "例胜专集": 311,
+    "兑子杀法": 24,
+    "双车攻防": 4,
+    "古谱残局": 120,
+    "古谱闷杀": 120,
+    "吕钦中残": 32,
+    "周德裕局": 50,
+    "基本战术": 59,
+    "基本杀法": 1372,
+    "大师残局": 215,
+    "妙局杀法": 48,
+    "妙杀巧和": 149,
+    "官璘残局": 100,
+    "实残增订": 423,
+    "实残手册": 155,
+    "实残艺术": 157,
+    "实残车兵": 47,
+    "实用残五": 663,
+    "巧妙": 289,
+    "巫师魔题": 600,
+    "弃子攻杀": 188,
+    "弃子杀法": 426,
+    "弃车绝杀": 38,
+    "弈海征帆": 50,
+    "弈海烟波": 119,
+    "形势判断": 171,
+    "德裕残局": 50,
+    "心武残编": 303,
+    "怪招速胜": 38,
+    "排局二百": 212,
+    "杀局宝典": 529,
+    "杀法大全": 415,
+    "杀法强化": 602,
+    "杀法运用": 248,
+    "杀着大全": 616,
+    "桔中秘残": 87,
+    "棋例裁决": 21,
+    "棋艺测棋": 55,
+    "棋藝残杀": 66,
+    "棋题测验": 200,
+    "橘中秘残": 137,
+    "步步追杀": 337,
+    "残局习题": 80,
+    "残局全书": 1128,
+    "残局基础": 256,
+    "残局大全": 119,
+    "残局学用": 10,
+    "残局巧胜": 224,
+    "残局手册": 680,
+    "残局提高": 109,
+    "残局攻杀": 117,
+    "残局杀势": 154,
+    "残局杀技": 199,
+    "残局杀法": 157,
+    "残局欣赏": 3,
+    "残局漫笔": 3,
+    "残局窥秘": 144,
+    "残局答疑": 270,
+    "残局精选": 130,
+    "残局胜和": 834,
+    "残战精华": 20,
+    "残桐零泪": 10,
+    "残棋妙式": 663,
+    "江湖百局": 337,
+    "测测棋力": 20,
+    "炮兵攻杀": 115,
+    "炮马兵残": 88,
+    "百花棋谱": 30,
+    "神妙排局": 69,
+    "简易残局": 115,
+    "胜和定式": 320,
+    "蕴秀斋谱": 144,
+    "虎啸弈林": 18,
+    "象棋习题": 80,
+    "象棋弈理": 219,
+    "象棋老谱": 42,
+    "趣味象棋": 240,
+    "路边摊前": 1590,
+    "车马专辑": 102,
+    "运子杀法": 42,
+    "连将带杀": 66,
+    "适情雅趣": 550,
+    "配合杀法": 82,
+    "锦囊妙手": 215,
+    "难胜残局": 52,
+    "韬略元残": 182,
+    "马兵攻杀": 126,
+    "高残教程": 238,
+    "total": 24412
+  },
+  "data": {
+    "An-Tu-Trai-Tuong-Hi-Pho": {
+      "meta": {
+        "title": "Ẩn Tú Trai Tượng Hí Phổ",
+        "description": "Sổ tay cờ của Thư phòng Vẻ đẹp Ẩn mình",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Bach-Bien-Tuong-Ky-Pho": {
+      "meta": {
+        "title": "Bách Biến Tượng Kỳ Phổ",
+        "description": "Sách cờ Tướng trăm biến hóa",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Co-Tan-Thuc-Dung": {
+      "meta": {
+        "title": "Cờ Tàn Thực Dụng",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/07"
+      }
+    },
+    "Dao-Tinh-Dat-Thu": {
+      "meta": {
+        "title": "Đào Tình Dật Thú",
+        "description": "Nuôi dưỡng tình cảm và thú vui nhàn dật",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Dich-Hai-Chinh-Pham": {
+      "meta": {
+        "title": "Dịch Hải Chinh Phàm",
+        "description": "Cánh buồm chinh phục biển cờ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Ham-Xa-Cuc": {
+      "meta": {
+        "title": "Hãm Xa Cục",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Ho-Nhai-Tap": {
+      "meta": {
+        "title": "Hồ Nhai Tập",
+        "description": "Tập hợp bên bờ hồ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Lan-Kha-Than-Co": {
+      "meta": {
+        "title": "Lạn Kha Thần Cơ",
+        "description": "Thần cơ Lạn Kha",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Mong-Nhap-Than-Co": {
+      "meta": {
+        "title": "Mộng Nhập Thần Cơ",
+        "description": "Mơ Vào Thần Cơ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Ne-Ma-Do-Khang-Vuong": {
+      "meta": {
+        "title": "Nê Mã Độ Khang Vương",
+        "description": "Ngựa Đất Vượt Sông Đưa Khang Vương",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Quat-Trung-Bi-Tan-Cuc-Pho": {
+      "meta": {
+        "title": "Quất Trung Bí Tàn Cuộc Phổ",
+        "description": "Bí Mật Trong Quả Quýt: Sách Tàn Cuộc",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Song-Xa-Lien-Cong": {
+      "meta": {
+        "title": "Song Xa Liên Công",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Tam-Vo-Tan-Bien": {
+      "meta": {
+        "title": "Tâm Võ Tàn Biên",
+        "description": "Tàn Tích Võ Thuật Trong Tâm",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Tan-Cuc-Thuc-Dung-Do-Canh-Minh": {
+      "meta": {
+        "title": "Tượng Kỳ Thực Dụng Tàn Cục",
+        "description": "Tàn Cuộc Cờ Tướng Thực Dụng - Sách của Đồ Cảnh Minh",
+        "tags": [],
+        "updatedAt": "2025/03/16"
+      }
+    },
+    "Thao-Luoc-Nguyen-Co-Tan-Cuc-Pho": {
+      "meta": {
+        "title": "Thao Lược Nguyên Cơ Tàn Cuộc Phổ",
+        "description": "Sách Tàn Cuộc Nguyên Cơ Thao Lược",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Thi-Xa-Dieu-Phap": {
+      "meta": {
+        "title": "Khí Xa Diệu Sát",
+        "description": "Vứt Bỏ Xe, Sát Chiếu Diệu Kỳ",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Thich-Tinh-Nha-Thu": {
+      "meta": {
+        "title": "Thích Tình Nhã Thú",
+        "description": "Tình Cảm Phù Hợp, Thú Vui Thanh Nhã",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Thuc-Chien-Cong-Sat-Ky-Xao": {
+      "meta": {
+        "title": "Thực Chiến Công Sát Kỹ Xảo",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Tieu-Song-Dat-Pham": {
+      "meta": {
+        "title": "Tiêu Song Dật Phẩm",
+        "description": "Phẩm Chất Tao Nhã Bên Cửa Sổ Chuối",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Tieu-Truc-Trai": {
+      "meta": {
+        "title": "Tiêu Trúc Trai",
+        "description": "Thư Phòng Chuối Trúc",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Truc-Huong-Trai-Ky-Pho": {
+      "meta": {
+        "title": "Trúc Hương Trai Tượng Kỳ Phổ",
+        "description": "Sách Cờ Tướng Thư Phòng Hương Trúc",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Tuong-Ky-Sat-Tru-Dai-Toan-Ly-Duc-Lam": {
+      "meta": {
+        "title": "Tượng Kỳ Sát Trứ Đại Toàn (Lý Đức Lâm)",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/16"
+      }
+    },
+    "一百零八": {
+      "meta": {
+        "title": "一百零八",
+        "description": "一百零八",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "东萍网录": {
+      "meta": {
+        "title": "东萍网录",
+        "description": "东萍网录",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "中残经典": {
+      "meta": {
+        "title": "中残经典",
+        "description": "中残经典",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "例胜专集": {
+      "meta": {
+        "title": "例胜专集",
+        "description": "例胜专集",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "兑子杀法": {
+      "meta": {
+        "title": "兑子杀法",
+        "description": "兑子杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "双车攻防": {
+      "meta": {
+        "title": "双车攻防",
+        "description": "双车攻防",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "古谱残局": {
+      "meta": {
+        "title": "古谱残局",
+        "description": "古谱残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "古谱闷杀": {
+      "meta": {
+        "title": "古谱闷杀",
+        "description": "古谱闷杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "吕钦中残": {
+      "meta": {
+        "title": "吕钦中残",
+        "description": "吕钦中残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "周德裕局": {
+      "meta": {
+        "title": "周德裕局",
+        "description": "周德裕局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "基本战术": {
+      "meta": {
+        "title": "基本战术",
+        "description": "基本战术",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "基本杀法": {
+      "meta": {
+        "title": "基本杀法",
+        "description": "基本杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "大师残局": {
+      "meta": {
+        "title": "大师残局",
+        "description": "大师残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "妙局杀法": {
+      "meta": {
+        "title": "妙局杀法",
+        "description": "妙局杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "妙杀巧和": {
+      "meta": {
+        "title": "妙杀巧和",
+        "description": "妙杀巧和",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "官璘残局": {
+      "meta": {
+        "title": "官璘残局",
+        "description": "官璘残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实残增订": {
+      "meta": {
+        "title": "实残增订",
+        "description": "实残增订",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实残手册": {
+      "meta": {
+        "title": "实残手册",
+        "description": "实残手册",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实残艺术": {
+      "meta": {
+        "title": "实残艺术",
+        "description": "实残艺术",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实残车兵": {
+      "meta": {
+        "title": "实残车兵",
+        "description": "实残车兵",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "实用残五": {
+      "meta": {
+        "title": "实用残五",
+        "description": "实用残五",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "巧妙": {
+      "meta": {
+        "title": "巧妙",
+        "description": "巧妙",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "巫师魔题": {
+      "meta": {
+        "title": "巫师魔题",
+        "description": "巫师魔题",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子攻杀": {
+      "meta": {
+        "title": "弃子攻杀",
+        "description": "弃子攻杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃子杀法": {
+      "meta": {
+        "title": "弃子杀法",
+        "description": "弃子杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弃车绝杀": {
+      "meta": {
+        "title": "弃车绝杀",
+        "description": "弃车绝杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弈海征帆": {
+      "meta": {
+        "title": "弈海征帆",
+        "description": "弈海征帆",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "弈海烟波": {
+      "meta": {
+        "title": "弈海烟波",
+        "description": "弈海烟波",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "形势判断": {
+      "meta": {
+        "title": "形势判断",
+        "description": "形势判断",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "德裕残局": {
+      "meta": {
+        "title": "德裕残局",
+        "description": "德裕残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "心武残编": {
+      "meta": {
+        "title": "心武残编",
+        "description": "心武残编",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "怪招速胜": {
+      "meta": {
+        "title": "怪招速胜",
+        "description": "怪招速胜",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "排局二百": {
+      "meta": {
+        "title": "排局二百",
+        "description": "排局二百",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀局宝典": {
+      "meta": {
+        "title": "杀局宝典",
+        "description": "杀局宝典",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀法大全": {
+      "meta": {
+        "title": "杀法大全",
+        "description": "杀法大全",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀法强化": {
+      "meta": {
+        "title": "杀法强化",
+        "description": "杀法强化",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀法运用": {
+      "meta": {
+        "title": "杀法运用",
+        "description": "杀法运用",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀着大全": {
+      "meta": {
+        "title": "杀着大全",
+        "description": "杀着大全",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "桔中秘残": {
+      "meta": {
+        "title": "桔中秘残",
+        "description": "桔中秘残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "棋例裁决": {
+      "meta": {
+        "title": "棋例裁决",
+        "description": "棋例裁决",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "棋艺测棋": {
+      "meta": {
+        "title": "棋艺测棋",
+        "description": "棋艺测棋",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "棋藝残杀": {
+      "meta": {
+        "title": "棋藝残杀",
+        "description": "棋藝残杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "棋题测验": {
+      "meta": {
+        "title": "棋题测验",
+        "description": "棋题测验",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "橘中秘残": {
+      "meta": {
+        "title": "橘中秘残",
+        "description": "橘中秘残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "步步追杀": {
+      "meta": {
+        "title": "步步追杀",
+        "description": "步步追杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局习题": {
+      "meta": {
+        "title": "残局习题",
+        "description": "残局习题",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局全书": {
+      "meta": {
+        "title": "残局全书",
+        "description": "残局全书",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局基础": {
+      "meta": {
+        "title": "残局基础",
+        "description": "残局基础",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局大全": {
+      "meta": {
+        "title": "残局大全",
+        "description": "残局大全",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局学用": {
+      "meta": {
+        "title": "残局学用",
+        "description": "残局学用",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局巧胜": {
+      "meta": {
+        "title": "残局巧胜",
+        "description": "残局巧胜",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局手册": {
+      "meta": {
+        "title": "残局手册",
+        "description": "残局手册",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局提高": {
+      "meta": {
+        "title": "残局提高",
+        "description": "残局提高",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局攻杀": {
+      "meta": {
+        "title": "残局攻杀",
+        "description": "残局攻杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局杀势": {
+      "meta": {
+        "title": "残局杀势",
+        "description": "残局杀势",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局杀技": {
+      "meta": {
+        "title": "残局杀技",
+        "description": "残局杀技",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局杀法": {
+      "meta": {
+        "title": "残局杀法",
+        "description": "残局杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局欣赏": {
+      "meta": {
+        "title": "残局欣赏",
+        "description": "残局欣赏",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局漫笔": {
+      "meta": {
+        "title": "残局漫笔",
+        "description": "残局漫笔",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局窥秘": {
+      "meta": {
+        "title": "残局窥秘",
+        "description": "残局窥秘",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局答疑": {
+      "meta": {
+        "title": "残局答疑",
+        "description": "残局答疑",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局精选": {
+      "meta": {
+        "title": "残局精选",
+        "description": "残局精选",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局胜和": {
+      "meta": {
+        "title": "残局胜和",
+        "description": "残局胜和",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残战精华": {
+      "meta": {
+        "title": "残战精华",
+        "description": "残战精华",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残桐零泪": {
+      "meta": {
+        "title": "残桐零泪",
+        "description": "残桐零泪",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残棋妙式": {
+      "meta": {
+        "title": "残棋妙式",
+        "description": "残棋妙式",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "江湖百局": {
+      "meta": {
+        "title": "江湖百局",
+        "description": "江湖百局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "测测棋力": {
+      "meta": {
+        "title": "测测棋力",
+        "description": "测测棋力",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "炮兵攻杀": {
+      "meta": {
+        "title": "炮兵攻杀",
+        "description": "炮兵攻杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "炮马兵残": {
+      "meta": {
+        "title": "炮马兵残",
+        "description": "炮马兵残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "百花棋谱": {
+      "meta": {
+        "title": "百花棋谱",
+        "description": "百花棋谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "神妙排局": {
+      "meta": {
+        "title": "神妙排局",
+        "description": "神妙排局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "简易残局": {
+      "meta": {
+        "title": "简易残局",
+        "description": "简易残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "胜和定式": {
+      "meta": {
+        "title": "胜和定式",
+        "description": "胜和定式",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "蕴秀斋谱": {
+      "meta": {
+        "title": "蕴秀斋谱",
+        "description": "蕴秀斋谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "虎啸弈林": {
+      "meta": {
+        "title": "虎啸弈林",
+        "description": "虎啸弈林",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "象棋习题": {
+      "meta": {
+        "title": "象棋习题",
+        "description": "象棋习题",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "象棋弈理": {
+      "meta": {
+        "title": "象棋弈理",
+        "description": "象棋弈理",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "象棋老谱": {
+      "meta": {
+        "title": "象棋老谱",
+        "description": "象棋老谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "趣味象棋": {
+      "meta": {
+        "title": "趣味象棋",
+        "description": "趣味象棋",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "路边摊前": {
+      "meta": {
+        "title": "路边摊前",
+        "description": "路边摊前",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "车马专辑": {
+      "meta": {
+        "title": "车马专辑",
+        "description": "车马专辑",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "运子杀法": {
+      "meta": {
+        "title": "运子杀法",
+        "description": "运子杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "连将带杀": {
+      "meta": {
+        "title": "连将带杀",
+        "description": "连将带杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "适情雅趣": {
+      "meta": {
+        "title": "适情雅趣",
+        "description": "适情雅趣",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "配合杀法": {
+      "meta": {
+        "title": "配合杀法",
+        "description": "配合杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "锦囊妙手": {
+      "meta": {
+        "title": "锦囊妙手",
+        "description": "锦囊妙手",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "难胜残局": {
+      "meta": {
+        "title": "难胜残局",
+        "description": "难胜残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "韬略元残": {
+      "meta": {
+        "title": "韬略元残",
+        "description": "韬略元残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "马兵攻杀": {
+      "meta": {
+        "title": "马兵攻杀",
+        "description": "马兵攻杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "高残教程": {
+      "meta": {
+        "title": "高残教程",
+        "description": "高残教程",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    }
+  }
+}

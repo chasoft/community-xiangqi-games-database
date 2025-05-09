@@ -1,0 +1,560 @@
+{
+  "owner": "puzzles",
+  "collections": [
+    "187-Van-Co-The-Giang-Ho",
+    "68-Sat-Phap-Co-Ban",
+    "Bai-Cuc-Han-Thuong",
+    "Chu-Manh-Phuong-Tan-Bai-Tac-Pham",
+    "Co-Kim-Bai-Cuc-Thuong-Tich",
+    "Dai-Bang-Trien-Si",
+    "Dich-Hai-Yen-Ba",
+    "Dong-Binh-Vong-Thu-Luc",
+    "Duong-Dai-Bai-Cuc-Pho",
+    "Duong-Thanh-The-Duc-Bai-Cuc-Thuong-Tich",
+    "Giang-Ho-Bai-Cuc-Tap-Thanh",
+    "Giang-Ho-Bat-Dai-Bai-Cuc",
+    "Giang-Ho-Tan-Cuc-Khuong-Vinh-Phu",
+    "Lien-Chieu-Thang-Bai-Cuc",
+    "Ma-Khieu-Dan-Khe",
+    "Quy-Thu-Bach-Cuc",
+    "Tan-Cuc-Thien-Ha-Thu-Luc",
+    "Truc-Huong-Trai",
+    "Tu-Dai-Danh-Cuc",
+    "Tuong-Hieu-Xuan-Thu-Luc-Bai-Cuc",
+    "Uyen-Tham-Hai-Khoat",
+    "三国七子",
+    "三山舞象",
+    "东萍网录",
+    "八大名局",
+    "古今排局",
+    "四大名局",
+    "四大名排",
+    "妙杀巧和",
+    "少子百局",
+    "排局神妙",
+    "排局集萃",
+    "摆谱残局",
+    "杀局宝典",
+    "桔中秘残",
+    "棋学捷径",
+    "残局天下",
+    "残局攻杀",
+    "残局杀法",
+    "残局精选",
+    "残排作品",
+    "民间排局",
+    "江湖收录",
+    "百变棋谱",
+    "百局秘谱",
+    "百花排局",
+    "百花棋谱",
+    "简易残局",
+    "精妙巧杀",
+    "绝杀妙和",
+    "蕉窗逸品",
+    "蕉竹斋谱",
+    "趣味象棋",
+    "连照排局",
+    "锦囊妙手"
+  ],
+  "statistics": {
+    "187-Van-Co-The-Giang-Ho": 187,
+    "68-Sat-Phap-Co-Ban": 68,
+    "Bai-Cuc-Han-Thuong": 98,
+    "Chu-Manh-Phuong-Tan-Bai-Tac-Pham": 120,
+    "Co-Kim-Bai-Cuc-Thuong-Tich": 100,
+    "Dai-Bang-Trien-Si": 4,
+    "Dich-Hai-Yen-Ba": 196,
+    "Dong-Binh-Vong-Thu-Luc": 81,
+    "Duong-Dai-Bai-Cuc-Pho": 38,
+    "Duong-Thanh-The-Duc-Bai-Cuc-Thuong-Tich": 365,
+    "Giang-Ho-Bai-Cuc-Tap-Thanh": 261,
+    "Giang-Ho-Bat-Dai-Bai-Cuc": 41,
+    "Giang-Ho-Tan-Cuc-Khuong-Vinh-Phu": 34,
+    "Lien-Chieu-Thang-Bai-Cuc": 142,
+    "Ma-Khieu-Dan-Khe": 8,
+    "Quy-Thu-Bach-Cuc": 100,
+    "Tan-Cuc-Thien-Ha-Thu-Luc": 249,
+    "Truc-Huong-Trai": 158,
+    "Tu-Dai-Danh-Cuc": 6,
+    "Tuong-Hieu-Xuan-Thu-Luc-Bai-Cuc": 213,
+    "Uyen-Tham-Hai-Khoat": 399,
+    "三国七子": 52,
+    "三山舞象": 12,
+    "东萍网录": 81,
+    "八大名局": 41,
+    "古今排局": 100,
+    "四大名局": 6,
+    "四大名排": 6,
+    "妙杀巧和": 149,
+    "少子百局": 108,
+    "排局神妙": 69,
+    "排局集萃": 84,
+    "摆谱残局": 58,
+    "杀局宝典": 529,
+    "桔中秘残": 135,
+    "棋学捷径": 21,
+    "残局天下": 249,
+    "残局攻杀": 122,
+    "残局杀法": 157,
+    "残局精选": 130,
+    "残排作品": 120,
+    "民间排局": 84,
+    "江湖收录": 213,
+    "百变棋谱": 90,
+    "百局秘谱": 105,
+    "百花排局": 243,
+    "百花棋谱": 30,
+    "简易残局": 114,
+    "精妙巧杀": 145,
+    "绝杀妙和": 279,
+    "蕉窗逸品": 10,
+    "蕉竹斋谱": 91,
+    "趣味象棋": 240,
+    "连照排局": 141,
+    "锦囊妙手": 214,
+    "total": 7096
+  },
+  "data": {
+    "187-Van-Co-The-Giang-Ho": {
+      "meta": {
+        "title": "187 Ván Cờ Thế Giang Hồ",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "68-Sat-Phap-Co-Ban": {
+      "meta": {
+        "title": "68 Sát Pháp Cơ bản",
+        "description": "",
+        "tags": [],
+        "updatedAt": "2025/03/05"
+      }
+    },
+    "Bai-Cuc-Han-Thuong": {
+      "meta": {
+        "title": "Bài Cục Hân Thưởng",
+        "description": "Thưởng Thức Bài Cục",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Chu-Manh-Phuong-Tan-Bai-Tac-Pham": {
+      "meta": {
+        "title": "Chu Mạnh Phương Tàn Bài Tác Phẩm",
+        "description": "Các tác phẩm cờ tàn và thế trận của Chu Mạnh Phương",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Co-Kim-Bai-Cuc-Thuong-Tich": {
+      "meta": {
+        "title": "Cổ Kim Bài Cục Thưởng Tích",
+        "description": "Thưởng thức các thế cờ Bài cục cổ kim",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Dai-Bang-Trien-Si": {
+      "meta": {
+        "title": "Đại Bằng Triển Sí",
+        "description": "Đại Bàng Xòe Cánh",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Dich-Hai-Yen-Ba": {
+      "meta": {
+        "title": "Dịch Hải Yên Ba",
+        "description": "Sóng Khói Trong Biển Cờ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Dong-Binh-Vong-Thu-Luc": {
+      "meta": {
+        "title": "Đông Bình Võng Thu Lục",
+        "description": "Tuyển Tập Thu Thập Từ Mạng Đông Bình",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Duong-Dai-Bai-Cuc-Pho": {
+      "meta": {
+        "title": "Đương Đại Bài Cục Phổ",
+        "description": "Tuyển Tập Các Thế Bài Cục Đương Đại",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Duong-Thanh-The-Duc-Bai-Cuc-Thuong-Tich": {
+      "meta": {
+        "title": "Dương Thành Thể Dục Bài Cục Thưởng Tích",
+        "description": "Thưởng Thức Bài Cục Thể Thao Dương Thành",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Giang-Ho-Bai-Cuc-Tap-Thanh": {
+      "meta": {
+        "title": "Giang Hồ Bài Cục Tập Thành",
+        "description": "Tuyển Tập Bài Cục Giang Hồ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Giang-Ho-Bat-Dai-Bai-Cuc": {
+      "meta": {
+        "title": "Giang Hồ Bát Đại Bài Cục",
+        "description": "Tám Thế Bài Cục Nổi Tiếng Trong Giới Giang Hồ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Giang-Ho-Tan-Cuc-Khuong-Vinh-Phu": {
+      "meta": {
+        "title": "Giang Hồ Tàn Cục Khương Vinh Phú Biên",
+        "description": "Tàn cuộc giang hồ, biên soạn bởi Khương Vinh Phú",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Lien-Chieu-Thang-Bai-Cuc": {
+      "meta": {
+        "title": "Liên Chiếu Thắng Bài Cục",
+        "description": "Bài cục thắng lợi bằng liên hoàn chiếu",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Ma-Khieu-Dan-Khe": {
+      "meta": {
+        "title": "Mã Khiêu Đàn Khê",
+        "description": "Ngựa Nhảy Qua Sông Đàn Khê",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Quy-Thu-Bach-Cuc": {
+      "meta": {
+        "title": "Quỷ Thủ Bách Cục",
+        "description": "Một Trăm Thế Cờ Quỷ Thủ Cờ Tướng (Di tác của Chu Kiếm Thu)",
+        "tags": [],
+        "updatedAt": "2025/03/16"
+      }
+    },
+    "Tan-Cuc-Thien-Ha-Thu-Luc": {
+      "meta": {
+        "title": "Tàn Cục Thiên Hạ Thu Lục",
+        "description": "Tuyển Tập Tàn Cuộc Thiên Hạ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Truc-Huong-Trai": {
+      "meta": {
+        "title": "Trúc Hương Trai Cách Thức",
+        "description": "Phong Cách Trúc Hương Trai",
+        "tags": [],
+        "updatedAt": "2025/03/06"
+      }
+    },
+    "Tu-Dai-Danh-Cuc": {
+      "meta": {
+        "title": "Cổ Phổ Tứ Đại Danh Cục",
+        "description": "Tứ Đại Thế Cờ Danh Tiếng Trong Cổ Phổ",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Tuong-Hieu-Xuan-Thu-Luc-Bai-Cuc": {
+      "meta": {
+        "title": "Tưởng Hiểu Xuân Thu Lục Bài Cục",
+        "description": "Bài Cục Thu Lục Của Tưởng Hiểu Xuân",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "Uyen-Tham-Hai-Khoat": {
+      "meta": {
+        "title": "Uyên Thâm Hải Khoát",
+        "description": "Biển Sâu Trời Rộng",
+        "tags": [],
+        "updatedAt": "2025/03/15"
+      }
+    },
+    "三国七子": {
+      "meta": {
+        "title": "三国七子",
+        "description": "三国七子",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "三山舞象": {
+      "meta": {
+        "title": "三山舞象",
+        "description": "三山舞象",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "东萍网录": {
+      "meta": {
+        "title": "东萍网录",
+        "description": "东萍网录",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "八大名局": {
+      "meta": {
+        "title": "八大名局",
+        "description": "八大名局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "古今排局": {
+      "meta": {
+        "title": "古今排局",
+        "description": "古今排局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "四大名局": {
+      "meta": {
+        "title": "四大名局",
+        "description": "四大名局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "四大名排": {
+      "meta": {
+        "title": "四大名排",
+        "description": "四大名排",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "妙杀巧和": {
+      "meta": {
+        "title": "妙杀巧和",
+        "description": "妙杀巧和",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "少子百局": {
+      "meta": {
+        "title": "少子百局",
+        "description": "少子百局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "排局神妙": {
+      "meta": {
+        "title": "排局神妙",
+        "description": "排局神妙",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "排局集萃": {
+      "meta": {
+        "title": "排局集萃",
+        "description": "排局集萃",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "摆谱残局": {
+      "meta": {
+        "title": "摆谱残局",
+        "description": "摆谱残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "杀局宝典": {
+      "meta": {
+        "title": "杀局宝典",
+        "description": "杀局宝典",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "桔中秘残": {
+      "meta": {
+        "title": "桔中秘残",
+        "description": "桔中秘残",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "棋学捷径": {
+      "meta": {
+        "title": "棋学捷径",
+        "description": "棋学捷径",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局天下": {
+      "meta": {
+        "title": "残局天下",
+        "description": "残局天下",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局攻杀": {
+      "meta": {
+        "title": "残局攻杀",
+        "description": "残局攻杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局杀法": {
+      "meta": {
+        "title": "残局杀法",
+        "description": "残局杀法",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残局精选": {
+      "meta": {
+        "title": "残局精选",
+        "description": "残局精选",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "残排作品": {
+      "meta": {
+        "title": "残排作品",
+        "description": "残排作品",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "民间排局": {
+      "meta": {
+        "title": "民间排局",
+        "description": "民间排局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "江湖收录": {
+      "meta": {
+        "title": "江湖收录",
+        "description": "江湖收录",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "百变棋谱": {
+      "meta": {
+        "title": "百变棋谱",
+        "description": "百变棋谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "百局秘谱": {
+      "meta": {
+        "title": "百局秘谱",
+        "description": "百局秘谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "百花排局": {
+      "meta": {
+        "title": "百花排局",
+        "description": "百花排局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "百花棋谱": {
+      "meta": {
+        "title": "百花棋谱",
+        "description": "百花棋谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "简易残局": {
+      "meta": {
+        "title": "简易残局",
+        "description": "简易残局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "精妙巧杀": {
+      "meta": {
+        "title": "精妙巧杀",
+        "description": "精妙巧杀",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "绝杀妙和": {
+      "meta": {
+        "title": "绝杀妙和",
+        "description": "绝杀妙和",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "蕉窗逸品": {
+      "meta": {
+        "title": "蕉窗逸品",
+        "description": "蕉窗逸品",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "蕉竹斋谱": {
+      "meta": {
+        "title": "蕉竹斋谱",
+        "description": "蕉竹斋谱",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "趣味象棋": {
+      "meta": {
+        "title": "趣味象棋",
+        "description": "趣味象棋",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "连照排局": {
+      "meta": {
+        "title": "连照排局",
+        "description": "连照排局",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    },
+    "锦囊妙手": {
+      "meta": {
+        "title": "锦囊妙手",
+        "description": "锦囊妙手",
+        "tags": [],
+        "updatedAt": "2025/05/01"
+      }
+    }
+  }
+}
